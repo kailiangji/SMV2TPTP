@@ -10,7 +10,8 @@
 	"process", PROCESS;
 	"boolean", BOOLEAN;
 	"VAR", VAR;
-	"INIT", INIT;
+	"init", INIT;
+	"next", NEXT;
 	"SPEC", SPEC;
 	"ASSIGN", ASSIGN
       ]
@@ -66,13 +67,14 @@ rule token = parse
 | ":=" {EQDEF}
 | '=' {EQ}
 | '!' {NOT}
-| "!=" {NOTEQ}
 | '|' {OR}
 | '&' {AND}
+| "=>" {IMP}
+| "<=>" {EQUV}
 | ',' {COMMA}
 | ':' {COLON}
 | ';' {SEMI}
-| eof {raise Eof}    
+| eof {EOF}    
 and comment = parse
     | '\n'
 	{ () }

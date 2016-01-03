@@ -12,10 +12,10 @@ type infix =
   | Land | Lor | Limp | Leqv
 
 type expr =
-  | Neg expr
+  | Neg of expr
   | True
   | False
-  | expr infix expr
+  | Infix of expr * infix * expr
   | Elem of string
 
 type assign = 
@@ -23,7 +23,7 @@ type assign =
   |Next of var * expr
 
 type spec =
-  | Pprop of string
+  | Pprop of string * expr
   | AX of spec
   | EX of spec
   | AF of spec
@@ -34,6 +34,10 @@ type spec =
   | EU of spec * spec
   | AR of spec * spec
   | ER of spec * spec
+  | Or of spec * spec
+  | And of spec * spec
+  | Imp of spec * spec
+  | Equv of spec * spec
 
 type decl =
   | Module1 of name * var_type list * assign list * spec

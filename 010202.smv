@@ -1,0 +1,60 @@
+MODULE main
+VAR
+v1:boolean;
+v2:boolean;
+v3:boolean;
+v4:boolean;
+v5:boolean;
+v6:boolean;
+v7:boolean;
+v8:boolean;
+p1: process p1t(v1,v2,v3,v4,v5,v6);
+p2: process p2t(v1,v2,v3,v4,v5,v6);
+ASSIGN
+init(v1):=FALSE;
+init(v2):=TRUE;
+init(v3):=FALSE;
+init(v4):=TRUE;
+init(v5):=TRUE;
+init(v6):=FALSE;
+init(v7):=FALSE;
+init(v8):=FALSE;
+next(v1):=!v6;
+next(v2):=!v4;
+next(v3):=!v4;
+next(v4):=!v6;
+next(v5):=!v2;
+next(v6):=!v6;
+next(v7):=!v3;
+next(v8):=!v5;
+SPEC AG((v1=TRUE|v2=TRUE|v3=TRUE|v4=TRUE|v5=TRUE|v6=TRUE))
+MODULE p1t(v1,v2,v3,v4,v5,v6)
+VAR
+v9:boolean;
+v10:boolean;
+ASSIGN
+init(v9):=FALSE;
+init(v10):=FALSE;
+next(v1):=!v4;
+next(v2):=!v10;
+next(v3):=!v9;
+next(v4):=!v10;
+next(v5):=!v3;
+next(v6):=!v3;
+next(v9):=!v5;
+next(v10):=!v2;
+MODULE p2t(v1,v2,v3,v4,v5,v6)
+VAR
+v11:boolean;
+v12:boolean;
+ASSIGN
+init(v11):=FALSE;
+init(v12):=FALSE;
+next(v1):=!v6;
+next(v2):=!v12;
+next(v3):=!v3;
+next(v4):=!v6;
+next(v5):=!v3;
+next(v6):=!v4;
+next(v11):=!v6;
+next(v12):=!v11;
