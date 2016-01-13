@@ -1,29 +1,36 @@
 type var = string
+type bvar = string
 type name = string
 
-type var_type = 
-  | Boolean of var
-  | Elem of var * string list
-  | Process of var * name * var list 
-
-type stringValue = string
+type boolConst = True | False 
 
 type infix =
   | Land | Lor | Limp | Leqv
 
-type expr =
-  | Neg of expr
+type lexpr =
+  | Neg of lexpr
   | True
   | False
-  | Infix of expr * infix * expr
-  | Elem of string
+  | Infix of lexpr * infix * lexpr
+  | BVar of string
 
-type assign = 
-  |Init of var * expr
-  |Next of var * expr
+type nlexpr =
+  |NBVar of string
+  |NBConst of string * string
+
+type var_type =
+  |Bvar of var
+  |NBvar of var * string list
+  |Process of var * name * var list
+
+type assign =
+  |BInit of bvar * lexpr 
+  |NBInit of var * nlexpr
+  |BNext of bvar * lexpr
+  |NBNext of var * (nlexpr * nlexpr) list
 
 type spec =
-  | Pprop of string * expr
+  | Eq of bvar * boolConst
   | AX of spec
   | EX of spec
   | AF of spec

@@ -13,13 +13,27 @@
 	"init", INIT;
 	"next", NEXT;
 	"SPEC", SPEC;
-	"ASSIGN", ASSIGN
+	"ASSIGN", ASSIGN;
+	"case", CASE;
+	"esac", ESAC;
+	"AX", AX;
+	"EX", EX;
+        "AG", AG;
+	"EG", EG;
+	"AF", AF;
+	"EF", EF;
+	"A", A;
+	"E", E;
+	"U", U;
+	"R", R;
+	"TRUE", TRUE;
+	"FALSE", FALSE
       ]
 
  let newline lexbuf =
     let pos = lexbuf.lex_curr_p in
     lexbuf.lex_curr_p <-
-      { pos with pos_lnum = pos.pos_lnum + 1; pos_bol = pos.pos_cnum }
+     {pos with pos_lnum = pos.pos_lnum + 1; pos_bol = pos.pos_cnum }
 
  let string_buf = Buffer.create 1024
    
@@ -30,8 +44,8 @@
 let space = [' ' '\t' '\r']
 let alpha = ['a'-'z' 'A'-'Z']
 let letter = alpha | '_'
-let hexdigit = ['0'-'9''a'-'f''A'-'F']
-let ident = (letter) (letter | hexdigit | '_')*
+let digit = ['0'-'9']
+let ident = (letter) (letter | digit)*
 
 rule token = parse
 | '\n'
@@ -44,20 +58,7 @@ rule token = parse
 	      with Not_found ->
 		IDENT id
 	    }
-| "--"
-	{comment lexbuf; token lexbuf}
-| "AX" {AX}
-| "EX" {EX}
-| "AG" {AG}
-| "EG" {EG}
-| "AF" {AF}
-| "EF" {EF}
-| "A" {A}
-| "E" {E}
-| "U" {U}
-| "R" {R}
-| "TRUE" {TRUE}
-| "FALSE" {FALSE}
+| "--"	{comment lexbuf; token lexbuf}
 | '(' {LP}
 | ')' {RP}
 | '[' {LB}
@@ -79,6 +80,6 @@ and comment = parse
     | '\n'
 	{ () }
     | eof
-	{ () }
+	{()}
     | _
 	{ comment lexbuf }

@@ -3,11 +3,28 @@ open Lexing
 open Parsing
 open Parsed
 
+let rec seprate_vars_list_helper (bvar, nbvar, nbconst, proc) l =
+  match l with
+  | [] -> accu
+  | Bvar(var) :: tl -> 
+     seprate_vars_list_helper (BVar(var)::bvar, nbvar, proc) tl
+  | NBvar(var,conlst) :: tl ->
+     seprate_vars_list_helper (bvar, NBVar(var)::nbvar,  proc) tl
+  | Process _,_,_ as h :: tl ->
+     seprate_vars_list_helper (bvar, nbvar, h::proc) tl
+
+let seprate_vars_list = seprate_vars_list_helper ([],[],[],[])
+
+let rec get_nbconst nbvar nbconst_l =
+  match nbconst_l with
+  | [] -> []
+  | h :: tl -> NBConst(h,nbvar) :: (get_nbconst nbvar tl)
+
 %}
 
 %token <string> IDENT
 %token AX EX AG EG AF EF A E U R TRUE FALSE
-%token LP RP LB RB LCB RCB
+%token LP RP LB RB LCB RCB CASE ESAC
 %token INIT NEXT 
 %token NOT OR AND IMP EQUV EQ
 %token COMMA COLON SEMI EQDEF EOF
@@ -39,35 +56,42 @@ list_decl:
 ;
 
 decl:
-| MODULE ident VAR varTypeList ASSIGN assignList SPEC spec END 
+| MODULE ident VAR var_list ASSIGN assign_list SPEC spec END 
     {Module1($2,$4,$6,$8)}
-| MODULE ident LP idents RP VAR varTypeList ASSIGN assignList END
+| MODULE ident LP idents RP VAR var_list ASSIGN assign_list END
 	{Module2($2,$4,$7,$9)}
 ;
 
-varTypeList:
+var_list:
 | /*empty list*/ {[]}
-| varType varTypeList {$1 :: $2}
+| var var_list {$1::$2}
 ;
 
-varType:
-| ident COLON BOOLEAN SEMI {Boolean($1)}
-| ident COLON LCB idents RCB SEMI {Elem($1,$4)}
+var:
+| ident COLON BOOLEAN SEMI {BVar($1)}
+| ident COLON LCB idents RCB SEMI {NBVar($1,$4)}
 | ident COLON PROCESS ident LP idents RP SEMI{Process($1,$4,$6)}
 ;
 
-assignList:
+assign_list:
 | /* empty assigns*/ {[]}
-| INIT LP ident RP EQDEF expr SEMI assignList {Init($3,$6)::$8}
-| NEXT LP ident RP EQDEF expr SEMI assignList {Next($3,$6)::$8}
+| INIT LP ident RP EQDEF expr SEMI assign_list {Init($3,$6)::$8}
+| NEXT LP ident RP EQDEF expr SEMI assign_list {Next($3,$6)::$8}
+| NEXT LP ident RP EQDEF CASE c_assign ESAC SEMI assign_list 
+    {NextCase($3,$7)::$10}
 ;
 
 expr:
-| NOT expr {Neg($2)}
+| lexpr {$1}
+| ident {Elem2($1)}
+;
+
+lexpr:
+| NOT lexpr {Neg($2)}
 | TRUE {True}
 | FALSE {False}
-| expr infix expr {Infix($1,$2,$3)}
-| ident {Elem($1)}
+| lexpr infix lexpr {Infix($1,$2,$3)}
+| ident { if List.mem }
 ;
 
 infix:
