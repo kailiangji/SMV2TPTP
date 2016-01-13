@@ -18,6 +18,8 @@ type token =
   | RB
   | LCB
   | RCB
+  | CASE
+  | ESAC
   | INIT
   | NEXT
   | NOT
