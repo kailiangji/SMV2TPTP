@@ -3,23 +3,6 @@ open Lexing
 open Parsing
 open Parsed
 
-let rec seprate_vars_list_helper (bvar, nbvar, nbconst, proc) l =
-  match l with
-  | [] -> accu
-  | Bvar(var) :: tl -> 
-     seprate_vars_list_helper (BVar(var)::bvar, nbvar, proc) tl
-  | NBvar(var,conlst) :: tl ->
-     seprate_vars_list_helper (bvar, NBVar(var)::nbvar,  proc) tl
-  | Process _,_,_ as h :: tl ->
-     seprate_vars_list_helper (bvar, nbvar, h::proc) tl
-
-let seprate_vars_list = seprate_vars_list_helper ([],[],[],[])
-
-let rec get_nbconst nbvar nbconst_l =
-  match nbconst_l with
-  | [] -> []
-  | h :: tl -> NBConst(h,nbvar) :: (get_nbconst nbvar tl)
-
 %}
 
 %token <string> IDENT
@@ -56,52 +39,45 @@ list_decl:
 ;
 
 decl:
-| MODULE ident VAR var_list ASSIGN assign_list SPEC spec END 
-    {Module1($2,$4,$6,$8)}
-| MODULE ident LP idents RP VAR var_list ASSIGN assign_list END
-	{Module2($2,$4,$7,$9)}
+| MODULE ident VAR var_list ASSIGN assign_list SPEC spec
+    {Module1($2,$4, $6, $8)}
+| MODULE ident LP idents RP VAR var_list ASSIGN assign_list
+	{Module2($2,$4,$7, $9)}
 ;
 
 var_list:
 | /*empty list*/ {[]}
-| var var_list {$1::$2}
+| var SEMI var_list {$1::$3}
 ;
 
 var:
-| ident COLON BOOLEAN SEMI {BVar($1)}
-| ident COLON LCB idents RCB SEMI {NBVar($1,$4)}
-| ident COLON PROCESS ident LP idents RP SEMI{Process($1,$4,$6)}
+| ident COLON BOOLEAN {Boolean($1)}
+| ident COLON LCB idents RCB {Elem($1,$4)}
+| ident COLON PROCESS ident LP idents RP {Proc($1,$4,$6)}
 ;
 
 assign_list:
-| /* empty assigns*/ {[]}
-| INIT LP ident RP EQDEF expr SEMI assign_list {Init($3,$6)::$8}
-| NEXT LP ident RP EQDEF expr SEMI assign_list {Next($3,$6)::$8}
-| NEXT LP ident RP EQDEF CASE c_assign ESAC SEMI assign_list 
-    {NextCase($3,$7)::$10}
+| /*empty list*/ {[]}
+| assign SEMI assign_list {$1::$3}
 ;
 
-expr:
-| lexpr {$1}
-| ident {Elem2($1)}
+assign:
+| INIT LP ident RP EQDEF exp {Init($3, $6)}
+| NEXT LP ident RP EQDEF exp {Next($3,$6)}
+| NEXT LP ident RP EQDEF CASE case_assigns ESAC {CNext($3, $7)}
 ;
 
-lexpr:
-| NOT lexpr {Neg($2)}
-| TRUE {True}
-| FALSE {False}
-| lexpr infix lexpr {Infix($1,$2,$3)}
-| ident { if List.mem }
-;
-
-infix:
-| AND {Land}
-| OR {Lor}
-| IMP {Limp}
-| EQUV {Leqv}
+case_assigns:
+|/* empty cases*/ {[]}
+| exp COLON exp SEMI case_assigns {($1, $3)::$5}
 ;
 
 spec:
+| ident EQ exp {Eq($1, $3)}
+| NOT spec {Neg($2)}
+| LP spec RP {$2}
+| spec AND spec {And($1, $3)}
+| spec OR spec {Or($1, $3)}
 | AX LP spec RP {AX($3)}
 | EX LP spec RP {EX($3)}
 | AF LP spec RP {AF($3)}
@@ -112,13 +88,17 @@ spec:
 | E LB spec U spec RB {EU($3,$5)}
 | A LB spec R spec RB {AR($3,$5)}
 | E LB spec R spec RB {ER($3,$5)}
-| spec OR spec {Or($1,$3)}
-| spec AND spec {And($1,$3)}
-| spec IMP spec {Imp($1,$3)}
-| spec EQUV spec {Equv($1,$3)}
-| ident EQ expr {Pprop($1, $3)}
 ;
 
+exp:
+| TRUE {True}
+| FALSE {False}
+| NOT exp { Neg($2)}
+| exp AND exp {And($1, $3)}
+| exp OR exp {Or($1, $3)}
+| exp EQ exp {Eq($1, $3)}
+| ident {Var($1)}
+;
 
 
 idents:
