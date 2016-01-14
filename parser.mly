@@ -20,6 +20,7 @@ open Parsed
 %right IMP
 %right EQUV
 %nonassoc NOT
+%right EQ
 %nonassoc AX EX AG EG AF EF A E TRUE FALSE
 %right U R
 %nonassoc IDENT
