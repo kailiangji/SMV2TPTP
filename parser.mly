@@ -79,12 +79,12 @@ spec:
 | LP spec RP {$2}
 | spec AND spec {And($1, $3)}
 | spec OR spec {Or($1, $3)}
-| AX LP spec RP {AX($3)}
-| EX LP spec RP {EX($3)}
-| AF LP spec RP {AF($3)}
-| EF LP spec RP {EF($3)}
-| AG LP spec RP {AG($3)}
-| EG LP spec RP {EG($3)}
+| AX spec {AX($2)}
+| EX spec {EX($2)}
+| AF spec {AF($2)}
+| EF spec {EF($2)}
+| AG spec {AG($2)}
+| EG spec {EG($2)}
 | A LB spec U spec RB {AU($3,$5)}
 | E LB spec U spec RB {EU($3,$5)}
 | A LB spec R spec RB {AR($3,$5)}

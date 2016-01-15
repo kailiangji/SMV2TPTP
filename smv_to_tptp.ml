@@ -23,44 +23,44 @@ let rec find_mdl m_nam m_vars md_lst=
 exception Not_Main_Module
 exception Main_Module
  
-let rec list_of_str_of_vars ?var_md:(var_md ="") vars md_lst =
+let rec lst_str_of_vars ?var_md:(var_md ="") vars md_lst =
   match vars with
   | [] -> []
   | (Boolean(bvar)) :: tl ->
      if var_md = "" then
-        bvar :: list_of_str_of_vars tl md_lst
+        bvar :: lst_str_of_vars tl md_lst
      else
-       (var_md ^ "_" ^ bvar ) :: list_of_str_of_vars ~var_md:(var_md) tl md_lst
+       (var_md ^ "_" ^ bvar ) :: lst_str_of_vars ~var_md:(var_md) tl md_lst
   | (Elem(elm, _ )) :: tl -> 
      if var_md = ""then
-       elm :: list_of_str_of_vars tl md_lst
+       elm :: lst_str_of_vars tl md_lst
      else     
-       (var_md^"_"^elm) :: list_of_str_of_vars ~var_md:(var_md) tl md_lst
+       (var_md^"_"^elm) :: lst_str_of_vars ~var_md:(var_md) tl md_lst
   | (Proc(name, st, st_lst)) :: tl -> 
      match find_mdl st st_lst md_lst with
      | Module2(_,_,var_decl_lst, _) -> 
-	(list_of_str_of_vars ~var_md:(name) var_decl_lst md_lst) @ 
-	  list_of_str_of_vars tl md_lst
+	(lst_str_of_vars ~var_md:(name) var_decl_lst md_lst) @ 
+	  lst_str_of_vars tl md_lst
      | _ -> raise Main_Module
 
-let rec list_of_str_of_vars' ?var_md:(var_md ="") vars md_lst =
+let rec lst_str_of_vars' ?var_md:(var_md ="") vars md_lst =
   match vars with
   | [] -> []
   | (Boolean(bvar)) as h :: tl ->
      if var_md = "" then
-       h :: list_of_str_of_vars' tl md_lst
+       h :: lst_str_of_vars' tl md_lst
      else
-      Boolean(var_md ^ "_" ^ bvar) :: list_of_str_of_vars' ~var_md:(var_md) tl md_lst
+      Boolean(var_md ^ "_" ^ bvar) :: lst_str_of_vars' ~var_md:(var_md) tl md_lst
   | (Elem(elm, value_lst )) as h :: tl -> 
      if var_md = ""then
-       h :: list_of_str_of_vars' tl md_lst
+       h :: lst_str_of_vars' tl md_lst
      else     
-      Elem(var_md^"_"^elm, value_lst) :: list_of_str_of_vars' ~var_md:(var_md) tl md_lst
+      Elem(var_md^"_"^elm, value_lst) :: lst_str_of_vars' ~var_md:(var_md) tl md_lst
   | (Proc(name, st, st_lst)) :: tl -> 
      match find_mdl st st_lst md_lst with
      | Module2(_,_,var_decl_lst, _) -> 
-	(list_of_str_of_vars' ~var_md:(name) var_decl_lst md_lst) @ 
-	  list_of_str_of_vars' tl md_lst
+	(lst_str_of_vars' ~var_md:(name) var_decl_lst md_lst) @ 
+	  lst_str_of_vars' tl md_lst
      | _ -> raise Main_Module
 
 let rec print_vars_with_types vars =
@@ -97,12 +97,12 @@ let rec print_vars_without_types vars =
 
 let state_var_list md md_lst=
   match md with
-  | Module1(nam, vars, _,_) -> list_of_str_of_vars vars md_lst
+  | Module1(nam, vars, _,_) -> lst_str_of_vars vars md_lst
   | _ -> raise Not_Main_Module
 
 let state_var_list' md md_lst=
   match md with
-  | Module1(nam, vars, _,_) -> list_of_str_of_vars' vars md_lst
+  | Module1(nam, vars, _,_) -> lst_str_of_vars' vars md_lst
   | _ -> raise Not_Main_Module
 
 exception Not_Initialized
@@ -187,14 +187,15 @@ let init_state md md_lst =
      list_of_inits_of_vars vars assigns md_lst
   | _ -> raise Not_Main_Module
 
-let rec put_ahead_elem_vars_helper accum1 accum2 var_lst =
-  match var_lst with
-  | [] -> accum1 @ accum2
-  | h::tl -> match h with
-    | Boolean(_) -> put_ahead_elem_vars_helper accum1 (accum2@[h]) tl
-    | _ -> put_ahead_elem_vars_helper (accum1@[h]) accum2 tl
-
-let put_ahead_elem_vars = put_ahead_elem_vars_helper [] []
+let put_ahead_elem_vars var_lst =
+  let rec put_ahead_elem_vars' acc1 acc2 var_lst =
+    match var_lst with
+    | [] -> acc1 @ acc2
+    | h::tl -> match h with
+      | Boolean(_) -> put_ahead_elem_vars' acc1 (acc2@[h]) tl
+      | _ -> put_ahead_elem_vars' (acc1@[h]) acc2 tl
+  in put_ahead_elem_vars' [] [] var_lst
+  
 
 let rec false_var_state v var_l =
   match var_l with
@@ -303,9 +304,6 @@ print_newline();
 state_shape var_lst'';
 print_newline();
 atomic_prop_in_state (List.hd result) var_lst;
-print_newline();
-print_string spec;
-state_shape inits';
 print_newline();
 goal spec inits';
 print_newline();
