@@ -30,12 +30,14 @@ let rec lst_str_of_vars ?var_md:(var_md ="") vars md_lst =
      if var_md = "" then
         bvar :: lst_str_of_vars tl md_lst
      else
-       (var_md ^ "_" ^ bvar ) :: lst_str_of_vars ~var_md:(var_md) tl md_lst
+       (var_md ^ "_" ^ bvar) 
+       :: lst_str_of_vars ~var_md:(var_md) tl md_lst
   | (Elem(elm, _ )) :: tl -> 
      if var_md = ""then
        elm :: lst_str_of_vars tl md_lst
      else     
-       (var_md^"_"^elm) :: lst_str_of_vars ~var_md:(var_md) tl md_lst
+       (var_md^"_"^elm)
+       :: lst_str_of_vars ~var_md:(var_md) tl md_lst
   | (Proc(name, st, st_lst)) :: tl -> 
      match find_mdl st st_lst md_lst with
      | Module2(_,_,var_decl_lst, _) -> 
@@ -50,17 +52,19 @@ let rec lst_str_of_vars' ?var_md:(var_md ="") vars md_lst =
      if var_md = "" then
        h :: lst_str_of_vars' tl md_lst
      else
-      Boolean(var_md ^ "_" ^ bvar) :: lst_str_of_vars' ~var_md:(var_md) tl md_lst
+      Boolean(var_md ^ "_" ^ bvar)
+       :: lst_str_of_vars' ~var_md:(var_md) tl md_lst
   | (Elem(elm, value_lst )) as h :: tl -> 
      if var_md = ""then
        h :: lst_str_of_vars' tl md_lst
      else     
-      Elem(var_md^"_"^elm, value_lst) :: lst_str_of_vars' ~var_md:(var_md) tl md_lst
+      Elem(var_md^"_"^elm, value_lst)
+       :: lst_str_of_vars' ~var_md:(var_md) tl md_lst
   | (Proc(name, st, st_lst)) :: tl -> 
      match find_mdl st st_lst md_lst with
      | Module2(_,_,var_decl_lst, _) -> 
-	(lst_str_of_vars' ~var_md:(name) var_decl_lst md_lst) @ 
-	  lst_str_of_vars' tl md_lst
+	(lst_str_of_vars' ~var_md:(name) var_decl_lst md_lst)
+	@ lst_str_of_vars' tl md_lst
      | _ -> raise Main_Module
 
 let rec print_vars_with_types vars =
@@ -217,6 +221,7 @@ let rec true_var_state v var_l =
        (String.uppercase h1)^", "^true_var_state v tl
   | [h] -> if v=h then "b(tt,ff) " else String.uppercase h
 
+
 let rec atomic_prop_in_state' var_l1 var_l2 =
   match var_l1 with
   | [] -> print_string "\n"
@@ -229,7 +234,6 @@ let rec atomic_prop_in_state' var_l1 var_l2 =
        ^ (true_var_state v var_l2) ^ "))).\n");
       atomic_prop_in_state' tl var_l2
     |_ -> ()
- 
 
 let atomic_prop_in_state md var_lst =
   match md with
@@ -278,13 +282,161 @@ let state_shape var_lst =
   print_vars_without_types var_lst;
   print_string ")"
 
+
 let goal spec s =
 print_string "cnf(check, negated_conjecture, pi0(";
 print_string (spec^", ");
 state_shape s;
 print_string ")."
 
-(*let succ_of_a_state s md_lst =*)
+
+let rec list_of_procs' vars' =
+       match vars' with
+       | [] -> []
+       | h :: tl -> 
+	  match h with
+	  | Proc(_,_,_) -> h :: list_of_procs' tl
+	  | _ -> list_of_procs' tl
+
+let list_of_procs md =
+  match md with
+  | Module1(_, vars, _, _) -> list_of_procs' vars
+  | Module2(_,_,vars,_) -> list_of_procs' vars
+
+
+let rec check_var_in_decl var decls =
+  match decls with
+  | [] -> false
+  | h :: tl -> 
+     match h with
+     | Boolean(var') -> if var=var' then true
+       else check_var_in_decl var tl
+     | Elem(var', _) -> if var=var' then true 
+       else check_var_in_decl var tl
+     | _ -> check_var_in_decl var tl
+
+
+let rec succ_assig ?p_name:(p_name = "main") var_decs assigns =
+  match assigns with
+  | [] -> []
+  | Next(var,exp) as h :: tl ->
+     if check_var_in_decl var var_decs = true
+     then
+       if p_name = "main" then 
+	 h :: succ_assig ~p_name:(p_name) var_decs tl 
+       else 
+	 Next(p_name^"_"^var, exp) 
+	 :: succ_assig ~p_name:(p_name) var_decs tl
+     else 
+       h :: succ_assig ~p_name:(p_name) var_decs tl
+
+  | CNext(var, case_ass) as h :: tl ->
+     if check_var_in_decl var var_decs = true
+     then 
+       if p_name = "main" then
+	 h :: succ_assig ~p_name:(p_name) var_decs tl
+       else 
+	 CNext(p_name^"_"^var, case_ass) 
+	 :: succ_assig ~p_name:(p_name) var_decs tl
+     else 
+       h::succ_assig ~p_name:(p_name) var_decs tl
+  | _:: tl -> succ_assig ~p_name:(p_name) var_decs tl 
+
+exception Not_Proc
+
+let rec succ_assig_in_each_proc procs md_lst =
+  match procs with
+  | [] -> []
+  | h :: tl -> match h with
+    |Proc(name, st, st_lst) ->(
+      match find_mdl st st_lst md_lst with
+      | Module2(_,_, vars', assigns') ->
+	 (succ_assig ~p_name:(name) vars' assigns')
+	 :: succ_assig_in_each_proc tl md_lst
+      | _ -> raise Main_Module ) 
+    | _ -> raise Not_Proc
+  
+let succ_assig_in_main md =
+  match md with
+  | Module1(name, vars, assigns, spec) -> 
+     succ_assig ~p_name:("main") vars assigns
+  | _ -> raise Not_Main_Module
+
+
+let rec var_of_exp exp =
+  match exp with
+  | Var(str) -> str
+  | True -> "b(tt,ff)"
+  | False -> "b(ff,tt)"
+  | Neg(e) -> ("not("^var_of_exp e^")")
+  | And(e1,e2) -> ("and("^var_of_exp e1 ^", "^ var_of_exp e2^")")
+  | Or(e1,e2) -> ("or("^var_of_exp e1 ^", "^ var_of_exp e2^")")
+  | Eq(e1,e2) -> ("eq("^var_of_exp e1 ^", "^ var_of_exp e2^")")
+
+
+let rec find_next_var var succ_assig =
+  match succ_assig with
+  | [] -> var
+  | h :: tl -> 
+     match h with
+     | Next(var', exp) -> 
+	if var=var' then var_of_exp exp
+	else find_next_var var tl
+     | _ -> find_next_var var tl
+
+
+let rec succ_without_elem vars succ_assig =
+  match vars with
+  | [] -> []
+  | Boolean(var) :: tl -> 
+     (find_next_var var succ_assig)
+     :: succ_without_elem tl succ_assig
+  | _ :: tl-> succ_without_elem tl succ_assig
+   
+let rec r_without_elem vars succ_assigs =
+  match succ_assigs with
+  | [] ->  []
+  | h :: tl ->
+     succ_without_elem vars h :: r_without_elem vars tl
+
+let rec print_var_list vars =
+  match vars with
+  | [] -> ()
+  | h::tl -> 
+     (print_string h;
+      List.iter (fun v -> print_string (", "^v)) tl
+     )
+let rec print_succs_without_elem succs =
+  match succs with
+  | [] -> print_string "nil"
+  | [h] ->
+     (print_string "con(";
+      print_string "s(";
+      print_var_list h;
+      print_string "), ";
+      print_string "nil";
+      print_string ")" )
+  | h :: tl -> print_string "con(";
+    print_string "s(";
+    print_var_list h;
+    print_string "), ";
+    print_succs_without_elem tl;
+    print_string ")"
+
+let r_shape_without_elem vars succs =
+  print_string "cnf(r, axiom, r(";
+  state_shape vars;
+  print_string ", ";
+  print_succs_without_elem succs;
+  print_string ")).\n"
+
+let relation md md_lst =
+  match md with
+  | Module1(name, vars, assigns, spec) ->
+     assert false
+  | _ -> raise Not_Main_Module
+ 
+
 
 let () =
 let chan_in = open_in Sys.argv.(1) in
@@ -296,6 +448,10 @@ let inits' = put_ahead_elem_vars inits in
 let var_lst = state_var_list (List.hd result) (List.tl result) in
 let var_lst' = state_var_list' (List.hd result) (List.tl result) in
 let var_lst'' = put_ahead_elem_vars var_lst' in
+let main_succ_assign = succ_assig_in_main (List.hd result) in
+let procs = list_of_procs (List.hd result) in
+let succ_assigns = succ_assig_in_each_proc procs (List.tl result) in
+let succ = r_without_elem var_lst'' (main_succ_assign::succ_assigns) in
 List.iter (fun x -> print_string (x^"\n")) var_lst;
 print_vars_with_types var_lst';
 print_newline();
@@ -304,6 +460,8 @@ print_newline();
 state_shape var_lst'';
 print_newline();
 atomic_prop_in_state (List.hd result) var_lst;
+print_newline();
+r_shape_without_elem var_lst'' succ;
 print_newline();
 goal spec inits';
 print_newline();
