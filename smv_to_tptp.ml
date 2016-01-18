@@ -316,6 +316,33 @@ let rec check_var_in_decl var decls =
      | _ -> check_var_in_decl var tl
 
 
+let rec add_proc_to_exp p_name var_decls exp =
+  match exp with
+  | True -> True
+  | False -> False
+  | Neg(e) -> 
+     Neg (add_proc_to_exp p_name var_decls e)
+  | And(e1,e2) ->
+     And(add_proc_to_exp p_name var_decls e1,
+	 add_proc_to_exp p_name var_decls e2)
+  | Or(e1,e2) ->
+     Or(add_proc_to_exp p_name var_decls e1,
+	add_proc_to_exp p_name var_decls e2)
+  | Eq(e1,e2) ->
+     Eq(add_proc_to_exp p_name var_decls e1,
+	add_proc_to_exp p_name var_decls e2)
+  | Var(str) -> 
+     if check_var_in_decl str var_decls = true
+     then Var(p_name^"_"^str)
+     else Var(str)
+
+let rec add_proc_to_case_assigns p_name decls case_ass =
+  match case_ass with
+  | [] -> []
+  | (e1,e2) :: tl ->
+     (add_proc_to_exp p_name decls e1, add_proc_to_exp p_name decls e2)
+     :: add_proc_to_case_assigns p_name decls tl
+
 let rec succ_assig ?p_name:(p_name = "main") var_decs assigns =
   match assigns with
   | [] -> []
@@ -325,10 +352,11 @@ let rec succ_assig ?p_name:(p_name = "main") var_decs assigns =
        if p_name = "main" then 
 	 h :: succ_assig ~p_name:(p_name) var_decs tl 
        else 
-	 Next(p_name^"_"^var, exp) 
+	 Next(p_name^"_"^var, add_proc_to_exp p_name var_decs exp) 
 	 :: succ_assig ~p_name:(p_name) var_decs tl
      else 
-       h :: succ_assig ~p_name:(p_name) var_decs tl
+       Next(var, add_proc_to_exp p_name var_decs exp)
+       :: succ_assig ~p_name:(p_name) var_decs tl
 
   | CNext(var, case_ass) as h :: tl ->
      if check_var_in_decl var var_decs = true
@@ -336,10 +364,12 @@ let rec succ_assig ?p_name:(p_name = "main") var_decs assigns =
        if p_name = "main" then
 	 h :: succ_assig ~p_name:(p_name) var_decs tl
        else 
-	 CNext(p_name^"_"^var, case_ass) 
+	 CNext(p_name^"_"^var, 
+	       add_proc_to_case_assigns p_name var_decs case_ass) 
 	 :: succ_assig ~p_name:(p_name) var_decs tl
      else 
-       h::succ_assig ~p_name:(p_name) var_decs tl
+       CNext(var, add_proc_to_case_assigns p_name var_decs case_ass)
+       ::succ_assig ~p_name:(p_name) var_decs tl
   | _:: tl -> succ_assig ~p_name:(p_name) var_decs tl 
 
 exception Not_Proc
@@ -385,19 +415,22 @@ let rec find_next_var var succ_assig =
      | _ -> find_next_var var tl
 
 
-let rec succ_without_elem vars succ_assig =
+let rec succ_without_case vars succ_assig =
   match vars with
   | [] -> []
   | Boolean(var) :: tl -> 
      (find_next_var var succ_assig)
-     :: succ_without_elem tl succ_assig
-  | _ :: tl-> succ_without_elem tl succ_assig
+     :: succ_without_case tl succ_assig
+  | Elem(var,_) :: tl -> 
+     (find_next_var var succ_assig)
+     :: succ_without_case tl succ_assig
+  | _ :: tl-> succ_without_case tl succ_assig
    
-let rec r_without_elem vars succ_assigs =
+let rec r_without_case vars succ_assigs =
   match succ_assigs with
   | [] ->  []
   | h :: tl ->
-     succ_without_elem vars h :: r_without_elem vars tl
+     succ_without_case vars h :: r_without_case vars tl
 
 let rec print_var_list vars =
   match vars with
@@ -406,7 +439,7 @@ let rec print_var_list vars =
      (print_string h;
       List.iter (fun v -> print_string (", "^v)) tl
      )
-let rec print_succs_without_elem succs =
+let rec print_succs_without_case succs =
   match succs with
   | [] -> print_string "nil"
   | [h] ->
@@ -420,15 +453,70 @@ let rec print_succs_without_elem succs =
     print_string "s(";
     print_var_list h;
     print_string "), ";
-    print_succs_without_elem tl;
+    print_succs_without_case tl;
     print_string ")"
 
-let r_shape_without_elem vars succs =
+let r_shape_without_case vars succs =
   print_string "cnf(r, axiom, r(";
   state_shape vars;
   print_string ", ";
-  print_succs_without_elem succs;
+  print_succs_without_case succs;
   print_string ")).\n"
+
+
+let rec succ_without_case vars succ_assig =
+  match vars with
+  | [] -> []
+  | Boolean(var) :: tl -> 
+     (find_next_var var succ_assig)
+     :: succ_without_case tl succ_assig
+  | Elem(var,_) :: tl -> 
+     (find_next_var var succ_assig)
+     :: succ_without_case tl succ_assig
+  | _ :: tl-> succ_without_case tl succ_assig
+
+exception Not_Condition_Exp
+
+let rec find_vars_in_con con_lst =
+  match con_lst with
+  | [] -> []
+  | (e1,e2) :: tl ->
+     let rec find_var_in_eq e =
+       match e with      
+       | Var(str) -> str
+       | Eq(e1,_) -> find_var_in_eq e1
+       | _ -> raise Not_Condition_Exp
+     in find_var_in_eq e1 :: find_vars_in_con tl
+
+let rec find_case_vars succ_assig =
+  match succ_assig with
+  | [] -> []
+  | h :: tl -> 
+     match h with
+     | CNext(_,con_lst) -> (find_vars_in_con con_lst)@find_case_vars tl
+     | _ -> find_case_vars tl
+
+let rec succ_with_case vars succ_assig =
+  match vars with
+  | [] -> []
+  | h:: tl -> assert false
+
+let rec r_with_case vars succ_assigs =
+  match succ_assigs with
+  | [] ->  []
+  | h :: tl ->
+     succ_with_case vars h :: r_with_case vars tl
+
+
+(*let r_shape_with_case vars succs =
+  print_string "cnf(r, axiom, r(";
+  state_shape vars;
+  print_string ", ";
+  print_succs_with_case succs;
+  print_string ")).\n"
+*)
+
+
 
 let relation md md_lst =
   match md with
@@ -451,7 +539,7 @@ let var_lst'' = put_ahead_elem_vars var_lst' in
 let main_succ_assign = succ_assig_in_main (List.hd result) in
 let procs = list_of_procs (List.hd result) in
 let succ_assigns = succ_assig_in_each_proc procs (List.tl result) in
-let succ = r_without_elem var_lst'' (main_succ_assign::succ_assigns) in
+let succ = r_without_case var_lst'' (main_succ_assign::succ_assigns) in
 List.iter (fun x -> print_string (x^"\n")) var_lst;
 print_vars_with_types var_lst';
 print_newline();
@@ -461,7 +549,7 @@ state_shape var_lst'';
 print_newline();
 atomic_prop_in_state (List.hd result) var_lst;
 print_newline();
-r_shape_without_elem var_lst'' succ;
+r_shape_without_case var_lst'' succ;
 print_newline();
 goal spec inits';
 print_newline();
