@@ -1,0 +1,9 @@
+parser.cmi : parsed.cmo
+lexer.cmo : parser.cmi
+lexer.cmx : parser.cmx
+parsed.cmo :
+parsed.cmx :
+parser.cmo : parsed.cmo parser.cmi
+parser.cmx : parsed.cmx parser.cmi
+smv_to_tptp.cmo : parser.cmi parsed.cmo lexer.cmo
+smv_to_tptp.cmx : parser.cmx parsed.cmx lexer.cmx
