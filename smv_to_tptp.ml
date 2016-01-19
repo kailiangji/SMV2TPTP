@@ -477,7 +477,7 @@ let rec succ_without_case vars succ_assig =
 
 exception Not_Condition_Exp
 
-let rec find_vars_in_con con_lst =
+let rec find_vars_in_cond con_lst =
   match con_lst with
   | [] -> []
   | (e1,e2) :: tl ->
@@ -485,37 +485,84 @@ let rec find_vars_in_con con_lst =
        match e with      
        | Var(str) -> str
        | Eq(e1,_) -> find_var_in_eq e1
+       | True -> "True"
        | _ -> raise Not_Condition_Exp
-     in find_var_in_eq e1 :: find_vars_in_con tl
+     in find_var_in_eq e1 :: find_vars_in_cond tl
 
 let rec find_case_vars succ_assig =
   match succ_assig with
   | [] -> []
   | h :: tl -> 
      match h with
-     | CNext(_,con_lst) -> (find_vars_in_con con_lst)@find_case_vars tl
+     | CNext(_,con_lst) -> 
+	(find_vars_in_cond con_lst)@find_case_vars tl
      | _ -> find_case_vars tl
 
-let rec succ_with_case vars succ_assig =
+let rec add_next_symb_to_case_var vars case_vars =
   match vars with
   | [] -> []
-  | h:: tl -> assert false
+  | h :: tl ->
+     match h with
+     | Elem (var,value_lst) -> 
+	if List. mem var case_vars then
+	  Elem("next("^var^")", value_lst)
+	  :: add_next_symb_to_case_var tl case_vars
+	else h :: add_next_symb_to_case_var tl case_vars
+     | _ -> h :: add_next_symb_to_case_var tl case_vars
+
+let add_next_symb_to_case_var vars succ_assig =
+  let case_vars = find_case_vars succ_assig in
+  add_next_symb_to_case_var vars case_vars
 
 let rec r_with_case vars succ_assigs =
   match succ_assigs with
-  | [] ->  []
+  | [] -> []
   | h :: tl ->
-     succ_with_case vars h :: r_with_case vars tl
+     add_next_symb_to_case_var vars h
+     :: r_with_case vars tl
+
+let rec print_succ_vars num1 num2 =
+  if num1 < num2 then
+    begin
+      print_string ("con("^"S"^(string_of_int num1)^",");
+      print_succ_vars (num1+1) num2;
+      print_string ")";
+    end 
+  else if num1=num2 then
+    print_string "nil"
+  else ()
+
+let rec print_st_eqs num next_vars =
+  match next_vars with
+  | [] -> ()
+  | h :: tl -> 
+     begin
+       print_string "| ~st_eq(";
+       state_shape h;
+       print_string (", S"^(string_of_int num)^")");
+       print_st_eqs (num+1) tl;
+     end
 
 
-(*let r_shape_with_case vars succs =
+let r_shape_with_st_eqs vars succ_assigs =
+  let next_vars = r_with_case vars succ_assigs in
+  let succ_num = List.length next_vars in
   print_string "cnf(r, axiom, r(";
   state_shape vars;
-  print_string ", ";
-  print_succs_with_case succs;
-  print_string ")).\n"
-*)
+  print_string ",";
+  print_succ_vars 0 succ_num;
+  print_string ")";
+  print_st_eqs 0 next_vars;
+  print_string ")."
+  
 
+let rec r_shape vars1 vars2 succ_assigns =
+  match vars1 with
+  | [] -> let succ = r_without_case vars2 succ_assigns in
+	  r_shape_without_case vars2 succ
+  | Elem(_,_) :: tl -> 
+     r_shape_with_st_eqs vars2 succ_assigns
+  | _ :: tl -> r_shape tl vars2 succ_assigns
 
 
 let relation md md_lst =
@@ -523,7 +570,6 @@ let relation md md_lst =
   | Module1(name, vars, assigns, spec) ->
      assert false
   | _ -> raise Not_Main_Module
- 
 
 
 let () =
@@ -539,17 +585,22 @@ let var_lst'' = put_ahead_elem_vars var_lst' in
 let main_succ_assign = succ_assig_in_main (List.hd result) in
 let procs = list_of_procs (List.hd result) in
 let succ_assigns = succ_assig_in_each_proc procs (List.tl result) in
+(*
 let succ = r_without_case var_lst'' (main_succ_assign::succ_assigns) in
+let c_succ = r_with_case var_lst'' (main_succ_assign::succ_assigns) in
 List.iter (fun x -> print_string (x^"\n")) var_lst;
-print_vars_with_types var_lst';
+*)
+(*print_vars_with_types var_lst';
 print_newline();
 print_vars_with_types var_lst'';
 print_newline();
 state_shape var_lst'';
 print_newline();
+*)
 atomic_prop_in_state (List.hd result) var_lst;
 print_newline();
-r_shape_without_case var_lst'' succ;
+(*r_shape_without_case var_lst'' succ;*)
+r_shape var_lst'' var_lst'' (main_succ_assign::succ_assigns);
 print_newline();
 goal spec inits';
 print_newline();
