@@ -285,7 +285,7 @@ let state_shape var_lst =
 
 let goal spec s =
 print_string "cnf(check, negated_conjecture, pi0(";
-print_string (spec^", ");
+print_string (spec^",\n              ");
 state_shape s;
 print_string ")."
 
@@ -443,26 +443,32 @@ let rec print_succs_without_case succs =
   match succs with
   | [] -> print_string "nil"
   | [h] ->
-     (print_string "con(";
-      print_string "s(";
-      print_var_list h;
-      print_string "), ";
-      print_string "nil";
-      print_string ")" )
-  | h :: tl -> print_string "con(";
-    print_string "s(";
-    print_var_list h;
-    print_string "), ";
-    print_succs_without_case tl;
-    print_string ")"
+     begin
+       print_string "              con(";
+       print_string "s(";
+       print_var_list h;
+       print_string "), ";
+       print_string "nil";
+       print_string ")"
+     end
+  | h :: tl ->
+     begin
+       print_string "              con(";
+       print_string "s(";
+       print_var_list h;
+       print_string "),\n";
+       print_succs_without_case tl;
+       print_string ")"
+     end
 
 let r_shape_without_case vars succs =
   print_string "cnf(r, axiom, r(";
   state_shape vars;
-  print_string ", ";
+  print_string ",\n";
   print_succs_without_case succs;
   print_string ")).\n"
 
+exception Not_State_Variable
 
 let rec succ_without_case vars succ_assig =
   match vars with
@@ -473,7 +479,7 @@ let rec succ_without_case vars succ_assig =
   | Elem(var,_) :: tl -> 
      (find_next_var var succ_assig)
      :: succ_without_case tl succ_assig
-  | _ :: tl-> succ_without_case tl succ_assig
+  | _ :: tl-> raise Not_State_Variable
 
 exception Not_Condition_Exp
 
@@ -524,7 +530,7 @@ let rec r_with_case vars succ_assigs =
 let rec print_succ_vars num1 num2 =
   if num1 < num2 then
     begin
-      print_string ("con("^"S"^(string_of_int num1)^",");
+      print_string ("con("^"S"^(string_of_int num1)^", ");
       print_succ_vars (num1+1) num2;
       print_string ")";
     end 
@@ -532,30 +538,125 @@ let rec print_succ_vars num1 num2 =
     print_string "nil"
   else ()
 
-let rec print_st_eqs num next_vars =
-  match next_vars with
+let rec print_st_eqs num next_vars_lst =
+  match next_vars_lst with
   | [] -> ()
-  | h :: tl -> 
+  | [h] ->
      begin
-       print_string "| ~st_eq(";
+       print_string "              | ~st_eq(";
        state_shape h;
        print_string (", S"^(string_of_int num)^")");
+     end
+  | h :: tl -> 
+     begin
+       print_string "              | ~st_eq(";
+       state_shape h;
+       print_string (", S"^(string_of_int num)^")\n");
        print_st_eqs (num+1) tl;
      end
 
 
 let r_shape_with_st_eqs vars succ_assigs =
-  let next_vars = r_with_case vars succ_assigs in
-  let succ_num = List.length next_vars in
+  let next_vars_lst = r_with_case vars succ_assigs in
+  let succ_num = List.length next_vars_lst in
   print_string "cnf(r, axiom, r(";
   state_shape vars;
-  print_string ",";
+  print_string ", ";
   print_succ_vars 0 succ_num;
-  print_string ")";
-  print_st_eqs 0 next_vars;
-  print_string ")."
-  
+  print_string ")\n";
+  print_st_eqs 0 next_vars_lst;
+  print_string ").\n"
 
+
+exception No_Such_Condition
+exception Not_Elem
+  
+let rec find_var_of_c_assigs elem e_val c_assig_lst =
+  match c_assig_lst with
+  | [] -> raise No_Such_Condition
+  | (e1,e2) :: tl ->
+     match elem with
+     | Elem(var, val_lst) ->
+	begin
+	  match e1 with
+	  | Var(_) -> raise Not_Condition_Exp
+	  | Eq(e1', e2') ->
+	     if (var_of_exp e1' = var) && (var_of_exp e2' = e_val)
+	     then var_of_exp e2
+	     else if e1 = True then var_of_exp e2
+	     else find_var_of_c_assigs elem e_val tl
+	  | _ -> raise Not_Condition_Exp
+	end
+     | _ -> raise Not_Elem
+
+exception  Not_Next_CNext
+	
+let rec find_case_next_value elem e_val var succ_assig =
+  match succ_assig with
+  | [] -> var
+  | h :: tl -> 
+     match h with
+     | Next(var', exp) -> 
+	if var=var' then var_of_exp exp
+	else find_case_next_value elem e_val var tl
+     | CNext(var', c_assig_lst) ->
+	if var=var' then find_var_of_c_assigs elem e_val c_assig_lst
+	else find_case_next_value elem e_val var tl
+     | _ -> raise Not_Next_CNext
+
+let rec succ_with_case' elem e_val vars succ_assig =
+  match vars with
+  | [] -> []
+  | h :: tl ->
+     match h with
+     | Elem(var, val_lst) ->
+	find_case_next_value elem e_val var succ_assig
+	:: succ_with_case' elem e_val tl succ_assig
+     | Boolean(var) ->
+	find_case_next_value elem e_val var succ_assig
+	:: succ_with_case' elem e_val tl succ_assig
+     | _ -> raise Not_State_Variable
+	
+let rec succ_with_case elem vars succ_assig =
+  match elem with
+  | Elem(var, val_lst) ->
+     begin
+       match val_lst with
+       | [] -> []
+       | h :: tl ->
+	  succ_with_case' elem h vars succ_assig
+	  :: succ_with_case (Elem(var, tl)) vars succ_assig
+     end
+  | _ -> raise Not_Elem
+
+
+let rec st_eqs_for_each_elem_value next_vars vars succ_assig =
+  match next_vars with
+  | [] -> []
+  | h :: tl ->
+       match h with
+       | Elem(var, val_lst) ->
+	  if (String.sub var 0 5 ) = "next(" then
+	    let var'= String.sub var 5 ((String.length var) - 6) in
+	    (succ_with_case (Elem(var', val_lst)) vars succ_assig
+	     @ st_eqs_for_each_elem_value tl vars succ_assig )
+	  else
+	    st_eqs_for_each_elem_value tl vars succ_assig
+       | _ -> st_eqs_for_each_elem_value tl vars succ_assig 
+       
+let st_eqs vars succ_assigs =
+  let next_vars_lst = r_with_case vars succ_assigs in
+  let rec st_eqs_print next_var_list vars succ_assig =
+    match next_var_list with
+    | [] -> ()
+    | h :: tl ->
+       let next_st_lst = st_eqs_for_each_elem_value h vars succ_assig in
+       List.iter (fun next_st ->
+	 begin
+	   print_string "cnf(next_st, axiom, st_eq(";
+	   state_shape ;)
+
+  
 let rec r_shape vars1 vars2 succ_assigns =
   match vars1 with
   | [] -> let succ = r_without_case vars2 succ_assigns in
