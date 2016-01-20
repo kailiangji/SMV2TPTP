@@ -556,18 +556,6 @@ let rec print_st_eqs num next_vars_lst =
      end
 
 
-let r_shape_with_st_eqs vars succ_assigs =
-  let next_vars_lst = r_with_case vars succ_assigs in
-  let succ_num = List.length next_vars_lst in
-  print_string "cnf(r, axiom, r(";
-  state_shape vars;
-  print_string ", ";
-  print_succ_vars 0 succ_num;
-  print_string ")\n";
-  print_st_eqs 0 next_vars_lst;
-  print_string ").\n"
-
-
 exception No_Such_Condition
 exception Not_Elem
   
@@ -583,8 +571,8 @@ let rec find_var_of_c_assigs elem e_val c_assig_lst =
 	  | Eq(e1', e2') ->
 	     if (var_of_exp e1' = var) && (var_of_exp e2' = e_val)
 	     then var_of_exp e2
-	     else if e1 = True then var_of_exp e2
 	     else find_var_of_c_assigs elem e_val tl
+	  | True -> var_of_exp e2
 	  | _ -> raise Not_Condition_Exp
 	end
      | _ -> raise Not_Elem
@@ -637,26 +625,94 @@ let rec st_eqs_for_each_elem_value next_vars vars succ_assig =
        match h with
        | Elem(var, val_lst) ->
 	  if (String.sub var 0 5 ) = "next(" then
-	    let var'= String.sub var 5 ((String.length var) - 6) in
+	    let var'= (String.sub var 5 ((String.length var) - 6)) in
 	    (succ_with_case (Elem(var', val_lst)) vars succ_assig
 	     @ st_eqs_for_each_elem_value tl vars succ_assig )
 	  else
 	    st_eqs_for_each_elem_value tl vars succ_assig
        | _ -> st_eqs_for_each_elem_value tl vars succ_assig 
-       
+
+
+let rec st_with_next_value' elem e_val vars =
+  match vars with
+  | [] -> []
+  | h :: tl ->
+     match h with
+     | Elem(var, val_lst) ->
+	begin
+	  match elem with
+	  | Elem(var', val_lst') -> 
+	     if var = var' then
+	       Elem("next("^e_val^")", val_lst) :: tl
+	     else h :: st_with_next_value' elem e_val tl
+	  | _ -> raise Not_Elem
+	end
+     | _ -> h :: st_with_next_value' elem e_val tl
+
+let rec st_with_next_value elem vars =
+  match elem with
+  | Elem(var, val_lst) ->
+     begin
+       match val_lst with
+       | [] -> []
+       | h :: tl ->
+	  st_with_next_value' elem h vars
+	  :: st_with_next_value (Elem(var, tl)) vars
+     end
+  | _ -> raise Not_Elem
+
+exception Not_the_same_number_of_vars
+
+let rec st_with_next_values next_vars vars1 vars2=
+  match next_vars, vars1 with
+  | [], [] -> []
+  | h1 :: tl1, h2::tl2 ->
+     if h1 = h2 then st_with_next_values tl1 tl2 vars2
+     else st_with_next_value h2 vars2
+  | _, _ -> raise Not_the_same_number_of_vars
+
+let rec print_eqs_st vars_with_nxt_vals next_st_lst =
+  match vars_with_nxt_vals, next_st_lst with
+  | h1::tl1, h2::tl2 -> 
+     begin
+       print_string "cnf(next_st, axiom, st_eq(";
+       state_shape h1;
+       print_string ",\n          s(";
+       print_var_list h2;
+       print_string "))).\n\n";
+       print_eqs_st tl1 tl2
+     end
+  | h1:: tl1, [] -> ()
+  | [], h2::tl2 -> ()
+  | [], [] -> ()
+      
+
 let st_eqs vars succ_assigs =
   let next_vars_lst = r_with_case vars succ_assigs in
-  let rec st_eqs_print next_var_list vars succ_assig =
-    match next_var_list with
-    | [] -> ()
-    | h :: tl ->
-       let next_st_lst = st_eqs_for_each_elem_value h vars succ_assig in
-       List.iter (fun next_st ->
-	 begin
-	   print_string "cnf(next_st, axiom, st_eq(";
-	   state_shape ;)
+  let rec st_eqs_print vars (next_var_list, succ_assigs) =
+    match next_var_list, succ_assigs with
+    | [], [] -> ()
+    | h1 :: tl1, h2::tl2 ->
+       let vars_with_nxt_vals = st_with_next_values h1 vars vars in  
+       let next_st_lst = st_eqs_for_each_elem_value h1 vars h2 in
+       print_eqs_st vars_with_nxt_vals next_st_lst;
+       st_eqs_print vars (tl1, tl2)
+    | _,_ -> ()
+  in st_eqs_print vars (next_vars_lst, succ_assigs)
 
-  
+
+let r_shape_with_st_eqs vars succ_assigs =
+  let next_vars_lst = r_with_case vars succ_assigs in
+  let succ_num = List.length next_vars_lst in
+  print_string "cnf(r, axiom, r(";
+  state_shape vars;
+  print_string ", ";
+  print_succ_vars 0 succ_num;
+  print_string ")\n";
+  print_st_eqs 0 next_vars_lst;
+  print_string ").\n\n";
+  st_eqs vars succ_assigs
+
 let rec r_shape vars1 vars2 succ_assigns =
   match vars1 with
   | [] -> let succ = r_without_case vars2 succ_assigns in
