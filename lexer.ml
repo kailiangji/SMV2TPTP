@@ -276,8 +276,7 @@ let
       (EOF)
 # 278 "lexer.ml"
 
-  | __ocaml_lex_state -> lexbuf.Lexing.refill_buff lexbuf; 
-      __ocaml_lex_token_rec lexbuf __ocaml_lex_state
+  | __ocaml_lex_state -> lexbuf.Lexing.refill_buff lexbuf; __ocaml_lex_token_rec lexbuf __ocaml_lex_state
 
 and comment lexbuf =
     __ocaml_lex_comment_rec lexbuf 25
@@ -286,20 +285,19 @@ and __ocaml_lex_comment_rec lexbuf __ocaml_lex_state =
       | 0 ->
 # 81 "lexer.mll"
  ( () )
-# 290 "lexer.ml"
+# 289 "lexer.ml"
 
   | 1 ->
 # 83 "lexer.mll"
  (())
-# 295 "lexer.ml"
+# 294 "lexer.ml"
 
   | 2 ->
 # 85 "lexer.mll"
  ( comment lexbuf )
-# 300 "lexer.ml"
+# 299 "lexer.ml"
 
-  | __ocaml_lex_state -> lexbuf.Lexing.refill_buff lexbuf; 
-      __ocaml_lex_comment_rec lexbuf __ocaml_lex_state
+  | __ocaml_lex_state -> lexbuf.Lexing.refill_buff lexbuf; __ocaml_lex_comment_rec lexbuf __ocaml_lex_state
 
 ;;
 

@@ -546,9 +546,6 @@ ident(
   int_ref tl "smv_to_tptp.ml" 20 477 485 "smv_to_tptp.ml" 20 477 487
 )
 "smv_to_tptp.ml" 20 477 491 "smv_to_tptp.ml" 20 477 515
-call(
-  tail
-)
 type(
   Parsed.decl
 )
@@ -2092,9 +2089,6 @@ ident(
   int_ref tl "smv_to_tptp.ml" 73 2084 2092 "smv_to_tptp.ml" 73 2084 2109
 )
 "smv_to_tptp.ml" 78 2304 2315 "smv_to_tptp.ml" 78 2304 2339
-call(
-  tail
-)
 type(
   unit
 )
@@ -2524,9 +2518,6 @@ ident(
   int_ref tl "smv_to_tptp.ml" 89 2574 2582 "smv_to_tptp.ml" 89 2574 2599
 )
 "smv_to_tptp.ml" 94 2777 2788 "smv_to_tptp.ml" 94 2777 2815
-call(
-  tail
-)
 type(
   unit
 )
@@ -2615,6 +2606,9 @@ ident(
   int_ref elm "smv_to_tptp.ml" 98 2886 2897 "smv_to_tptp.ml" 98 2886 2900
 )
 "smv_to_tptp.ml" 98 2886 2907 "smv_to_tptp.ml" 98 2886 2928
+call(
+  tail
+)
 type(
   unit
 )
@@ -4077,9 +4071,6 @@ ident(
   int_ref md_lst "smv_to_tptp.ml" 165 4560 4583 "smv_to_tptp.ml" 165 4560 4589
 )
 "smv_to_tptp.ml" 173 4801 4819 "smv_to_tptp.ml" 173 4801 4843
-call(
-  tail
-)
 type(
   Parsed.var_decl list
 )
@@ -4306,9 +4297,6 @@ ident(
   int_ref md_lst "smv_to_tptp.ml" 165 4560 4583 "smv_to_tptp.ml" 165 4560 4589
 )
 "smv_to_tptp.ml" 180 5050 5068 "smv_to_tptp.ml" 180 5050 5092
-call(
-  tail
-)
 type(
   Parsed.var_decl list
 )
@@ -4798,9 +4786,6 @@ type(
   Parsed.var_decl list
 )
 "smv_to_tptp.ml" 200 5670 5704 "smv_to_tptp.ml" 200 5670 5714
-call(
-  stack
-)
 type(
   Parsed.var_decl list
 )
@@ -4819,9 +4804,6 @@ ident(
   int_ref tl "smv_to_tptp.ml" 198 5580 5589 "smv_to_tptp.ml" 198 5580 5591
 )
 "smv_to_tptp.ml" 200 5670 5683 "smv_to_tptp.ml" 200 5670 5722
-call(
-  tail
-)
 type(
   Parsed.var_decl list
 )
@@ -7833,9 +7815,6 @@ ident(
   int_ref tl "smv_to_tptp.ml" 296 8482 8496 "smv_to_tptp.ml" 296 8482 8498
 )
 "smv_to_tptp.ml" 299 8562 8572 "smv_to_tptp.ml" 299 8562 8589
-call(
-  tail
-)
 type(
   Parsed.var_decl list
 )
@@ -8160,6 +8139,9 @@ ident(
   int_ref tl "smv_to_tptp.ml" 310 8802 8811 "smv_to_tptp.ml" 310 8802 8813
 )
 "smv_to_tptp.ml" 315 8966 8978 "smv_to_tptp.ml" 315 8966 9002
+call(
+  tail
+)
 type(
   bool
 )
@@ -8193,9 +8175,6 @@ ident(
   int_ref tl "smv_to_tptp.ml" 310 8802 8811 "smv_to_tptp.ml" 310 8802 8813
 )
 "smv_to_tptp.ml" 316 9003 9015 "smv_to_tptp.ml" 316 9003 9039
-call(
-  tail
-)
 type(
   bool
 )
@@ -9747,9 +9726,6 @@ ident(
   int_ref tl "smv_to_tptp.ml" 373 10802 10810 "smv_to_tptp.ml" 373 10802 10812
 )
 "smv_to_tptp.ml" 373 10802 10816 "smv_to_tptp.ml" 373 10802 10855
-call(
-  tail
-)
 type(
   Parsed.assign list
 )
@@ -10830,9 +10806,6 @@ ident(
   int_ref tl "smv_to_tptp.ml" 410 11836 11845 "smv_to_tptp.ml" 410 11836 11847
 )
 "smv_to_tptp.ml" 415 11957 11969 "smv_to_tptp.ml" 415 11957 11989
-call(
-  tail
-)
 type(
   Parsed.var
 )
@@ -11011,6 +10984,9 @@ ident(
   int_ref succ_assig "smv_to_tptp.ml" 418 11992 12023 "smv_to_tptp.ml" 418 11992 12033
 )
 "smv_to_tptp.ml" 425 12196 12201 "smv_to_tptp.ml" 425 12196 12231
+call(
+  stack
+)
 type(
   Parsed.var
 )
@@ -11036,6 +11012,9 @@ ident(
   int_ref succ_assig "smv_to_tptp.ml" 418 11992 12023 "smv_to_tptp.ml" 418 11992 12033
 )
 "smv_to_tptp.ml" 426 12232 12240 "smv_to_tptp.ml" 426 12232 12271
+call(
+  stack
+)
 type(
   Parsed.var list
 )
@@ -11080,9 +11059,6 @@ ident(
   int_ref succ_assig "smv_to_tptp.ml" 418 11992 12023 "smv_to_tptp.ml" 418 11992 12033
 )
 "smv_to_tptp.ml" 427 12272 12286 "smv_to_tptp.ml" 427 12272 12317
-call(
-  tail
-)
 type(
   Parsed.var list
 )
@@ -11996,6 +11972,9 @@ ident(
   int_ref succ_assig "smv_to_tptp.ml" 473 13342 13373 "smv_to_tptp.ml" 473 13342 13383
 )
 "smv_to_tptp.ml" 480 13546 13551 "smv_to_tptp.ml" 480 13546 13581
+call(
+  stack
+)
 type(
   Parsed.var
 )
@@ -12021,6 +12000,9 @@ ident(
   int_ref succ_assig "smv_to_tptp.ml" 473 13342 13373 "smv_to_tptp.ml" 473 13342 13383
 )
 "smv_to_tptp.ml" 481 13582 13590 "smv_to_tptp.ml" 481 13582 13621
+call(
+  stack
+)
 type(
   Parsed.var list
 )
@@ -12425,9 +12407,6 @@ ident(
   int_ref tl "smv_to_tptp.ml" 501 14090 14099 "smv_to_tptp.ml" 501 14090 14101
 )
 "smv_to_tptp.ml" 505 14199 14211 "smv_to_tptp.ml" 505 14199 14228
-call(
-  tail
-)
 type(
   string list
 )
@@ -12708,9 +12687,6 @@ ident(
   int_ref case_vars "smv_to_tptp.ml" 507 14230 14269 "smv_to_tptp.ml" 507 14230 14278
 )
 "smv_to_tptp.ml" 517 14541 14558 "smv_to_tptp.ml" 517 14541 14596
-call(
-  stack
-)
 type(
   Parsed.var_decl list
 )
@@ -14387,6 +14363,9 @@ ident(
   int_ref succ_assig "smv_to_tptp.ml" 595 16561 16601 "smv_to_tptp.ml" 595 16561 16611
 )
 "smv_to_tptp.ml" 601 16707 16708 "smv_to_tptp.ml" 601 16707 16754
+call(
+  stack
+)
 type(
   Parsed.var
 )
@@ -14427,6 +14406,9 @@ ident(
   int_ref succ_assig "smv_to_tptp.ml" 595 16561 16601 "smv_to_tptp.ml" 595 16561 16611
 )
 "smv_to_tptp.ml" 602 16755 16759 "smv_to_tptp.ml" 602 16755 16799
+call(
+  stack
+)
 type(
   Parsed.var list
 )
@@ -14773,6 +14755,7 @@ type(
 "smv_to_tptp.ml" 621 17250 17258 "smv_to_tptp.ml" 621 17250 17284
 type(
   Parsed.var_decl list ->
+  Parsed.var_decl list ->
   Parsed.var_decl list -> Parsed.assign list -> Parsed.var list list
 )
 ident(
@@ -14783,190 +14766,198 @@ type(
   Parsed.var_decl list
 )
 ident(
-  def next_vars "smv_to_tptp.ml" 621 17250 17295 "smv_to_tptp.ml" 633 17695 17754
+  def next_vars "smv_to_tptp.ml" 621 17250 17295 "smv_to_tptp.ml" 635 17729 17744
 )
-"smv_to_tptp.ml" 621 17250 17295 "smv_to_tptp.ml" 621 17250 17299
+"smv_to_tptp.ml" 621 17250 17295 "smv_to_tptp.ml" 621 17250 17300
 type(
   Parsed.var_decl list
 )
 ident(
-  def vars "smv_to_tptp.ml" 621 17250 17300 "smv_to_tptp.ml" 633 17695 17754
+  def vars1 "smv_to_tptp.ml" 621 17250 17301 "smv_to_tptp.ml" 635 17729 17744
 )
-"smv_to_tptp.ml" 621 17250 17300 "smv_to_tptp.ml" 621 17250 17310
+"smv_to_tptp.ml" 621 17250 17301 "smv_to_tptp.ml" 621 17250 17306
+type(
+  Parsed.var_decl list
+)
+ident(
+  def vars2 "smv_to_tptp.ml" 621 17250 17307 "smv_to_tptp.ml" 635 17729 17744
+)
+"smv_to_tptp.ml" 621 17250 17307 "smv_to_tptp.ml" 621 17250 17317
 type(
   Parsed.assign list
 )
 ident(
-  def succ_assig "smv_to_tptp.ml" 622 17313 17315 "smv_to_tptp.ml" 633 17695 17754
+  def succ_assig "smv_to_tptp.ml" 622 17320 17322 "smv_to_tptp.ml" 635 17729 17744
 )
-"smv_to_tptp.ml" 622 17313 17321 "smv_to_tptp.ml" 622 17313 17330
+"smv_to_tptp.ml" 622 17320 17328 "smv_to_tptp.ml" 622 17320 17337
 type(
   Parsed.var_decl list
 )
 ident(
   int_ref next_vars "smv_to_tptp.ml" 621 17250 17285 "smv_to_tptp.ml" 621 17250 17294
 )
-"smv_to_tptp.ml" 623 17336 17340 "smv_to_tptp.ml" 623 17336 17342
+"smv_to_tptp.ml" 622 17320 17339 "smv_to_tptp.ml" 622 17320 17344
 type(
   Parsed.var_decl list
 )
-"smv_to_tptp.ml" 623 17336 17346 "smv_to_tptp.ml" 623 17336 17348
+ident(
+  int_ref vars1 "smv_to_tptp.ml" 621 17250 17295 "smv_to_tptp.ml" 621 17250 17300
+)
+"smv_to_tptp.ml" 622 17320 17328 "smv_to_tptp.ml" 622 17320 17344
+type(
+  Parsed.var_decl list * Parsed.var_decl list
+)
+"smv_to_tptp.ml" 623 17350 17354 "smv_to_tptp.ml" 623 17350 17356
+type(
+  Parsed.var_decl list
+)
+"smv_to_tptp.ml" 623 17350 17357 "smv_to_tptp.ml" 623 17350 17359
+type(
+  Parsed.var_decl list
+)
+"smv_to_tptp.ml" 623 17350 17354 "smv_to_tptp.ml" 623 17350 17359
+type(
+  Parsed.var_decl list * Parsed.var_decl list
+)
+"smv_to_tptp.ml" 623 17350 17363 "smv_to_tptp.ml" 623 17350 17365
 type(
   Parsed.var list list
 )
-"smv_to_tptp.ml" 624 17349 17353 "smv_to_tptp.ml" 624 17349 17354
+"smv_to_tptp.ml" 624 17366 17370 "smv_to_tptp.ml" 624 17366 17372
 type(
   Parsed.var_decl
 )
 ident(
-  def h "smv_to_tptp.ml" 625 17364 17371 "smv_to_tptp.ml" 633 17695 17754
+  def h1 "smv_to_tptp.ml" 625 17392 17397 "smv_to_tptp.ml" 633 17704 17712
 )
-"smv_to_tptp.ml" 624 17349 17358 "smv_to_tptp.ml" 624 17349 17360
+"smv_to_tptp.ml" 624 17366 17376 "smv_to_tptp.ml" 624 17366 17379
 type(
   Parsed.var_decl list
 )
 ident(
-  def tl "smv_to_tptp.ml" 625 17364 17371 "smv_to_tptp.ml" 633 17695 17754
+  def tl1 "smv_to_tptp.ml" 625 17392 17397 "smv_to_tptp.ml" 633 17704 17712
 )
-"smv_to_tptp.ml" 624 17349 17353 "smv_to_tptp.ml" 624 17349 17360
+"smv_to_tptp.ml" 624 17366 17370 "smv_to_tptp.ml" 624 17366 17379
 type(
   Parsed.var_decl list
 )
-"smv_to_tptp.ml" 625 17364 17377 "smv_to_tptp.ml" 625 17364 17378
+"smv_to_tptp.ml" 624 17366 17381 "smv_to_tptp.ml" 624 17366 17383
 type(
   Parsed.var_decl
 )
 ident(
-  int_ref h "smv_to_tptp.ml" 624 17349 17353 "smv_to_tptp.ml" 624 17349 17354
+  def h2 "smv_to_tptp.ml" 625 17392 17397 "smv_to_tptp.ml" 633 17704 17712
 )
-"smv_to_tptp.ml" 626 17384 17398 "smv_to_tptp.ml" 626 17384 17401
+"smv_to_tptp.ml" 624 17366 17385 "smv_to_tptp.ml" 624 17366 17388
+type(
+  Parsed.var_decl list
+)
+ident(
+  def tl2 "smv_to_tptp.ml" 625 17392 17397 "smv_to_tptp.ml" 633 17704 17712
+)
+"smv_to_tptp.ml" 624 17366 17381 "smv_to_tptp.ml" 624 17366 17388
+type(
+  Parsed.var_decl list
+)
+"smv_to_tptp.ml" 624 17366 17370 "smv_to_tptp.ml" 624 17366 17388
+type(
+  Parsed.var_decl list * Parsed.var_decl list
+)
+"smv_to_tptp.ml" 626 17403 17416 "smv_to_tptp.ml" 626 17403 17418
+type(
+  Parsed.var_decl
+)
+ident(
+  int_ref h1 "smv_to_tptp.ml" 624 17366 17370 "smv_to_tptp.ml" 624 17366 17372
+)
+"smv_to_tptp.ml" 627 17424 17438 "smv_to_tptp.ml" 627 17424 17441
 type(
   string
 )
 ident(
-  def var "smv_to_tptp.ml" 627 17415 17418 "smv_to_tptp.ml" 632 17644 17694
+  def var "smv_to_tptp.ml" 628 17455 17458 "smv_to_tptp.ml" 631 17575 17636
 )
-"smv_to_tptp.ml" 626 17384 17403 "smv_to_tptp.ml" 626 17384 17410
+"smv_to_tptp.ml" 627 17424 17443 "smv_to_tptp.ml" 627 17424 17450
 type(
   string list
 )
 ident(
-  def val_lst "smv_to_tptp.ml" 627 17415 17418 "smv_to_tptp.ml" 632 17644 17694
+  def val_lst "smv_to_tptp.ml" 628 17455 17458 "smv_to_tptp.ml" 631 17575 17636
 )
-"smv_to_tptp.ml" 626 17384 17393 "smv_to_tptp.ml" 626 17384 17411
+"smv_to_tptp.ml" 627 17424 17433 "smv_to_tptp.ml" 627 17424 17451
 type(
   Parsed.var_decl
 )
-"smv_to_tptp.ml" 627 17415 17422 "smv_to_tptp.ml" 627 17415 17432
+"smv_to_tptp.ml" 628 17455 17461 "smv_to_tptp.ml" 628 17455 17463
 type(
-  string -> int -> int -> string
+  Parsed.var_decl
 )
 ident(
-  ext_ref String.sub
+  int_ref h1 "smv_to_tptp.ml" 624 17366 17370 "smv_to_tptp.ml" 624 17366 17372
 )
-"smv_to_tptp.ml" 627 17415 17433 "smv_to_tptp.ml" 627 17415 17436
+"smv_to_tptp.ml" 628 17455 17464 "smv_to_tptp.ml" 628 17455 17465
 type(
-  string
-)
-ident(
-  int_ref var "smv_to_tptp.ml" 626 17384 17398 "smv_to_tptp.ml" 626 17384 17401
-)
-"smv_to_tptp.ml" 627 17415 17437 "smv_to_tptp.ml" 627 17415 17438
-type(
-  int
-)
-"smv_to_tptp.ml" 627 17415 17439 "smv_to_tptp.ml" 627 17415 17440
-type(
-  int
-)
-"smv_to_tptp.ml" 627 17415 17421 "smv_to_tptp.ml" 627 17415 17442
-call(
-  stack
-)
-type(
-  string
-)
-"smv_to_tptp.ml" 627 17415 17443 "smv_to_tptp.ml" 627 17415 17444
-type(
-  string -> string -> bool
+  Parsed.var_decl -> Parsed.var_decl -> bool
 )
 ident(
   ext_ref Pervasives.( = )
 )
-"smv_to_tptp.ml" 627 17415 17445 "smv_to_tptp.ml" 627 17415 17452
+"smv_to_tptp.ml" 628 17455 17466 "smv_to_tptp.ml" 628 17455 17468
 type(
-  string
+  Parsed.var_decl
 )
-"smv_to_tptp.ml" 627 17415 17421 "smv_to_tptp.ml" 627 17415 17452
+ident(
+  int_ref h2 "smv_to_tptp.ml" 624 17366 17381 "smv_to_tptp.ml" 624 17366 17383
+)
+"smv_to_tptp.ml" 628 17455 17461 "smv_to_tptp.ml" 628 17455 17468
 type(
   bool
 )
-"smv_to_tptp.ml" 628 17458 17467 "smv_to_tptp.ml" 628 17458 17471
+"smv_to_tptp.ml" 628 17455 17474 "smv_to_tptp.ml" 628 17455 17500
 type(
-  string
+  Parsed.var_decl list ->
+  Parsed.var_decl list ->
+  Parsed.var_decl list -> Parsed.assign list -> Parsed.var list list
 )
 ident(
-  def var' "smv_to_tptp.ml" 629 17521 17526 "smv_to_tptp.ml" 630 17580 17635
+  int_ref st_eqs_for_each_elem_value "smv_to_tptp.ml" 621 17250 17258 "smv_to_tptp.ml" 621 17250 17284
 )
-"smv_to_tptp.ml" 628 17458 17474 "smv_to_tptp.ml" 628 17458 17484
+"smv_to_tptp.ml" 628 17455 17501 "smv_to_tptp.ml" 628 17455 17504
 type(
-  string -> int -> int -> string
+  Parsed.var_decl list
 )
 ident(
-  ext_ref String.sub
+  int_ref tl1 "smv_to_tptp.ml" 624 17366 17376 "smv_to_tptp.ml" 624 17366 17379
 )
-"smv_to_tptp.ml" 628 17458 17485 "smv_to_tptp.ml" 628 17458 17488
+"smv_to_tptp.ml" 628 17455 17505 "smv_to_tptp.ml" 628 17455 17508
 type(
-  string
+  Parsed.var_decl list
 )
 ident(
-  int_ref var "smv_to_tptp.ml" 626 17384 17398 "smv_to_tptp.ml" 626 17384 17401
+  int_ref tl2 "smv_to_tptp.ml" 624 17366 17385 "smv_to_tptp.ml" 624 17366 17388
 )
-"smv_to_tptp.ml" 628 17458 17489 "smv_to_tptp.ml" 628 17458 17490
+"smv_to_tptp.ml" 628 17455 17509 "smv_to_tptp.ml" 628 17455 17514
 type(
-  int
-)
-"smv_to_tptp.ml" 628 17458 17493 "smv_to_tptp.ml" 628 17458 17506
-type(
-  string -> int
+  Parsed.var_decl list
 )
 ident(
-  ext_ref String.length
+  int_ref vars2 "smv_to_tptp.ml" 621 17250 17301 "smv_to_tptp.ml" 621 17250 17306
 )
-"smv_to_tptp.ml" 628 17458 17507 "smv_to_tptp.ml" 628 17458 17510
+"smv_to_tptp.ml" 628 17455 17515 "smv_to_tptp.ml" 628 17455 17525
 type(
-  string
+  Parsed.assign list
 )
 ident(
-  int_ref var "smv_to_tptp.ml" 626 17384 17398 "smv_to_tptp.ml" 626 17384 17401
+  int_ref succ_assig "smv_to_tptp.ml" 621 17250 17307 "smv_to_tptp.ml" 621 17250 17317
 )
-"smv_to_tptp.ml" 628 17458 17492 "smv_to_tptp.ml" 628 17458 17511
-type(
-  int
-)
-"smv_to_tptp.ml" 628 17458 17512 "smv_to_tptp.ml" 628 17458 17513
-type(
-  int -> int -> int
-)
-ident(
-  ext_ref Pervasives.( - )
-)
-"smv_to_tptp.ml" 628 17458 17514 "smv_to_tptp.ml" 628 17458 17515
-type(
-  int
-)
-"smv_to_tptp.ml" 628 17458 17491 "smv_to_tptp.ml" 628 17458 17516
-type(
-  int
-)
-"smv_to_tptp.ml" 628 17458 17473 "smv_to_tptp.ml" 628 17458 17517
+"smv_to_tptp.ml" 628 17455 17474 "smv_to_tptp.ml" 628 17455 17525
 call(
-  stack
+  tail
 )
 type(
-  string
+  Parsed.var list list
 )
-"smv_to_tptp.ml" 629 17521 17527 "smv_to_tptp.ml" 629 17521 17541
+"smv_to_tptp.ml" 630 17534 17540 "smv_to_tptp.ml" 630 17534 17554
 type(
   Parsed.var_decl ->
   Parsed.var_decl list -> Parsed.assign list -> Parsed.var list list
@@ -14974,1262 +14965,1253 @@ type(
 ident(
   int_ref succ_with_case "smv_to_tptp.ml" 608 16955 16963 "smv_to_tptp.ml" 608 16955 16977
 )
-"smv_to_tptp.ml" 629 17521 17548 "smv_to_tptp.ml" 629 17521 17552
-type(
-  string
-)
-ident(
-  int_ref var' "smv_to_tptp.ml" 628 17458 17467 "smv_to_tptp.ml" 628 17458 17471
-)
-"smv_to_tptp.ml" 629 17521 17554 "smv_to_tptp.ml" 629 17521 17561
-type(
-  string list
-)
-ident(
-  int_ref val_lst "smv_to_tptp.ml" 626 17384 17403 "smv_to_tptp.ml" 626 17384 17410
-)
-"smv_to_tptp.ml" 629 17521 17542 "smv_to_tptp.ml" 629 17521 17563
+"smv_to_tptp.ml" 630 17534 17555 "smv_to_tptp.ml" 630 17534 17557
 type(
   Parsed.var_decl
 )
-"smv_to_tptp.ml" 629 17521 17564 "smv_to_tptp.ml" 629 17521 17568
+ident(
+  int_ref h2 "smv_to_tptp.ml" 624 17366 17381 "smv_to_tptp.ml" 624 17366 17383
+)
+"smv_to_tptp.ml" 630 17534 17558 "smv_to_tptp.ml" 630 17534 17563
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref vars "smv_to_tptp.ml" 621 17250 17295 "smv_to_tptp.ml" 621 17250 17299
+  int_ref vars2 "smv_to_tptp.ml" 621 17250 17301 "smv_to_tptp.ml" 621 17250 17306
 )
-"smv_to_tptp.ml" 629 17521 17569 "smv_to_tptp.ml" 629 17521 17579
+"smv_to_tptp.ml" 630 17534 17564 "smv_to_tptp.ml" 630 17534 17574
 type(
   Parsed.assign list
 )
 ident(
-  int_ref succ_assig "smv_to_tptp.ml" 621 17250 17300 "smv_to_tptp.ml" 621 17250 17310
+  int_ref succ_assig "smv_to_tptp.ml" 621 17250 17307 "smv_to_tptp.ml" 621 17250 17317
 )
-"smv_to_tptp.ml" 629 17521 17527 "smv_to_tptp.ml" 629 17521 17579
+"smv_to_tptp.ml" 630 17534 17540 "smv_to_tptp.ml" 630 17534 17574
 call(
   stack
 )
 type(
   Parsed.var list list
 )
-"smv_to_tptp.ml" 630 17580 17586 "smv_to_tptp.ml" 630 17580 17587
+"smv_to_tptp.ml" 631 17575 17581 "smv_to_tptp.ml" 631 17575 17582
 type(
   Parsed.var list list -> Parsed.var list list -> Parsed.var list list
 )
 ident(
   ext_ref Pervasives.( @ )
 )
-"smv_to_tptp.ml" 630 17580 17588 "smv_to_tptp.ml" 630 17580 17614
+"smv_to_tptp.ml" 631 17575 17583 "smv_to_tptp.ml" 631 17575 17609
 type(
+  Parsed.var_decl list ->
   Parsed.var_decl list ->
   Parsed.var_decl list -> Parsed.assign list -> Parsed.var list list
 )
 ident(
   int_ref st_eqs_for_each_elem_value "smv_to_tptp.ml" 621 17250 17258 "smv_to_tptp.ml" 621 17250 17284
 )
-"smv_to_tptp.ml" 630 17580 17615 "smv_to_tptp.ml" 630 17580 17617
+"smv_to_tptp.ml" 631 17575 17610 "smv_to_tptp.ml" 631 17575 17613
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref tl "smv_to_tptp.ml" 624 17349 17358 "smv_to_tptp.ml" 624 17349 17360
+  int_ref tl1 "smv_to_tptp.ml" 624 17366 17376 "smv_to_tptp.ml" 624 17366 17379
 )
-"smv_to_tptp.ml" 630 17580 17618 "smv_to_tptp.ml" 630 17580 17622
+"smv_to_tptp.ml" 631 17575 17614 "smv_to_tptp.ml" 631 17575 17617
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref vars "smv_to_tptp.ml" 621 17250 17295 "smv_to_tptp.ml" 621 17250 17299
+  int_ref tl2 "smv_to_tptp.ml" 624 17366 17385 "smv_to_tptp.ml" 624 17366 17388
 )
-"smv_to_tptp.ml" 630 17580 17623 "smv_to_tptp.ml" 630 17580 17633
+"smv_to_tptp.ml" 631 17575 17618 "smv_to_tptp.ml" 631 17575 17623
+type(
+  Parsed.var_decl list
+)
+ident(
+  int_ref vars2 "smv_to_tptp.ml" 621 17250 17301 "smv_to_tptp.ml" 621 17250 17306
+)
+"smv_to_tptp.ml" 631 17575 17624 "smv_to_tptp.ml" 631 17575 17634
 type(
   Parsed.assign list
 )
 ident(
-  int_ref succ_assig "smv_to_tptp.ml" 621 17250 17300 "smv_to_tptp.ml" 621 17250 17310
+  int_ref succ_assig "smv_to_tptp.ml" 621 17250 17307 "smv_to_tptp.ml" 621 17250 17317
 )
-"smv_to_tptp.ml" 630 17580 17588 "smv_to_tptp.ml" 630 17580 17633
+"smv_to_tptp.ml" 631 17575 17583 "smv_to_tptp.ml" 631 17575 17634
 call(
   stack
 )
 type(
   Parsed.var list list
 )
-"smv_to_tptp.ml" 629 17521 17526 "smv_to_tptp.ml" 630 17580 17635
+"smv_to_tptp.ml" 630 17534 17539 "smv_to_tptp.ml" 631 17575 17636
 call(
   tail
 )
 type(
   Parsed.var list list
 )
-"smv_to_tptp.ml" 628 17458 17463 "smv_to_tptp.ml" 630 17580 17635
+"smv_to_tptp.ml" 628 17455 17458 "smv_to_tptp.ml" 631 17575 17636
 type(
   Parsed.var list list
 )
-"smv_to_tptp.ml" 632 17644 17649 "smv_to_tptp.ml" 632 17644 17675
-type(
-  Parsed.var_decl list ->
-  Parsed.var_decl list -> Parsed.assign list -> Parsed.var list list
-)
-ident(
-  int_ref st_eqs_for_each_elem_value "smv_to_tptp.ml" 621 17250 17258 "smv_to_tptp.ml" 621 17250 17284
-)
-"smv_to_tptp.ml" 632 17644 17676 "smv_to_tptp.ml" 632 17644 17678
-type(
-  Parsed.var_decl list
-)
-ident(
-  int_ref tl "smv_to_tptp.ml" 624 17349 17358 "smv_to_tptp.ml" 624 17349 17360
-)
-"smv_to_tptp.ml" 632 17644 17679 "smv_to_tptp.ml" 632 17644 17683
-type(
-  Parsed.var_decl list
-)
-ident(
-  int_ref vars "smv_to_tptp.ml" 621 17250 17295 "smv_to_tptp.ml" 621 17250 17299
-)
-"smv_to_tptp.ml" 632 17644 17684 "smv_to_tptp.ml" 632 17644 17694
-type(
-  Parsed.assign list
-)
-ident(
-  int_ref succ_assig "smv_to_tptp.ml" 621 17250 17300 "smv_to_tptp.ml" 621 17250 17310
-)
-"smv_to_tptp.ml" 632 17644 17649 "smv_to_tptp.ml" 632 17644 17694
-call(
-  tail
-)
-type(
-  Parsed.var list list
-)
-"smv_to_tptp.ml" 627 17415 17418 "smv_to_tptp.ml" 632 17644 17694
-type(
-  Parsed.var list list
-)
-"smv_to_tptp.ml" 633 17695 17704 "smv_to_tptp.ml" 633 17695 17705
+"smv_to_tptp.ml" 632 17637 17646 "smv_to_tptp.ml" 632 17637 17647
 type(
   Parsed.var_decl
 )
-"smv_to_tptp.ml" 633 17695 17709 "smv_to_tptp.ml" 633 17695 17735
+"smv_to_tptp.ml" 632 17637 17651 "smv_to_tptp.ml" 632 17637 17677
 type(
+  Parsed.var_decl list ->
   Parsed.var_decl list ->
   Parsed.var_decl list -> Parsed.assign list -> Parsed.var list list
 )
 ident(
   int_ref st_eqs_for_each_elem_value "smv_to_tptp.ml" 621 17250 17258 "smv_to_tptp.ml" 621 17250 17284
 )
-"smv_to_tptp.ml" 633 17695 17736 "smv_to_tptp.ml" 633 17695 17738
+"smv_to_tptp.ml" 632 17637 17678 "smv_to_tptp.ml" 632 17637 17681
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref tl "smv_to_tptp.ml" 624 17349 17358 "smv_to_tptp.ml" 624 17349 17360
+  int_ref tl1 "smv_to_tptp.ml" 624 17366 17376 "smv_to_tptp.ml" 624 17366 17379
 )
-"smv_to_tptp.ml" 633 17695 17739 "smv_to_tptp.ml" 633 17695 17743
+"smv_to_tptp.ml" 632 17637 17682 "smv_to_tptp.ml" 632 17637 17685
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref vars "smv_to_tptp.ml" 621 17250 17295 "smv_to_tptp.ml" 621 17250 17299
+  int_ref tl2 "smv_to_tptp.ml" 624 17366 17385 "smv_to_tptp.ml" 624 17366 17388
 )
-"smv_to_tptp.ml" 633 17695 17744 "smv_to_tptp.ml" 633 17695 17754
+"smv_to_tptp.ml" 632 17637 17686 "smv_to_tptp.ml" 632 17637 17691
+type(
+  Parsed.var_decl list
+)
+ident(
+  int_ref vars2 "smv_to_tptp.ml" 621 17250 17301 "smv_to_tptp.ml" 621 17250 17306
+)
+"smv_to_tptp.ml" 632 17637 17692 "smv_to_tptp.ml" 632 17637 17702
 type(
   Parsed.assign list
 )
 ident(
-  int_ref succ_assig "smv_to_tptp.ml" 621 17250 17300 "smv_to_tptp.ml" 621 17250 17310
+  int_ref succ_assig "smv_to_tptp.ml" 621 17250 17307 "smv_to_tptp.ml" 621 17250 17317
 )
-"smv_to_tptp.ml" 633 17695 17709 "smv_to_tptp.ml" 633 17695 17754
-call(
-  tail
-)
+"smv_to_tptp.ml" 632 17637 17651 "smv_to_tptp.ml" 632 17637 17702
 type(
   Parsed.var list list
 )
-"smv_to_tptp.ml" 625 17364 17371 "smv_to_tptp.ml" 633 17695 17754
+"smv_to_tptp.ml" 625 17392 17397 "smv_to_tptp.ml" 633 17704 17712
 type(
   Parsed.var list list
 )
-"smv_to_tptp.ml" 622 17313 17315 "smv_to_tptp.ml" 633 17695 17754
+"smv_to_tptp.ml" 634 17713 17717 "smv_to_tptp.ml" 634 17713 17718
+type(
+  Parsed.var_decl list
+)
+"smv_to_tptp.ml" 634 17713 17720 "smv_to_tptp.ml" 634 17713 17722
+type(
+  Parsed.var_decl list
+)
+"smv_to_tptp.ml" 634 17713 17717 "smv_to_tptp.ml" 634 17713 17722
+type(
+  Parsed.var_decl list * Parsed.var_decl list
+)
+"smv_to_tptp.ml" 634 17713 17726 "smv_to_tptp.ml" 634 17713 17728
 type(
   Parsed.var list list
 )
-"smv_to_tptp.ml" 636 17758 17766 "smv_to_tptp.ml" 636 17758 17785
+"smv_to_tptp.ml" 635 17729 17733 "smv_to_tptp.ml" 635 17729 17735
+type(
+  Parsed.var_decl list
+)
+"smv_to_tptp.ml" 635 17729 17737 "smv_to_tptp.ml" 635 17729 17738
+type(
+  Parsed.var_decl list
+)
+"smv_to_tptp.ml" 635 17729 17733 "smv_to_tptp.ml" 635 17729 17738
+type(
+  Parsed.var_decl list * Parsed.var_decl list
+)
+"smv_to_tptp.ml" 635 17729 17742 "smv_to_tptp.ml" 635 17729 17744
+type(
+  Parsed.var list list
+)
+"smv_to_tptp.ml" 622 17320 17322 "smv_to_tptp.ml" 635 17729 17744
+type(
+  Parsed.var list list
+)
+"smv_to_tptp.ml" 637 17746 17754 "smv_to_tptp.ml" 637 17746 17773
 type(
   Parsed.var_decl -> string -> Parsed.var_decl list -> Parsed.var_decl list
 )
 ident(
-  def st_with_next_value' "smv_to_tptp.ml" 636 17758 17758 "smv_to_tptp.ml" 1 0 -1
+  def st_with_next_value' "smv_to_tptp.ml" 637 17746 17746 "smv_to_tptp.ml" 1 0 -1
 )
-"smv_to_tptp.ml" 636 17758 17786 "smv_to_tptp.ml" 636 17758 17790
+"smv_to_tptp.ml" 637 17746 17774 "smv_to_tptp.ml" 637 17746 17778
 type(
   Parsed.var_decl
 )
 ident(
-  def elem "smv_to_tptp.ml" 636 17758 17791 "smv_to_tptp.ml" 650 18105 18155
+  def elem "smv_to_tptp.ml" 637 17746 17779 "smv_to_tptp.ml" 651 18093 18143
 )
-"smv_to_tptp.ml" 636 17758 17791 "smv_to_tptp.ml" 636 17758 17796
+"smv_to_tptp.ml" 637 17746 17779 "smv_to_tptp.ml" 637 17746 17784
 type(
   string
 )
 ident(
-  def e_val "smv_to_tptp.ml" 636 17758 17797 "smv_to_tptp.ml" 650 18105 18155
+  def e_val "smv_to_tptp.ml" 637 17746 17785 "smv_to_tptp.ml" 651 18093 18143
 )
-"smv_to_tptp.ml" 636 17758 17797 "smv_to_tptp.ml" 636 17758 17801
+"smv_to_tptp.ml" 637 17746 17785 "smv_to_tptp.ml" 637 17746 17789
 type(
   Parsed.var_decl list
 )
 ident(
-  def vars "smv_to_tptp.ml" 637 17804 17806 "smv_to_tptp.ml" 650 18105 18155
+  def vars "smv_to_tptp.ml" 638 17792 17794 "smv_to_tptp.ml" 651 18093 18143
 )
-"smv_to_tptp.ml" 637 17804 17812 "smv_to_tptp.ml" 637 17804 17816
+"smv_to_tptp.ml" 638 17792 17800 "smv_to_tptp.ml" 638 17792 17804
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref vars "smv_to_tptp.ml" 636 17758 17797 "smv_to_tptp.ml" 636 17758 17801
+  int_ref vars "smv_to_tptp.ml" 637 17746 17785 "smv_to_tptp.ml" 637 17746 17789
 )
-"smv_to_tptp.ml" 638 17822 17826 "smv_to_tptp.ml" 638 17822 17828
+"smv_to_tptp.ml" 639 17810 17814 "smv_to_tptp.ml" 639 17810 17816
 type(
   Parsed.var_decl list
 )
-"smv_to_tptp.ml" 638 17822 17832 "smv_to_tptp.ml" 638 17822 17834
+"smv_to_tptp.ml" 639 17810 17820 "smv_to_tptp.ml" 639 17810 17822
 type(
   Parsed.var_decl list
 )
-"smv_to_tptp.ml" 639 17835 17839 "smv_to_tptp.ml" 639 17835 17840
+"smv_to_tptp.ml" 640 17823 17827 "smv_to_tptp.ml" 640 17823 17828
 type(
   Parsed.var_decl
 )
 ident(
-  def h "smv_to_tptp.ml" 640 17850 17855 "smv_to_tptp.ml" 650 18105 18155
+  def h "smv_to_tptp.ml" 641 17838 17843 "smv_to_tptp.ml" 651 18093 18143
 )
-"smv_to_tptp.ml" 639 17835 17844 "smv_to_tptp.ml" 639 17835 17846
+"smv_to_tptp.ml" 640 17823 17832 "smv_to_tptp.ml" 640 17823 17834
 type(
   Parsed.var_decl list
 )
 ident(
-  def tl "smv_to_tptp.ml" 640 17850 17855 "smv_to_tptp.ml" 650 18105 18155
+  def tl "smv_to_tptp.ml" 641 17838 17843 "smv_to_tptp.ml" 651 18093 18143
 )
-"smv_to_tptp.ml" 639 17835 17839 "smv_to_tptp.ml" 639 17835 17846
+"smv_to_tptp.ml" 640 17823 17827 "smv_to_tptp.ml" 640 17823 17834
 type(
   Parsed.var_decl list
 )
-"smv_to_tptp.ml" 640 17850 17861 "smv_to_tptp.ml" 640 17850 17862
+"smv_to_tptp.ml" 641 17838 17849 "smv_to_tptp.ml" 641 17838 17850
 type(
   Parsed.var_decl
 )
 ident(
-  int_ref h "smv_to_tptp.ml" 639 17835 17839 "smv_to_tptp.ml" 639 17835 17840
+  int_ref h "smv_to_tptp.ml" 640 17823 17827 "smv_to_tptp.ml" 640 17823 17828
 )
-"smv_to_tptp.ml" 641 17868 17880 "smv_to_tptp.ml" 641 17868 17883
+"smv_to_tptp.ml" 642 17856 17868 "smv_to_tptp.ml" 642 17856 17871
 type(
   string
 )
 ident(
-  def var "smv_to_tptp.ml" 642 17897 17898 "smv_to_tptp.ml" 649 18100 18104
+  def var "smv_to_tptp.ml" 643 17885 17886 "smv_to_tptp.ml" 650 18088 18092
 )
-"smv_to_tptp.ml" 641 17868 17885 "smv_to_tptp.ml" 641 17868 17892
+"smv_to_tptp.ml" 642 17856 17873 "smv_to_tptp.ml" 642 17856 17880
 type(
   string list
 )
 ident(
-  def val_lst "smv_to_tptp.ml" 642 17897 17898 "smv_to_tptp.ml" 649 18100 18104
+  def val_lst "smv_to_tptp.ml" 643 17885 17886 "smv_to_tptp.ml" 650 18088 18092
 )
-"smv_to_tptp.ml" 641 17868 17875 "smv_to_tptp.ml" 641 17868 17893
+"smv_to_tptp.ml" 642 17856 17863 "smv_to_tptp.ml" 642 17856 17881
 type(
   Parsed.var_decl
 )
-"smv_to_tptp.ml" 643 17904 17913 "smv_to_tptp.ml" 643 17904 17917
+"smv_to_tptp.ml" 644 17892 17901 "smv_to_tptp.ml" 644 17892 17905
 type(
   Parsed.var_decl
 )
 ident(
-  int_ref elem "smv_to_tptp.ml" 636 17758 17786 "smv_to_tptp.ml" 636 17758 17790
+  int_ref elem "smv_to_tptp.ml" 637 17746 17774 "smv_to_tptp.ml" 637 17746 17778
 )
-"smv_to_tptp.ml" 644 17923 17933 "smv_to_tptp.ml" 644 17923 17937
+"smv_to_tptp.ml" 645 17911 17921 "smv_to_tptp.ml" 645 17911 17925
 type(
   string
 )
 ident(
-  def var' "smv_to_tptp.ml" 645 17953 17959 "smv_to_tptp.ml" 647 18025 18074
+  def var' "smv_to_tptp.ml" 646 17941 17947 "smv_to_tptp.ml" 648 18013 18062
 )
-"smv_to_tptp.ml" 644 17923 17939 "smv_to_tptp.ml" 644 17923 17947
+"smv_to_tptp.ml" 645 17911 17927 "smv_to_tptp.ml" 645 17911 17935
 type(
   string list
 )
 ident(
-  def val_lst' "smv_to_tptp.ml" 645 17953 17959 "smv_to_tptp.ml" 647 18025 18074
+  def val_lst' "smv_to_tptp.ml" 646 17941 17947 "smv_to_tptp.ml" 648 18013 18062
 )
-"smv_to_tptp.ml" 644 17923 17928 "smv_to_tptp.ml" 644 17923 17948
+"smv_to_tptp.ml" 645 17911 17916 "smv_to_tptp.ml" 645 17911 17936
 type(
   Parsed.var_decl
 )
-"smv_to_tptp.ml" 645 17953 17962 "smv_to_tptp.ml" 645 17953 17965
+"smv_to_tptp.ml" 646 17941 17950 "smv_to_tptp.ml" 646 17941 17953
 type(
   string
 )
 ident(
-  int_ref var "smv_to_tptp.ml" 641 17868 17880 "smv_to_tptp.ml" 641 17868 17883
+  int_ref var "smv_to_tptp.ml" 642 17856 17868 "smv_to_tptp.ml" 642 17856 17871
 )
-"smv_to_tptp.ml" 645 17953 17966 "smv_to_tptp.ml" 645 17953 17967
+"smv_to_tptp.ml" 646 17941 17954 "smv_to_tptp.ml" 646 17941 17955
 type(
   string -> string -> bool
 )
 ident(
   ext_ref Pervasives.( = )
 )
-"smv_to_tptp.ml" 645 17953 17968 "smv_to_tptp.ml" 645 17953 17972
+"smv_to_tptp.ml" 646 17941 17956 "smv_to_tptp.ml" 646 17941 17960
 type(
   string
 )
 ident(
-  int_ref var' "smv_to_tptp.ml" 644 17923 17933 "smv_to_tptp.ml" 644 17923 17937
+  int_ref var' "smv_to_tptp.ml" 645 17911 17921 "smv_to_tptp.ml" 645 17911 17925
 )
-"smv_to_tptp.ml" 645 17953 17962 "smv_to_tptp.ml" 645 17953 17972
+"smv_to_tptp.ml" 646 17941 17950 "smv_to_tptp.ml" 646 17941 17960
 type(
   bool
 )
-"smv_to_tptp.ml" 646 17978 17991 "smv_to_tptp.ml" 646 17978 17998
+"smv_to_tptp.ml" 647 17966 17979 "smv_to_tptp.ml" 647 17966 17986
 type(
   string
 )
-"smv_to_tptp.ml" 646 17978 17998 "smv_to_tptp.ml" 646 17978 17999
+"smv_to_tptp.ml" 647 17966 17986 "smv_to_tptp.ml" 647 17966 17987
 type(
   string -> string -> string
 )
 ident(
   ext_ref Pervasives.( ^ )
 )
-"smv_to_tptp.ml" 646 17978 17999 "smv_to_tptp.ml" 646 17978 18004
+"smv_to_tptp.ml" 647 17966 17987 "smv_to_tptp.ml" 647 17966 17992
 type(
   string
 )
 ident(
-  int_ref e_val "smv_to_tptp.ml" 636 17758 17791 "smv_to_tptp.ml" 636 17758 17796
+  int_ref e_val "smv_to_tptp.ml" 637 17746 17779 "smv_to_tptp.ml" 637 17746 17784
 )
-"smv_to_tptp.ml" 646 17978 18004 "smv_to_tptp.ml" 646 17978 18005
+"smv_to_tptp.ml" 647 17966 17992 "smv_to_tptp.ml" 647 17966 17993
 type(
   string -> string -> string
 )
 ident(
   ext_ref Pervasives.( ^ )
 )
-"smv_to_tptp.ml" 646 17978 18005 "smv_to_tptp.ml" 646 17978 18008
+"smv_to_tptp.ml" 647 17966 17993 "smv_to_tptp.ml" 647 17966 17996
 type(
   string
 )
-"smv_to_tptp.ml" 646 17978 17999 "smv_to_tptp.ml" 646 17978 18008
+"smv_to_tptp.ml" 647 17966 17987 "smv_to_tptp.ml" 647 17966 17996
 call(
   stack
 )
 type(
   string
 )
-"smv_to_tptp.ml" 646 17978 17991 "smv_to_tptp.ml" 646 17978 18008
+"smv_to_tptp.ml" 647 17966 17979 "smv_to_tptp.ml" 647 17966 17996
 call(
   stack
 )
 type(
   string
 )
-"smv_to_tptp.ml" 646 17978 18010 "smv_to_tptp.ml" 646 17978 18017
+"smv_to_tptp.ml" 647 17966 17998 "smv_to_tptp.ml" 647 17966 18005
 type(
   string list
 )
 ident(
-  int_ref val_lst "smv_to_tptp.ml" 641 17868 17885 "smv_to_tptp.ml" 641 17868 17892
+  int_ref val_lst "smv_to_tptp.ml" 642 17856 17873 "smv_to_tptp.ml" 642 17856 17880
 )
-"smv_to_tptp.ml" 646 17978 17986 "smv_to_tptp.ml" 646 17978 18018
+"smv_to_tptp.ml" 647 17966 17974 "smv_to_tptp.ml" 647 17966 18006
 type(
   Parsed.var_decl
 )
-"smv_to_tptp.ml" 646 17978 18022 "smv_to_tptp.ml" 646 17978 18024
+"smv_to_tptp.ml" 647 17966 18010 "smv_to_tptp.ml" 647 17966 18012
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref tl "smv_to_tptp.ml" 639 17835 17844 "smv_to_tptp.ml" 639 17835 17846
+  int_ref tl "smv_to_tptp.ml" 640 17823 17832 "smv_to_tptp.ml" 640 17823 17834
 )
-"smv_to_tptp.ml" 646 17978 17986 "smv_to_tptp.ml" 646 17978 18024
+"smv_to_tptp.ml" 647 17966 17974 "smv_to_tptp.ml" 647 17966 18012
 type(
   Parsed.var_decl list
 )
-"smv_to_tptp.ml" 647 18025 18036 "smv_to_tptp.ml" 647 18025 18037
+"smv_to_tptp.ml" 648 18013 18024 "smv_to_tptp.ml" 648 18013 18025
 type(
   Parsed.var_decl
 )
 ident(
-  int_ref h "smv_to_tptp.ml" 639 17835 17839 "smv_to_tptp.ml" 639 17835 17840
+  int_ref h "smv_to_tptp.ml" 640 17823 17827 "smv_to_tptp.ml" 640 17823 17828
 )
-"smv_to_tptp.ml" 647 18025 18041 "smv_to_tptp.ml" 647 18025 18060
+"smv_to_tptp.ml" 648 18013 18029 "smv_to_tptp.ml" 648 18013 18048
 type(
   Parsed.var_decl -> string -> Parsed.var_decl list -> Parsed.var_decl list
 )
 ident(
-  int_ref st_with_next_value' "smv_to_tptp.ml" 636 17758 17766 "smv_to_tptp.ml" 636 17758 17785
+  int_ref st_with_next_value' "smv_to_tptp.ml" 637 17746 17754 "smv_to_tptp.ml" 637 17746 17773
 )
-"smv_to_tptp.ml" 647 18025 18061 "smv_to_tptp.ml" 647 18025 18065
+"smv_to_tptp.ml" 648 18013 18049 "smv_to_tptp.ml" 648 18013 18053
 type(
   Parsed.var_decl
 )
 ident(
-  int_ref elem "smv_to_tptp.ml" 636 17758 17786 "smv_to_tptp.ml" 636 17758 17790
+  int_ref elem "smv_to_tptp.ml" 637 17746 17774 "smv_to_tptp.ml" 637 17746 17778
 )
-"smv_to_tptp.ml" 647 18025 18066 "smv_to_tptp.ml" 647 18025 18071
+"smv_to_tptp.ml" 648 18013 18054 "smv_to_tptp.ml" 648 18013 18059
 type(
   string
 )
 ident(
-  int_ref e_val "smv_to_tptp.ml" 636 17758 17791 "smv_to_tptp.ml" 636 17758 17796
+  int_ref e_val "smv_to_tptp.ml" 637 17746 17779 "smv_to_tptp.ml" 637 17746 17784
 )
-"smv_to_tptp.ml" 647 18025 18072 "smv_to_tptp.ml" 647 18025 18074
+"smv_to_tptp.ml" 648 18013 18060 "smv_to_tptp.ml" 648 18013 18062
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref tl "smv_to_tptp.ml" 639 17835 17844 "smv_to_tptp.ml" 639 17835 17846
+  int_ref tl "smv_to_tptp.ml" 640 17823 17832 "smv_to_tptp.ml" 640 17823 17834
 )
-"smv_to_tptp.ml" 647 18025 18041 "smv_to_tptp.ml" 647 18025 18074
+"smv_to_tptp.ml" 648 18013 18029 "smv_to_tptp.ml" 648 18013 18062
 call(
   stack
 )
 type(
   Parsed.var_decl list
 )
-"smv_to_tptp.ml" 647 18025 18036 "smv_to_tptp.ml" 647 18025 18074
+"smv_to_tptp.ml" 648 18013 18024 "smv_to_tptp.ml" 648 18013 18062
 type(
   Parsed.var_decl list
 )
-"smv_to_tptp.ml" 645 17953 17959 "smv_to_tptp.ml" 647 18025 18074
+"smv_to_tptp.ml" 646 17941 17947 "smv_to_tptp.ml" 648 18013 18062
 type(
   Parsed.var_decl list
 )
-"smv_to_tptp.ml" 648 18075 18080 "smv_to_tptp.ml" 648 18075 18081
+"smv_to_tptp.ml" 649 18063 18068 "smv_to_tptp.ml" 649 18063 18069
 type(
   Parsed.var_decl
 )
-"smv_to_tptp.ml" 648 18075 18085 "smv_to_tptp.ml" 648 18075 18090
+"smv_to_tptp.ml" 649 18063 18073 "smv_to_tptp.ml" 649 18063 18078
 type(
   exn -> Parsed.var_decl list
 )
 ident(
   ext_ref Pervasives.raise
 )
-"smv_to_tptp.ml" 648 18075 18091 "smv_to_tptp.ml" 648 18075 18099
+"smv_to_tptp.ml" 649 18063 18079 "smv_to_tptp.ml" 649 18063 18087
 type(
   exn
 )
-"smv_to_tptp.ml" 648 18075 18085 "smv_to_tptp.ml" 648 18075 18099
+"smv_to_tptp.ml" 649 18063 18073 "smv_to_tptp.ml" 649 18063 18087
 type(
   Parsed.var_decl list
 )
-"smv_to_tptp.ml" 642 17897 17898 "smv_to_tptp.ml" 649 18100 18104
+"smv_to_tptp.ml" 643 17885 17886 "smv_to_tptp.ml" 650 18088 18092
 type(
   Parsed.var_decl list
 )
-"smv_to_tptp.ml" 650 18105 18112 "smv_to_tptp.ml" 650 18105 18113
+"smv_to_tptp.ml" 651 18093 18100 "smv_to_tptp.ml" 651 18093 18101
 type(
   Parsed.var_decl
 )
-"smv_to_tptp.ml" 650 18105 18117 "smv_to_tptp.ml" 650 18105 18118
+"smv_to_tptp.ml" 651 18093 18105 "smv_to_tptp.ml" 651 18093 18106
 type(
   Parsed.var_decl
 )
 ident(
-  int_ref h "smv_to_tptp.ml" 639 17835 17839 "smv_to_tptp.ml" 639 17835 17840
+  int_ref h "smv_to_tptp.ml" 640 17823 17827 "smv_to_tptp.ml" 640 17823 17828
 )
-"smv_to_tptp.ml" 650 18105 18122 "smv_to_tptp.ml" 650 18105 18141
+"smv_to_tptp.ml" 651 18093 18110 "smv_to_tptp.ml" 651 18093 18129
 type(
   Parsed.var_decl -> string -> Parsed.var_decl list -> Parsed.var_decl list
 )
 ident(
-  int_ref st_with_next_value' "smv_to_tptp.ml" 636 17758 17766 "smv_to_tptp.ml" 636 17758 17785
+  int_ref st_with_next_value' "smv_to_tptp.ml" 637 17746 17754 "smv_to_tptp.ml" 637 17746 17773
 )
-"smv_to_tptp.ml" 650 18105 18142 "smv_to_tptp.ml" 650 18105 18146
+"smv_to_tptp.ml" 651 18093 18130 "smv_to_tptp.ml" 651 18093 18134
 type(
   Parsed.var_decl
 )
 ident(
-  int_ref elem "smv_to_tptp.ml" 636 17758 17786 "smv_to_tptp.ml" 636 17758 17790
+  int_ref elem "smv_to_tptp.ml" 637 17746 17774 "smv_to_tptp.ml" 637 17746 17778
 )
-"smv_to_tptp.ml" 650 18105 18147 "smv_to_tptp.ml" 650 18105 18152
+"smv_to_tptp.ml" 651 18093 18135 "smv_to_tptp.ml" 651 18093 18140
 type(
   string
 )
 ident(
-  int_ref e_val "smv_to_tptp.ml" 636 17758 17791 "smv_to_tptp.ml" 636 17758 17796
+  int_ref e_val "smv_to_tptp.ml" 637 17746 17779 "smv_to_tptp.ml" 637 17746 17784
 )
-"smv_to_tptp.ml" 650 18105 18153 "smv_to_tptp.ml" 650 18105 18155
+"smv_to_tptp.ml" 651 18093 18141 "smv_to_tptp.ml" 651 18093 18143
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref tl "smv_to_tptp.ml" 639 17835 17844 "smv_to_tptp.ml" 639 17835 17846
+  int_ref tl "smv_to_tptp.ml" 640 17823 17832 "smv_to_tptp.ml" 640 17823 17834
 )
-"smv_to_tptp.ml" 650 18105 18122 "smv_to_tptp.ml" 650 18105 18155
-call(
-  stack
-)
+"smv_to_tptp.ml" 651 18093 18110 "smv_to_tptp.ml" 651 18093 18143
 type(
   Parsed.var_decl list
 )
-"smv_to_tptp.ml" 650 18105 18117 "smv_to_tptp.ml" 650 18105 18155
+"smv_to_tptp.ml" 651 18093 18105 "smv_to_tptp.ml" 651 18093 18143
 type(
   Parsed.var_decl list
 )
-"smv_to_tptp.ml" 640 17850 17855 "smv_to_tptp.ml" 650 18105 18155
+"smv_to_tptp.ml" 641 17838 17843 "smv_to_tptp.ml" 651 18093 18143
 type(
   Parsed.var_decl list
 )
-"smv_to_tptp.ml" 637 17804 17806 "smv_to_tptp.ml" 650 18105 18155
+"smv_to_tptp.ml" 638 17792 17794 "smv_to_tptp.ml" 651 18093 18143
 type(
   Parsed.var_decl list
 )
-"smv_to_tptp.ml" 652 18157 18165 "smv_to_tptp.ml" 652 18157 18183
+"smv_to_tptp.ml" 653 18145 18153 "smv_to_tptp.ml" 653 18145 18171
 type(
   Parsed.var_decl -> Parsed.var_decl list -> Parsed.var_decl list list
 )
 ident(
-  def st_with_next_value "smv_to_tptp.ml" 652 18157 18157 "smv_to_tptp.ml" 1 0 -1
+  def st_with_next_value "smv_to_tptp.ml" 653 18145 18145 "smv_to_tptp.ml" 1 0 -1
 )
-"smv_to_tptp.ml" 652 18157 18184 "smv_to_tptp.ml" 652 18157 18188
+"smv_to_tptp.ml" 653 18145 18172 "smv_to_tptp.ml" 653 18145 18176
 type(
   Parsed.var_decl
 )
 ident(
-  def elem "smv_to_tptp.ml" 652 18157 18189 "smv_to_tptp.ml" 662 18405 18428
+  def elem "smv_to_tptp.ml" 653 18145 18177 "smv_to_tptp.ml" 663 18393 18416
 )
-"smv_to_tptp.ml" 652 18157 18189 "smv_to_tptp.ml" 652 18157 18193
+"smv_to_tptp.ml" 653 18145 18177 "smv_to_tptp.ml" 653 18145 18181
 type(
   Parsed.var_decl list
 )
 ident(
-  def vars "smv_to_tptp.ml" 653 18196 18198 "smv_to_tptp.ml" 662 18405 18428
+  def vars "smv_to_tptp.ml" 654 18184 18186 "smv_to_tptp.ml" 663 18393 18416
 )
-"smv_to_tptp.ml" 653 18196 18204 "smv_to_tptp.ml" 653 18196 18208
+"smv_to_tptp.ml" 654 18184 18192 "smv_to_tptp.ml" 654 18184 18196
 type(
   Parsed.var_decl
 )
 ident(
-  int_ref elem "smv_to_tptp.ml" 652 18157 18184 "smv_to_tptp.ml" 652 18157 18188
+  int_ref elem "smv_to_tptp.ml" 653 18145 18172 "smv_to_tptp.ml" 653 18145 18176
 )
-"smv_to_tptp.ml" 654 18214 18223 "smv_to_tptp.ml" 654 18214 18226
+"smv_to_tptp.ml" 655 18202 18211 "smv_to_tptp.ml" 655 18202 18214
 type(
   string
 )
 ident(
-  def var "smv_to_tptp.ml" 655 18240 18245 "smv_to_tptp.ml" 661 18396 18404
+  def var "smv_to_tptp.ml" 656 18228 18233 "smv_to_tptp.ml" 662 18384 18392
 )
-"smv_to_tptp.ml" 654 18214 18228 "smv_to_tptp.ml" 654 18214 18235
+"smv_to_tptp.ml" 655 18202 18216 "smv_to_tptp.ml" 655 18202 18223
 type(
   string list
 )
 ident(
-  def val_lst "smv_to_tptp.ml" 655 18240 18245 "smv_to_tptp.ml" 661 18396 18404
+  def val_lst "smv_to_tptp.ml" 656 18228 18233 "smv_to_tptp.ml" 662 18384 18392
 )
-"smv_to_tptp.ml" 654 18214 18218 "smv_to_tptp.ml" 654 18214 18236
+"smv_to_tptp.ml" 655 18202 18206 "smv_to_tptp.ml" 655 18202 18224
 type(
   Parsed.var_decl
 )
-"smv_to_tptp.ml" 656 18251 18264 "smv_to_tptp.ml" 656 18251 18271
+"smv_to_tptp.ml" 657 18239 18252 "smv_to_tptp.ml" 657 18239 18259
 type(
   string list
 )
 ident(
-  int_ref val_lst "smv_to_tptp.ml" 654 18214 18228 "smv_to_tptp.ml" 654 18214 18235
+  int_ref val_lst "smv_to_tptp.ml" 655 18202 18216 "smv_to_tptp.ml" 655 18202 18223
 )
-"smv_to_tptp.ml" 657 18277 18286 "smv_to_tptp.ml" 657 18277 18288
+"smv_to_tptp.ml" 658 18265 18274 "smv_to_tptp.ml" 658 18265 18276
 type(
   string list
 )
-"smv_to_tptp.ml" 657 18277 18292 "smv_to_tptp.ml" 657 18277 18294
+"smv_to_tptp.ml" 658 18265 18280 "smv_to_tptp.ml" 658 18265 18282
 type(
   Parsed.var_decl list list
 )
-"smv_to_tptp.ml" 658 18295 18304 "smv_to_tptp.ml" 658 18295 18305
+"smv_to_tptp.ml" 659 18283 18292 "smv_to_tptp.ml" 659 18283 18293
 type(
   string
 )
 ident(
-  def h "smv_to_tptp.ml" 659 18315 18318 "smv_to_tptp.ml" 660 18350 18395
+  def h "smv_to_tptp.ml" 660 18303 18306 "smv_to_tptp.ml" 661 18338 18383
 )
-"smv_to_tptp.ml" 658 18295 18309 "smv_to_tptp.ml" 658 18295 18311
+"smv_to_tptp.ml" 659 18283 18297 "smv_to_tptp.ml" 659 18283 18299
 type(
   string list
 )
 ident(
-  def tl "smv_to_tptp.ml" 659 18315 18318 "smv_to_tptp.ml" 660 18350 18395
+  def tl "smv_to_tptp.ml" 660 18303 18306 "smv_to_tptp.ml" 661 18338 18383
 )
-"smv_to_tptp.ml" 658 18295 18304 "smv_to_tptp.ml" 658 18295 18311
+"smv_to_tptp.ml" 659 18283 18292 "smv_to_tptp.ml" 659 18283 18299
 type(
   string list
 )
-"smv_to_tptp.ml" 659 18315 18318 "smv_to_tptp.ml" 659 18315 18337
+"smv_to_tptp.ml" 660 18303 18306 "smv_to_tptp.ml" 660 18303 18325
 type(
   Parsed.var_decl -> string -> Parsed.var_decl list -> Parsed.var_decl list
 )
 ident(
-  int_ref st_with_next_value' "smv_to_tptp.ml" 636 17758 17766 "smv_to_tptp.ml" 636 17758 17785
+  int_ref st_with_next_value' "smv_to_tptp.ml" 637 17746 17754 "smv_to_tptp.ml" 637 17746 17773
 )
-"smv_to_tptp.ml" 659 18315 18338 "smv_to_tptp.ml" 659 18315 18342
+"smv_to_tptp.ml" 660 18303 18326 "smv_to_tptp.ml" 660 18303 18330
 type(
   Parsed.var_decl
 )
 ident(
-  int_ref elem "smv_to_tptp.ml" 652 18157 18184 "smv_to_tptp.ml" 652 18157 18188
+  int_ref elem "smv_to_tptp.ml" 653 18145 18172 "smv_to_tptp.ml" 653 18145 18176
 )
-"smv_to_tptp.ml" 659 18315 18343 "smv_to_tptp.ml" 659 18315 18344
+"smv_to_tptp.ml" 660 18303 18331 "smv_to_tptp.ml" 660 18303 18332
 type(
   string
 )
 ident(
-  int_ref h "smv_to_tptp.ml" 658 18295 18304 "smv_to_tptp.ml" 658 18295 18305
+  int_ref h "smv_to_tptp.ml" 659 18283 18292 "smv_to_tptp.ml" 659 18283 18293
 )
-"smv_to_tptp.ml" 659 18315 18345 "smv_to_tptp.ml" 659 18315 18349
+"smv_to_tptp.ml" 660 18303 18333 "smv_to_tptp.ml" 660 18303 18337
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref vars "smv_to_tptp.ml" 652 18157 18189 "smv_to_tptp.ml" 652 18157 18193
+  int_ref vars "smv_to_tptp.ml" 653 18145 18177 "smv_to_tptp.ml" 653 18145 18181
 )
-"smv_to_tptp.ml" 659 18315 18318 "smv_to_tptp.ml" 659 18315 18349
+"smv_to_tptp.ml" 660 18303 18306 "smv_to_tptp.ml" 660 18303 18337
 call(
   stack
 )
 type(
   Parsed.var_decl list
 )
-"smv_to_tptp.ml" 660 18350 18356 "smv_to_tptp.ml" 660 18350 18374
+"smv_to_tptp.ml" 661 18338 18344 "smv_to_tptp.ml" 661 18338 18362
 type(
   Parsed.var_decl -> Parsed.var_decl list -> Parsed.var_decl list list
 )
 ident(
-  int_ref st_with_next_value "smv_to_tptp.ml" 652 18157 18165 "smv_to_tptp.ml" 652 18157 18183
+  int_ref st_with_next_value "smv_to_tptp.ml" 653 18145 18153 "smv_to_tptp.ml" 653 18145 18171
 )
-"smv_to_tptp.ml" 660 18350 18381 "smv_to_tptp.ml" 660 18350 18384
+"smv_to_tptp.ml" 661 18338 18369 "smv_to_tptp.ml" 661 18338 18372
 type(
   string
 )
 ident(
-  int_ref var "smv_to_tptp.ml" 654 18214 18223 "smv_to_tptp.ml" 654 18214 18226
+  int_ref var "smv_to_tptp.ml" 655 18202 18211 "smv_to_tptp.ml" 655 18202 18214
 )
-"smv_to_tptp.ml" 660 18350 18386 "smv_to_tptp.ml" 660 18350 18388
+"smv_to_tptp.ml" 661 18338 18374 "smv_to_tptp.ml" 661 18338 18376
 type(
   string list
 )
 ident(
-  int_ref tl "smv_to_tptp.ml" 658 18295 18309 "smv_to_tptp.ml" 658 18295 18311
+  int_ref tl "smv_to_tptp.ml" 659 18283 18297 "smv_to_tptp.ml" 659 18283 18299
 )
-"smv_to_tptp.ml" 660 18350 18375 "smv_to_tptp.ml" 660 18350 18390
+"smv_to_tptp.ml" 661 18338 18363 "smv_to_tptp.ml" 661 18338 18378
 type(
   Parsed.var_decl
 )
-"smv_to_tptp.ml" 660 18350 18391 "smv_to_tptp.ml" 660 18350 18395
+"smv_to_tptp.ml" 661 18338 18379 "smv_to_tptp.ml" 661 18338 18383
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref vars "smv_to_tptp.ml" 652 18157 18189 "smv_to_tptp.ml" 652 18157 18193
+  int_ref vars "smv_to_tptp.ml" 653 18145 18177 "smv_to_tptp.ml" 653 18145 18181
 )
-"smv_to_tptp.ml" 660 18350 18356 "smv_to_tptp.ml" 660 18350 18395
+"smv_to_tptp.ml" 661 18338 18344 "smv_to_tptp.ml" 661 18338 18383
 call(
   stack
 )
 type(
   Parsed.var_decl list list
 )
-"smv_to_tptp.ml" 659 18315 18318 "smv_to_tptp.ml" 660 18350 18395
+"smv_to_tptp.ml" 660 18303 18306 "smv_to_tptp.ml" 661 18338 18383
 type(
   Parsed.var_decl list list
 )
-"smv_to_tptp.ml" 655 18240 18245 "smv_to_tptp.ml" 661 18396 18404
+"smv_to_tptp.ml" 656 18228 18233 "smv_to_tptp.ml" 662 18384 18392
 type(
   Parsed.var_decl list list
 )
-"smv_to_tptp.ml" 662 18405 18409 "smv_to_tptp.ml" 662 18405 18410
+"smv_to_tptp.ml" 663 18393 18397 "smv_to_tptp.ml" 663 18393 18398
 type(
   Parsed.var_decl
 )
-"smv_to_tptp.ml" 662 18405 18414 "smv_to_tptp.ml" 662 18405 18419
+"smv_to_tptp.ml" 663 18393 18402 "smv_to_tptp.ml" 663 18393 18407
 type(
   exn -> Parsed.var_decl list list
 )
 ident(
   ext_ref Pervasives.raise
 )
-"smv_to_tptp.ml" 662 18405 18420 "smv_to_tptp.ml" 662 18405 18428
+"smv_to_tptp.ml" 663 18393 18408 "smv_to_tptp.ml" 663 18393 18416
 type(
   exn
 )
-"smv_to_tptp.ml" 662 18405 18414 "smv_to_tptp.ml" 662 18405 18428
+"smv_to_tptp.ml" 663 18393 18402 "smv_to_tptp.ml" 663 18393 18416
 type(
   Parsed.var_decl list list
 )
-"smv_to_tptp.ml" 653 18196 18198 "smv_to_tptp.ml" 662 18405 18428
+"smv_to_tptp.ml" 654 18184 18186 "smv_to_tptp.ml" 663 18393 18416
 type(
   Parsed.var_decl list list
 )
-"smv_to_tptp.ml" 665 18468 18476 "smv_to_tptp.ml" 665 18468 18495
+"smv_to_tptp.ml" 667 18457 18465 "smv_to_tptp.ml" 667 18457 18484
 type(
   Parsed.var_decl list ->
   Parsed.var_decl list -> Parsed.var_decl list -> Parsed.var_decl list list
 )
 ident(
-  def st_with_next_values "smv_to_tptp.ml" 665 18468 18468 "smv_to_tptp.ml" 1 0 -1
+  def st_with_next_values "smv_to_tptp.ml" 667 18457 18457 "smv_to_tptp.ml" 1 0 -1
 )
-"smv_to_tptp.ml" 665 18468 18496 "smv_to_tptp.ml" 665 18468 18505
+"smv_to_tptp.ml" 667 18457 18485 "smv_to_tptp.ml" 667 18457 18494
 type(
   Parsed.var_decl list
 )
 ident(
-  def next_vars "smv_to_tptp.ml" 665 18468 18506 "smv_to_tptp.ml" 671 18685 18731
+  def next_vars "smv_to_tptp.ml" 667 18457 18495 "smv_to_tptp.ml" 673 18674 18719
 )
-"smv_to_tptp.ml" 665 18468 18506 "smv_to_tptp.ml" 665 18468 18511
+"smv_to_tptp.ml" 667 18457 18495 "smv_to_tptp.ml" 667 18457 18500
 type(
   Parsed.var_decl list
 )
 ident(
-  def vars1 "smv_to_tptp.ml" 665 18468 18512 "smv_to_tptp.ml" 671 18685 18731
+  def vars1 "smv_to_tptp.ml" 667 18457 18501 "smv_to_tptp.ml" 673 18674 18719
 )
-"smv_to_tptp.ml" 665 18468 18512 "smv_to_tptp.ml" 665 18468 18517
+"smv_to_tptp.ml" 667 18457 18501 "smv_to_tptp.ml" 667 18457 18506
 type(
   Parsed.var_decl list
 )
 ident(
-  def vars2 "smv_to_tptp.ml" 666 18519 18521 "smv_to_tptp.ml" 671 18685 18731
+  def vars2 "smv_to_tptp.ml" 668 18508 18510 "smv_to_tptp.ml" 673 18674 18719
 )
-"smv_to_tptp.ml" 666 18519 18527 "smv_to_tptp.ml" 666 18519 18536
+"smv_to_tptp.ml" 668 18508 18516 "smv_to_tptp.ml" 668 18508 18525
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref next_vars "smv_to_tptp.ml" 665 18468 18496 "smv_to_tptp.ml" 665 18468 18505
+  int_ref next_vars "smv_to_tptp.ml" 667 18457 18485 "smv_to_tptp.ml" 667 18457 18494
 )
-"smv_to_tptp.ml" 666 18519 18538 "smv_to_tptp.ml" 666 18519 18543
+"smv_to_tptp.ml" 668 18508 18527 "smv_to_tptp.ml" 668 18508 18532
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref vars1 "smv_to_tptp.ml" 665 18468 18506 "smv_to_tptp.ml" 665 18468 18511
+  int_ref vars1 "smv_to_tptp.ml" 667 18457 18495 "smv_to_tptp.ml" 667 18457 18500
 )
-"smv_to_tptp.ml" 666 18519 18527 "smv_to_tptp.ml" 666 18519 18543
+"smv_to_tptp.ml" 668 18508 18516 "smv_to_tptp.ml" 668 18508 18532
 type(
   Parsed.var_decl list * Parsed.var_decl list
 )
-"smv_to_tptp.ml" 667 18549 18553 "smv_to_tptp.ml" 667 18549 18555
+"smv_to_tptp.ml" 669 18538 18542 "smv_to_tptp.ml" 669 18538 18544
 type(
   Parsed.var_decl list
 )
-"smv_to_tptp.ml" 667 18549 18557 "smv_to_tptp.ml" 667 18549 18559
+"smv_to_tptp.ml" 669 18538 18546 "smv_to_tptp.ml" 669 18538 18548
 type(
   Parsed.var_decl list
 )
-"smv_to_tptp.ml" 667 18549 18553 "smv_to_tptp.ml" 667 18549 18559
+"smv_to_tptp.ml" 669 18538 18542 "smv_to_tptp.ml" 669 18538 18548
 type(
   Parsed.var_decl list * Parsed.var_decl list
 )
-"smv_to_tptp.ml" 667 18549 18563 "smv_to_tptp.ml" 667 18549 18565
+"smv_to_tptp.ml" 669 18538 18552 "smv_to_tptp.ml" 669 18538 18554
 type(
   Parsed.var_decl list list
 )
-"smv_to_tptp.ml" 668 18566 18570 "smv_to_tptp.ml" 668 18566 18572
+"smv_to_tptp.ml" 670 18555 18559 "smv_to_tptp.ml" 670 18555 18561
 type(
   Parsed.var_decl
 )
 ident(
-  def h1 "smv_to_tptp.ml" 669 18592 18597 "smv_to_tptp.ml" 670 18647 18684
+  def h1 "smv_to_tptp.ml" 671 18581 18586 "smv_to_tptp.ml" 672 18636 18673
 )
-"smv_to_tptp.ml" 668 18566 18576 "smv_to_tptp.ml" 668 18566 18579
+"smv_to_tptp.ml" 670 18555 18565 "smv_to_tptp.ml" 670 18555 18568
 type(
   Parsed.var_decl list
 )
 ident(
-  def tl1 "smv_to_tptp.ml" 669 18592 18597 "smv_to_tptp.ml" 670 18647 18684
+  def tl1 "smv_to_tptp.ml" 671 18581 18586 "smv_to_tptp.ml" 672 18636 18673
 )
-"smv_to_tptp.ml" 668 18566 18570 "smv_to_tptp.ml" 668 18566 18579
+"smv_to_tptp.ml" 670 18555 18559 "smv_to_tptp.ml" 670 18555 18568
 type(
   Parsed.var_decl list
 )
-"smv_to_tptp.ml" 668 18566 18581 "smv_to_tptp.ml" 668 18566 18583
+"smv_to_tptp.ml" 670 18555 18570 "smv_to_tptp.ml" 670 18555 18572
 type(
   Parsed.var_decl
 )
 ident(
-  def h2 "smv_to_tptp.ml" 669 18592 18597 "smv_to_tptp.ml" 670 18647 18684
+  def h2 "smv_to_tptp.ml" 671 18581 18586 "smv_to_tptp.ml" 672 18636 18673
 )
-"smv_to_tptp.ml" 668 18566 18585 "smv_to_tptp.ml" 668 18566 18588
+"smv_to_tptp.ml" 670 18555 18574 "smv_to_tptp.ml" 670 18555 18577
 type(
   Parsed.var_decl list
 )
 ident(
-  def tl2 "smv_to_tptp.ml" 669 18592 18597 "smv_to_tptp.ml" 670 18647 18684
+  def tl2 "smv_to_tptp.ml" 671 18581 18586 "smv_to_tptp.ml" 672 18636 18673
 )
-"smv_to_tptp.ml" 668 18566 18581 "smv_to_tptp.ml" 668 18566 18588
+"smv_to_tptp.ml" 670 18555 18570 "smv_to_tptp.ml" 670 18555 18577
 type(
   Parsed.var_decl list
 )
-"smv_to_tptp.ml" 668 18566 18570 "smv_to_tptp.ml" 668 18566 18588
+"smv_to_tptp.ml" 670 18555 18559 "smv_to_tptp.ml" 670 18555 18577
 type(
   Parsed.var_decl list * Parsed.var_decl list
 )
-"smv_to_tptp.ml" 669 18592 18600 "smv_to_tptp.ml" 669 18592 18602
+"smv_to_tptp.ml" 671 18581 18589 "smv_to_tptp.ml" 671 18581 18591
 type(
   Parsed.var_decl
 )
 ident(
-  int_ref h1 "smv_to_tptp.ml" 668 18566 18570 "smv_to_tptp.ml" 668 18566 18572
+  int_ref h1 "smv_to_tptp.ml" 670 18555 18559 "smv_to_tptp.ml" 670 18555 18561
 )
-"smv_to_tptp.ml" 669 18592 18603 "smv_to_tptp.ml" 669 18592 18604
+"smv_to_tptp.ml" 671 18581 18592 "smv_to_tptp.ml" 671 18581 18593
 type(
   Parsed.var_decl -> Parsed.var_decl -> bool
 )
 ident(
   ext_ref Pervasives.( = )
 )
-"smv_to_tptp.ml" 669 18592 18605 "smv_to_tptp.ml" 669 18592 18607
+"smv_to_tptp.ml" 671 18581 18594 "smv_to_tptp.ml" 671 18581 18596
 type(
   Parsed.var_decl
 )
 ident(
-  int_ref h2 "smv_to_tptp.ml" 668 18566 18581 "smv_to_tptp.ml" 668 18566 18583
+  int_ref h2 "smv_to_tptp.ml" 670 18555 18570 "smv_to_tptp.ml" 670 18555 18572
 )
-"smv_to_tptp.ml" 669 18592 18600 "smv_to_tptp.ml" 669 18592 18607
+"smv_to_tptp.ml" 671 18581 18589 "smv_to_tptp.ml" 671 18581 18596
 type(
   bool
 )
-"smv_to_tptp.ml" 669 18592 18613 "smv_to_tptp.ml" 669 18592 18632
+"smv_to_tptp.ml" 671 18581 18602 "smv_to_tptp.ml" 671 18581 18621
 type(
   Parsed.var_decl list ->
   Parsed.var_decl list -> Parsed.var_decl list -> Parsed.var_decl list list
 )
 ident(
-  int_ref st_with_next_values "smv_to_tptp.ml" 665 18468 18476 "smv_to_tptp.ml" 665 18468 18495
+  int_ref st_with_next_values "smv_to_tptp.ml" 667 18457 18465 "smv_to_tptp.ml" 667 18457 18484
 )
-"smv_to_tptp.ml" 669 18592 18633 "smv_to_tptp.ml" 669 18592 18636
+"smv_to_tptp.ml" 671 18581 18622 "smv_to_tptp.ml" 671 18581 18625
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref tl1 "smv_to_tptp.ml" 668 18566 18576 "smv_to_tptp.ml" 668 18566 18579
+  int_ref tl1 "smv_to_tptp.ml" 670 18555 18565 "smv_to_tptp.ml" 670 18555 18568
 )
-"smv_to_tptp.ml" 669 18592 18637 "smv_to_tptp.ml" 669 18592 18640
+"smv_to_tptp.ml" 671 18581 18626 "smv_to_tptp.ml" 671 18581 18629
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref tl2 "smv_to_tptp.ml" 668 18566 18585 "smv_to_tptp.ml" 668 18566 18588
+  int_ref tl2 "smv_to_tptp.ml" 670 18555 18574 "smv_to_tptp.ml" 670 18555 18577
 )
-"smv_to_tptp.ml" 669 18592 18641 "smv_to_tptp.ml" 669 18592 18646
+"smv_to_tptp.ml" 671 18581 18630 "smv_to_tptp.ml" 671 18581 18635
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref vars2 "smv_to_tptp.ml" 665 18468 18512 "smv_to_tptp.ml" 665 18468 18517
+  int_ref vars2 "smv_to_tptp.ml" 667 18457 18501 "smv_to_tptp.ml" 667 18457 18506
 )
-"smv_to_tptp.ml" 669 18592 18613 "smv_to_tptp.ml" 669 18592 18646
+"smv_to_tptp.ml" 671 18581 18602 "smv_to_tptp.ml" 671 18581 18635
 call(
   tail
 )
 type(
   Parsed.var_decl list list
 )
-"smv_to_tptp.ml" 670 18647 18657 "smv_to_tptp.ml" 670 18647 18675
+"smv_to_tptp.ml" 672 18636 18646 "smv_to_tptp.ml" 672 18636 18664
 type(
   Parsed.var_decl -> Parsed.var_decl list -> Parsed.var_decl list list
 )
 ident(
-  int_ref st_with_next_value "smv_to_tptp.ml" 652 18157 18165 "smv_to_tptp.ml" 652 18157 18183
+  int_ref st_with_next_value "smv_to_tptp.ml" 653 18145 18153 "smv_to_tptp.ml" 653 18145 18171
 )
-"smv_to_tptp.ml" 670 18647 18676 "smv_to_tptp.ml" 670 18647 18678
+"smv_to_tptp.ml" 672 18636 18665 "smv_to_tptp.ml" 672 18636 18667
 type(
   Parsed.var_decl
 )
 ident(
-  int_ref h2 "smv_to_tptp.ml" 668 18566 18581 "smv_to_tptp.ml" 668 18566 18583
+  int_ref h2 "smv_to_tptp.ml" 670 18555 18570 "smv_to_tptp.ml" 670 18555 18572
 )
-"smv_to_tptp.ml" 670 18647 18679 "smv_to_tptp.ml" 670 18647 18684
+"smv_to_tptp.ml" 672 18636 18668 "smv_to_tptp.ml" 672 18636 18673
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref vars2 "smv_to_tptp.ml" 665 18468 18512 "smv_to_tptp.ml" 665 18468 18517
+  int_ref vars2 "smv_to_tptp.ml" 667 18457 18501 "smv_to_tptp.ml" 667 18457 18506
 )
-"smv_to_tptp.ml" 670 18647 18657 "smv_to_tptp.ml" 670 18647 18684
+"smv_to_tptp.ml" 672 18636 18646 "smv_to_tptp.ml" 672 18636 18673
 call(
   tail
 )
 type(
   Parsed.var_decl list list
 )
-"smv_to_tptp.ml" 669 18592 18597 "smv_to_tptp.ml" 670 18647 18684
+"smv_to_tptp.ml" 671 18581 18586 "smv_to_tptp.ml" 672 18636 18673
 type(
   Parsed.var_decl list list
 )
-"smv_to_tptp.ml" 671 18685 18689 "smv_to_tptp.ml" 671 18685 18690
+"smv_to_tptp.ml" 673 18674 18678 "smv_to_tptp.ml" 673 18674 18679
 type(
   Parsed.var_decl list
 )
-"smv_to_tptp.ml" 671 18685 18692 "smv_to_tptp.ml" 671 18685 18693
+"smv_to_tptp.ml" 673 18674 18681 "smv_to_tptp.ml" 673 18674 18682
 type(
   Parsed.var_decl list
 )
-"smv_to_tptp.ml" 671 18685 18689 "smv_to_tptp.ml" 671 18685 18693
+"smv_to_tptp.ml" 673 18674 18678 "smv_to_tptp.ml" 673 18674 18682
 type(
   Parsed.var_decl list * Parsed.var_decl list
 )
-"smv_to_tptp.ml" 671 18685 18697 "smv_to_tptp.ml" 671 18685 18702
+"smv_to_tptp.ml" 673 18674 18686 "smv_to_tptp.ml" 673 18674 18691
 type(
   exn -> Parsed.var_decl list list
 )
 ident(
   ext_ref Pervasives.raise
 )
-"smv_to_tptp.ml" 671 18685 18704 "smv_to_tptp.ml" 671 18685 18731
+"smv_to_tptp.ml" 673 18674 18692 "smv_to_tptp.ml" 673 18674 18719
 type(
   exn
 )
-"smv_to_tptp.ml" 671 18685 18697 "smv_to_tptp.ml" 671 18685 18731
+"smv_to_tptp.ml" 673 18674 18686 "smv_to_tptp.ml" 673 18674 18719
 type(
   Parsed.var_decl list list
 )
-"smv_to_tptp.ml" 666 18519 18521 "smv_to_tptp.ml" 671 18685 18731
+"smv_to_tptp.ml" 668 18508 18510 "smv_to_tptp.ml" 673 18674 18719
 type(
   Parsed.var_decl list list
 )
-"smv_to_tptp.ml" 673 18733 18741 "smv_to_tptp.ml" 673 18733 18753
+"smv_to_tptp.ml" 675 18721 18729 "smv_to_tptp.ml" 675 18721 18741
 type(
   Parsed.var_decl list list -> string list list -> unit
 )
 ident(
-  def print_eqs_st "smv_to_tptp.ml" 673 18733 18733 "smv_to_tptp.ml" 1 0 -1
+  def print_eqs_st "smv_to_tptp.ml" 675 18721 18721 "smv_to_tptp.ml" 1 0 -1
 )
-"smv_to_tptp.ml" 673 18733 18754 "smv_to_tptp.ml" 673 18733 18772
+"smv_to_tptp.ml" 675 18721 18742 "smv_to_tptp.ml" 675 18721 18760
 type(
   Parsed.var_decl list list
 )
 ident(
-  def vars_with_nxt_vals "smv_to_tptp.ml" 673 18733 18773 "smv_to_tptp.ml" 686 19120 19136
+  def vars_with_nxt_vals "smv_to_tptp.ml" 675 18721 18761 "smv_to_tptp.ml" 688 19108 19124
 )
-"smv_to_tptp.ml" 673 18733 18773 "smv_to_tptp.ml" 673 18733 18784
+"smv_to_tptp.ml" 675 18721 18761 "smv_to_tptp.ml" 675 18721 18772
 type(
   string list list
 )
 ident(
-  def next_st_lst "smv_to_tptp.ml" 674 18787 18789 "smv_to_tptp.ml" 686 19120 19136
+  def next_st_lst "smv_to_tptp.ml" 676 18775 18777 "smv_to_tptp.ml" 688 19108 19124
 )
-"smv_to_tptp.ml" 674 18787 18795 "smv_to_tptp.ml" 674 18787 18813
+"smv_to_tptp.ml" 676 18775 18783 "smv_to_tptp.ml" 676 18775 18801
 type(
   Parsed.var_decl list list
 )
 ident(
-  int_ref vars_with_nxt_vals "smv_to_tptp.ml" 673 18733 18754 "smv_to_tptp.ml" 673 18733 18772
+  int_ref vars_with_nxt_vals "smv_to_tptp.ml" 675 18721 18742 "smv_to_tptp.ml" 675 18721 18760
 )
-"smv_to_tptp.ml" 674 18787 18815 "smv_to_tptp.ml" 674 18787 18826
+"smv_to_tptp.ml" 676 18775 18803 "smv_to_tptp.ml" 676 18775 18814
 type(
   string list list
 )
 ident(
-  int_ref next_st_lst "smv_to_tptp.ml" 673 18733 18773 "smv_to_tptp.ml" 673 18733 18784
+  int_ref next_st_lst "smv_to_tptp.ml" 675 18721 18761 "smv_to_tptp.ml" 675 18721 18772
 )
-"smv_to_tptp.ml" 674 18787 18795 "smv_to_tptp.ml" 674 18787 18826
+"smv_to_tptp.ml" 676 18775 18783 "smv_to_tptp.ml" 676 18775 18814
 type(
   Parsed.var_decl list list * string list list
 )
-"smv_to_tptp.ml" 675 18832 18836 "smv_to_tptp.ml" 675 18832 18838
+"smv_to_tptp.ml" 677 18820 18824 "smv_to_tptp.ml" 677 18820 18826
 type(
   Parsed.var_decl list
 )
 ident(
-  def h1 "smv_to_tptp.ml" 676 18857 18862 "smv_to_tptp.ml" 683 19066 19074
+  def h1 "smv_to_tptp.ml" 678 18845 18850 "smv_to_tptp.ml" 685 19054 19062
 )
-"smv_to_tptp.ml" 675 18832 18840 "smv_to_tptp.ml" 675 18832 18843
+"smv_to_tptp.ml" 677 18820 18828 "smv_to_tptp.ml" 677 18820 18831
 type(
   Parsed.var_decl list list
 )
 ident(
-  def tl1 "smv_to_tptp.ml" 676 18857 18862 "smv_to_tptp.ml" 683 19066 19074
+  def tl1 "smv_to_tptp.ml" 678 18845 18850 "smv_to_tptp.ml" 685 19054 19062
 )
-"smv_to_tptp.ml" 675 18832 18836 "smv_to_tptp.ml" 675 18832 18843
+"smv_to_tptp.ml" 677 18820 18824 "smv_to_tptp.ml" 677 18820 18831
 type(
   Parsed.var_decl list list
 )
-"smv_to_tptp.ml" 675 18832 18845 "smv_to_tptp.ml" 675 18832 18847
+"smv_to_tptp.ml" 677 18820 18833 "smv_to_tptp.ml" 677 18820 18835
 type(
   string list
 )
 ident(
-  def h2 "smv_to_tptp.ml" 676 18857 18862 "smv_to_tptp.ml" 683 19066 19074
+  def h2 "smv_to_tptp.ml" 678 18845 18850 "smv_to_tptp.ml" 685 19054 19062
 )
-"smv_to_tptp.ml" 675 18832 18849 "smv_to_tptp.ml" 675 18832 18852
+"smv_to_tptp.ml" 677 18820 18837 "smv_to_tptp.ml" 677 18820 18840
 type(
   string list list
 )
 ident(
-  def tl2 "smv_to_tptp.ml" 676 18857 18862 "smv_to_tptp.ml" 683 19066 19074
+  def tl2 "smv_to_tptp.ml" 678 18845 18850 "smv_to_tptp.ml" 685 19054 19062
 )
-"smv_to_tptp.ml" 675 18832 18845 "smv_to_tptp.ml" 675 18832 18852
+"smv_to_tptp.ml" 677 18820 18833 "smv_to_tptp.ml" 677 18820 18840
 type(
   string list list
 )
-"smv_to_tptp.ml" 675 18832 18836 "smv_to_tptp.ml" 675 18832 18852
+"smv_to_tptp.ml" 677 18820 18824 "smv_to_tptp.ml" 677 18820 18840
 type(
   Parsed.var_decl list list * string list list
 )
-"smv_to_tptp.ml" 677 18868 18875 "smv_to_tptp.ml" 677 18868 18887
+"smv_to_tptp.ml" 679 18856 18863 "smv_to_tptp.ml" 679 18856 18875
 type(
   string -> unit
 )
 ident(
   ext_ref Pervasives.print_string
 )
-"smv_to_tptp.ml" 677 18868 18888 "smv_to_tptp.ml" 677 18868 18916
+"smv_to_tptp.ml" 679 18856 18876 "smv_to_tptp.ml" 679 18856 18904
 type(
   string
 )
-"smv_to_tptp.ml" 677 18868 18875 "smv_to_tptp.ml" 677 18868 18916
+"smv_to_tptp.ml" 679 18856 18863 "smv_to_tptp.ml" 679 18856 18904
 call(
   stack
 )
 type(
   unit
 )
-"smv_to_tptp.ml" 678 18918 18925 "smv_to_tptp.ml" 678 18918 18936
+"smv_to_tptp.ml" 680 18906 18913 "smv_to_tptp.ml" 680 18906 18924
 type(
   Parsed.var_decl list -> unit
 )
 ident(
   int_ref state_shape "smv_to_tptp.ml" 280 8159 8163 "smv_to_tptp.ml" 280 8159 8174
 )
-"smv_to_tptp.ml" 678 18918 18937 "smv_to_tptp.ml" 678 18918 18939
+"smv_to_tptp.ml" 680 18906 18925 "smv_to_tptp.ml" 680 18906 18927
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref h1 "smv_to_tptp.ml" 675 18832 18836 "smv_to_tptp.ml" 675 18832 18838
+  int_ref h1 "smv_to_tptp.ml" 677 18820 18824 "smv_to_tptp.ml" 677 18820 18826
 )
-"smv_to_tptp.ml" 678 18918 18925 "smv_to_tptp.ml" 678 18918 18939
+"smv_to_tptp.ml" 680 18906 18913 "smv_to_tptp.ml" 680 18906 18927
 call(
   stack
 )
 type(
   unit
 )
-"smv_to_tptp.ml" 679 18941 18948 "smv_to_tptp.ml" 679 18941 18960
+"smv_to_tptp.ml" 681 18929 18936 "smv_to_tptp.ml" 681 18929 18948
 type(
   string -> unit
 )
 ident(
   ext_ref Pervasives.print_string
 )
-"smv_to_tptp.ml" 679 18941 18961 "smv_to_tptp.ml" 679 18941 18978
+"smv_to_tptp.ml" 681 18929 18949 "smv_to_tptp.ml" 681 18929 18966
 type(
   string
 )
-"smv_to_tptp.ml" 679 18941 18948 "smv_to_tptp.ml" 679 18941 18978
+"smv_to_tptp.ml" 681 18929 18936 "smv_to_tptp.ml" 681 18929 18966
 call(
   stack
 )
 type(
   unit
 )
-"smv_to_tptp.ml" 680 18980 18987 "smv_to_tptp.ml" 680 18980 19001
+"smv_to_tptp.ml" 682 18968 18975 "smv_to_tptp.ml" 682 18968 18989
 type(
   string list -> unit
 )
 ident(
   int_ref print_var_list "smv_to_tptp.ml" 435 12475 12483 "smv_to_tptp.ml" 435 12475 12497
 )
-"smv_to_tptp.ml" 680 18980 19002 "smv_to_tptp.ml" 680 18980 19004
+"smv_to_tptp.ml" 682 18968 18990 "smv_to_tptp.ml" 682 18968 18992
 type(
   string list
 )
 ident(
-  int_ref h2 "smv_to_tptp.ml" 675 18832 18845 "smv_to_tptp.ml" 675 18832 18847
+  int_ref h2 "smv_to_tptp.ml" 677 18820 18833 "smv_to_tptp.ml" 677 18820 18835
 )
-"smv_to_tptp.ml" 680 18980 18987 "smv_to_tptp.ml" 680 18980 19004
+"smv_to_tptp.ml" 682 18968 18975 "smv_to_tptp.ml" 682 18968 18992
 call(
   stack
 )
 type(
   unit
 )
-"smv_to_tptp.ml" 681 19006 19013 "smv_to_tptp.ml" 681 19006 19025
+"smv_to_tptp.ml" 683 18994 19001 "smv_to_tptp.ml" 683 18994 19013
 type(
   string -> unit
 )
 ident(
   ext_ref Pervasives.print_string
 )
-"smv_to_tptp.ml" 681 19006 19026 "smv_to_tptp.ml" 681 19006 19036
+"smv_to_tptp.ml" 683 18994 19014 "smv_to_tptp.ml" 683 18994 19024
 type(
   string
 )
-"smv_to_tptp.ml" 681 19006 19013 "smv_to_tptp.ml" 681 19006 19036
+"smv_to_tptp.ml" 683 18994 19001 "smv_to_tptp.ml" 683 18994 19024
 call(
   stack
 )
 type(
   unit
 )
-"smv_to_tptp.ml" 682 19038 19045 "smv_to_tptp.ml" 682 19038 19057
+"smv_to_tptp.ml" 684 19026 19033 "smv_to_tptp.ml" 684 19026 19045
 type(
   Parsed.var_decl list list -> string list list -> unit
 )
 ident(
-  int_ref print_eqs_st "smv_to_tptp.ml" 673 18733 18741 "smv_to_tptp.ml" 673 18733 18753
+  int_ref print_eqs_st "smv_to_tptp.ml" 675 18721 18729 "smv_to_tptp.ml" 675 18721 18741
 )
-"smv_to_tptp.ml" 682 19038 19058 "smv_to_tptp.ml" 682 19038 19061
+"smv_to_tptp.ml" 684 19026 19046 "smv_to_tptp.ml" 684 19026 19049
 type(
   Parsed.var_decl list list
 )
 ident(
-  int_ref tl1 "smv_to_tptp.ml" 675 18832 18840 "smv_to_tptp.ml" 675 18832 18843
+  int_ref tl1 "smv_to_tptp.ml" 677 18820 18828 "smv_to_tptp.ml" 677 18820 18831
 )
-"smv_to_tptp.ml" 682 19038 19062 "smv_to_tptp.ml" 682 19038 19065
+"smv_to_tptp.ml" 684 19026 19050 "smv_to_tptp.ml" 684 19026 19053
 type(
   string list list
 )
 ident(
-  int_ref tl2 "smv_to_tptp.ml" 675 18832 18849 "smv_to_tptp.ml" 675 18832 18852
+  int_ref tl2 "smv_to_tptp.ml" 677 18820 18837 "smv_to_tptp.ml" 677 18820 18840
 )
-"smv_to_tptp.ml" 682 19038 19045 "smv_to_tptp.ml" 682 19038 19065
+"smv_to_tptp.ml" 684 19026 19033 "smv_to_tptp.ml" 684 19026 19053
 call(
   tail
 )
 type(
   unit
 )
-"smv_to_tptp.ml" 681 19006 19013 "smv_to_tptp.ml" 682 19038 19065
+"smv_to_tptp.ml" 683 18994 19001 "smv_to_tptp.ml" 684 19026 19053
 type(
   unit
 )
-"smv_to_tptp.ml" 680 18980 18987 "smv_to_tptp.ml" 682 19038 19065
+"smv_to_tptp.ml" 682 18968 18975 "smv_to_tptp.ml" 684 19026 19053
 type(
   unit
 )
-"smv_to_tptp.ml" 679 18941 18948 "smv_to_tptp.ml" 682 19038 19065
+"smv_to_tptp.ml" 681 18929 18936 "smv_to_tptp.ml" 684 19026 19053
 type(
   unit
 )
-"smv_to_tptp.ml" 678 18918 18925 "smv_to_tptp.ml" 682 19038 19065
+"smv_to_tptp.ml" 680 18906 18913 "smv_to_tptp.ml" 684 19026 19053
 type(
   unit
 )
-"smv_to_tptp.ml" 676 18857 18862 "smv_to_tptp.ml" 683 19066 19074
+"smv_to_tptp.ml" 678 18845 18850 "smv_to_tptp.ml" 685 19054 19062
 type(
   unit
 )
-"smv_to_tptp.ml" 684 19075 19079 "smv_to_tptp.ml" 684 19075 19081
+"smv_to_tptp.ml" 686 19063 19067 "smv_to_tptp.ml" 686 19063 19069
 type(
   Parsed.var_decl list
 )
 ident(
-  def h1 "smv_to_tptp.ml" 684 19075 19095 "smv_to_tptp.ml" 684 19075 19097
+  def h1 "smv_to_tptp.ml" 686 19063 19083 "smv_to_tptp.ml" 686 19063 19085
 )
-"smv_to_tptp.ml" 684 19075 19084 "smv_to_tptp.ml" 684 19075 19087
+"smv_to_tptp.ml" 686 19063 19072 "smv_to_tptp.ml" 686 19063 19075
 type(
   Parsed.var_decl list list
 )
 ident(
-  def tl1 "smv_to_tptp.ml" 684 19075 19095 "smv_to_tptp.ml" 684 19075 19097
+  def tl1 "smv_to_tptp.ml" 686 19063 19083 "smv_to_tptp.ml" 686 19063 19085
 )
-"smv_to_tptp.ml" 684 19075 19079 "smv_to_tptp.ml" 684 19075 19087
+"smv_to_tptp.ml" 686 19063 19067 "smv_to_tptp.ml" 686 19063 19075
 type(
   Parsed.var_decl list list
 )
-"smv_to_tptp.ml" 684 19075 19089 "smv_to_tptp.ml" 684 19075 19091
+"smv_to_tptp.ml" 686 19063 19077 "smv_to_tptp.ml" 686 19063 19079
 type(
   string list list
 )
-"smv_to_tptp.ml" 684 19075 19079 "smv_to_tptp.ml" 684 19075 19091
+"smv_to_tptp.ml" 686 19063 19067 "smv_to_tptp.ml" 686 19063 19079
 type(
   Parsed.var_decl list list * string list list
 )
-"smv_to_tptp.ml" 684 19075 19095 "smv_to_tptp.ml" 684 19075 19097
+"smv_to_tptp.ml" 686 19063 19083 "smv_to_tptp.ml" 686 19063 19085
 type(
   unit
 )
-"smv_to_tptp.ml" 685 19098 19102 "smv_to_tptp.ml" 685 19098 19104
+"smv_to_tptp.ml" 687 19086 19090 "smv_to_tptp.ml" 687 19086 19092
 type(
   Parsed.var_decl list list
 )
-"smv_to_tptp.ml" 685 19098 19106 "smv_to_tptp.ml" 685 19098 19108
+"smv_to_tptp.ml" 687 19086 19094 "smv_to_tptp.ml" 687 19086 19096
 type(
   string list
 )
 ident(
-  def h2 "smv_to_tptp.ml" 685 19098 19117 "smv_to_tptp.ml" 685 19098 19119
+  def h2 "smv_to_tptp.ml" 687 19086 19105 "smv_to_tptp.ml" 687 19086 19107
 )
-"smv_to_tptp.ml" 685 19098 19110 "smv_to_tptp.ml" 685 19098 19113
+"smv_to_tptp.ml" 687 19086 19098 "smv_to_tptp.ml" 687 19086 19101
 type(
   string list list
 )
 ident(
-  def tl2 "smv_to_tptp.ml" 685 19098 19117 "smv_to_tptp.ml" 685 19098 19119
+  def tl2 "smv_to_tptp.ml" 687 19086 19105 "smv_to_tptp.ml" 687 19086 19107
 )
-"smv_to_tptp.ml" 685 19098 19106 "smv_to_tptp.ml" 685 19098 19113
+"smv_to_tptp.ml" 687 19086 19094 "smv_to_tptp.ml" 687 19086 19101
 type(
   string list list
 )
-"smv_to_tptp.ml" 685 19098 19102 "smv_to_tptp.ml" 685 19098 19113
+"smv_to_tptp.ml" 687 19086 19090 "smv_to_tptp.ml" 687 19086 19101
 type(
   Parsed.var_decl list list * string list list
 )
-"smv_to_tptp.ml" 685 19098 19117 "smv_to_tptp.ml" 685 19098 19119
+"smv_to_tptp.ml" 687 19086 19105 "smv_to_tptp.ml" 687 19086 19107
 type(
   unit
 )
-"smv_to_tptp.ml" 686 19120 19124 "smv_to_tptp.ml" 686 19120 19126
+"smv_to_tptp.ml" 688 19108 19112 "smv_to_tptp.ml" 688 19108 19114
 type(
   Parsed.var_decl list list
 )
-"smv_to_tptp.ml" 686 19120 19128 "smv_to_tptp.ml" 686 19120 19130
+"smv_to_tptp.ml" 688 19108 19116 "smv_to_tptp.ml" 688 19108 19118
 type(
   string list list
 )
-"smv_to_tptp.ml" 686 19120 19124 "smv_to_tptp.ml" 686 19120 19130
+"smv_to_tptp.ml" 688 19108 19112 "smv_to_tptp.ml" 688 19108 19118
 type(
   Parsed.var_decl list list * string list list
 )
-"smv_to_tptp.ml" 686 19120 19134 "smv_to_tptp.ml" 686 19120 19136
+"smv_to_tptp.ml" 688 19108 19122 "smv_to_tptp.ml" 688 19108 19124
 type(
   unit
 )
-"smv_to_tptp.ml" 674 18787 18789 "smv_to_tptp.ml" 686 19120 19136
+"smv_to_tptp.ml" 676 18775 18777 "smv_to_tptp.ml" 688 19108 19124
 type(
   unit
 )
-"smv_to_tptp.ml" 689 19145 19149 "smv_to_tptp.ml" 689 19145 19155
+"smv_to_tptp.ml" 691 19133 19137 "smv_to_tptp.ml" 691 19133 19143
 type(
   Parsed.var_decl list -> Parsed.assign list list -> unit
 )
 ident(
-  def st_eqs "smv_to_tptp.ml" 703 19671 19671 "smv_to_tptp.ml" 1 0 -1
+  def st_eqs "smv_to_tptp.ml" 705 19664 19664 "smv_to_tptp.ml" 1 0 -1
 )
-"smv_to_tptp.ml" 689 19145 19156 "smv_to_tptp.ml" 689 19145 19160
+"smv_to_tptp.ml" 691 19133 19144 "smv_to_tptp.ml" 691 19133 19148
 type(
   Parsed.var_decl list
 )
 ident(
-  def vars "smv_to_tptp.ml" 689 19145 19161 "smv_to_tptp.ml" 700 19617 19668
+  def vars "smv_to_tptp.ml" 691 19133 19149 "smv_to_tptp.ml" 702 19610 19661
 )
-"smv_to_tptp.ml" 689 19145 19161 "smv_to_tptp.ml" 689 19145 19172
+"smv_to_tptp.ml" 691 19133 19149 "smv_to_tptp.ml" 691 19133 19160
 type(
   Parsed.assign list list
 )
 ident(
-  def succ_assigs "smv_to_tptp.ml" 690 19175 19177 "smv_to_tptp.ml" 700 19617 19668
+  def succ_assigs "smv_to_tptp.ml" 692 19163 19165 "smv_to_tptp.ml" 702 19610 19661
 )
-"smv_to_tptp.ml" 690 19175 19181 "smv_to_tptp.ml" 690 19175 19194
+"smv_to_tptp.ml" 692 19163 19169 "smv_to_tptp.ml" 692 19163 19182
 type(
   Parsed.var_decl list list
 )
 ident(
-  def next_vars_lst "smv_to_tptp.ml" 691 19229 19231 "smv_to_tptp.ml" 700 19617 19668
+  def next_vars_lst "smv_to_tptp.ml" 693 19217 19219 "smv_to_tptp.ml" 702 19610 19661
 )
-"smv_to_tptp.ml" 690 19175 19197 "smv_to_tptp.ml" 690 19175 19208
+"smv_to_tptp.ml" 692 19163 19185 "smv_to_tptp.ml" 692 19163 19196
 type(
   Parsed.var_decl list ->
   Parsed.assign list list -> Parsed.var_decl list list
@@ -16237,397 +16219,405 @@ type(
 ident(
   int_ref r_with_case "smv_to_tptp.ml" 523 14737 14745 "smv_to_tptp.ml" 523 14737 14756
 )
-"smv_to_tptp.ml" 690 19175 19209 "smv_to_tptp.ml" 690 19175 19213
+"smv_to_tptp.ml" 692 19163 19197 "smv_to_tptp.ml" 692 19163 19201
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref vars "smv_to_tptp.ml" 689 19145 19156 "smv_to_tptp.ml" 689 19145 19160
+  int_ref vars "smv_to_tptp.ml" 691 19133 19144 "smv_to_tptp.ml" 691 19133 19148
 )
-"smv_to_tptp.ml" 690 19175 19214 "smv_to_tptp.ml" 690 19175 19225
+"smv_to_tptp.ml" 692 19163 19202 "smv_to_tptp.ml" 692 19163 19213
 type(
   Parsed.assign list list
 )
 ident(
-  int_ref succ_assigs "smv_to_tptp.ml" 689 19145 19161 "smv_to_tptp.ml" 689 19145 19172
+  int_ref succ_assigs "smv_to_tptp.ml" 691 19133 19149 "smv_to_tptp.ml" 691 19133 19160
 )
-"smv_to_tptp.ml" 690 19175 19197 "smv_to_tptp.ml" 690 19175 19225
+"smv_to_tptp.ml" 692 19163 19185 "smv_to_tptp.ml" 692 19163 19213
 call(
   stack
 )
 type(
   Parsed.var_decl list list
 )
-"smv_to_tptp.ml" 691 19229 19239 "smv_to_tptp.ml" 691 19229 19251
+"smv_to_tptp.ml" 693 19217 19227 "smv_to_tptp.ml" 693 19217 19239
 type(
   Parsed.var_decl list ->
   Parsed.var_decl list list * Parsed.assign list list -> unit
 )
 ident(
-  def st_eqs_print "smv_to_tptp.ml" 691 19229 19231 "smv_to_tptp.ml" 700 19617 19668
+  def st_eqs_print "smv_to_tptp.ml" 693 19217 19219 "smv_to_tptp.ml" 702 19610 19661
 )
-"smv_to_tptp.ml" 691 19229 19252 "smv_to_tptp.ml" 691 19229 19256
+"smv_to_tptp.ml" 693 19217 19240 "smv_to_tptp.ml" 693 19217 19244
 type(
   Parsed.var_decl list
 )
 ident(
-  def vars "smv_to_tptp.ml" 691 19229 19257 "smv_to_tptp.ml" 699 19601 19616
+  def vars "smv_to_tptp.ml" 693 19217 19245 "smv_to_tptp.ml" 701 19594 19609
 )
-"smv_to_tptp.ml" 691 19229 19258 "smv_to_tptp.ml" 691 19229 19271
+"smv_to_tptp.ml" 693 19217 19246 "smv_to_tptp.ml" 693 19217 19259
 type(
   Parsed.var_decl list list
 )
 ident(
-  def next_var_list "smv_to_tptp.ml" 692 19288 19292 "smv_to_tptp.ml" 699 19601 19616
+  def next_var_list "smv_to_tptp.ml" 694 19276 19280 "smv_to_tptp.ml" 701 19594 19609
 )
-"smv_to_tptp.ml" 691 19229 19273 "smv_to_tptp.ml" 691 19229 19284
+"smv_to_tptp.ml" 693 19217 19261 "smv_to_tptp.ml" 693 19217 19272
 type(
   Parsed.assign list list
 )
 ident(
-  def succ_assigs "smv_to_tptp.ml" 692 19288 19292 "smv_to_tptp.ml" 699 19601 19616
+  def succ_assigs "smv_to_tptp.ml" 694 19276 19280 "smv_to_tptp.ml" 701 19594 19609
 )
-"smv_to_tptp.ml" 691 19229 19257 "smv_to_tptp.ml" 691 19229 19285
+"smv_to_tptp.ml" 693 19217 19245 "smv_to_tptp.ml" 693 19217 19273
 type(
   Parsed.var_decl list list * Parsed.assign list list
 )
-"smv_to_tptp.ml" 692 19288 19298 "smv_to_tptp.ml" 692 19288 19311
+"smv_to_tptp.ml" 694 19276 19286 "smv_to_tptp.ml" 694 19276 19299
 type(
   Parsed.var_decl list list
 )
 ident(
-  int_ref next_var_list "smv_to_tptp.ml" 691 19229 19258 "smv_to_tptp.ml" 691 19229 19271
+  int_ref next_var_list "smv_to_tptp.ml" 693 19217 19246 "smv_to_tptp.ml" 693 19217 19259
 )
-"smv_to_tptp.ml" 692 19288 19313 "smv_to_tptp.ml" 692 19288 19324
+"smv_to_tptp.ml" 694 19276 19301 "smv_to_tptp.ml" 694 19276 19312
 type(
   Parsed.assign list list
 )
 ident(
-  int_ref succ_assigs "smv_to_tptp.ml" 691 19229 19273 "smv_to_tptp.ml" 691 19229 19284
+  int_ref succ_assigs "smv_to_tptp.ml" 693 19217 19261 "smv_to_tptp.ml" 693 19217 19272
 )
-"smv_to_tptp.ml" 692 19288 19298 "smv_to_tptp.ml" 692 19288 19324
+"smv_to_tptp.ml" 694 19276 19286 "smv_to_tptp.ml" 694 19276 19312
 type(
   Parsed.var_decl list list * Parsed.assign list list
 )
-"smv_to_tptp.ml" 693 19330 19336 "smv_to_tptp.ml" 693 19330 19338
+"smv_to_tptp.ml" 695 19318 19324 "smv_to_tptp.ml" 695 19318 19326
 type(
   Parsed.var_decl list list
 )
-"smv_to_tptp.ml" 693 19330 19340 "smv_to_tptp.ml" 693 19330 19342
+"smv_to_tptp.ml" 695 19318 19328 "smv_to_tptp.ml" 695 19318 19330
 type(
   Parsed.assign list list
 )
-"smv_to_tptp.ml" 693 19330 19336 "smv_to_tptp.ml" 693 19330 19342
+"smv_to_tptp.ml" 695 19318 19324 "smv_to_tptp.ml" 695 19318 19330
 type(
   Parsed.var_decl list list * Parsed.assign list list
 )
-"smv_to_tptp.ml" 693 19330 19346 "smv_to_tptp.ml" 693 19330 19348
+"smv_to_tptp.ml" 695 19318 19334 "smv_to_tptp.ml" 695 19318 19336
 type(
   unit
 )
-"smv_to_tptp.ml" 694 19349 19355 "smv_to_tptp.ml" 694 19349 19357
+"smv_to_tptp.ml" 696 19337 19343 "smv_to_tptp.ml" 696 19337 19345
 type(
   Parsed.var_decl list
 )
 ident(
-  def h1 "smv_to_tptp.ml" 695 19377 19384 "smv_to_tptp.ml" 698 19565 19600
+  def h1 "smv_to_tptp.ml" 697 19365 19372 "smv_to_tptp.ml" 700 19558 19593
 )
-"smv_to_tptp.ml" 694 19349 19361 "smv_to_tptp.ml" 694 19349 19364
+"smv_to_tptp.ml" 696 19337 19349 "smv_to_tptp.ml" 696 19337 19352
 type(
   Parsed.var_decl list list
 )
 ident(
-  def tl1 "smv_to_tptp.ml" 695 19377 19384 "smv_to_tptp.ml" 698 19565 19600
+  def tl1 "smv_to_tptp.ml" 697 19365 19372 "smv_to_tptp.ml" 700 19558 19593
 )
-"smv_to_tptp.ml" 694 19349 19355 "smv_to_tptp.ml" 694 19349 19364
+"smv_to_tptp.ml" 696 19337 19343 "smv_to_tptp.ml" 696 19337 19352
 type(
   Parsed.var_decl list list
 )
-"smv_to_tptp.ml" 694 19349 19366 "smv_to_tptp.ml" 694 19349 19368
+"smv_to_tptp.ml" 696 19337 19354 "smv_to_tptp.ml" 696 19337 19356
 type(
   Parsed.assign list
 )
 ident(
-  def h2 "smv_to_tptp.ml" 695 19377 19384 "smv_to_tptp.ml" 698 19565 19600
+  def h2 "smv_to_tptp.ml" 697 19365 19372 "smv_to_tptp.ml" 700 19558 19593
 )
-"smv_to_tptp.ml" 694 19349 19370 "smv_to_tptp.ml" 694 19349 19373
+"smv_to_tptp.ml" 696 19337 19358 "smv_to_tptp.ml" 696 19337 19361
 type(
   Parsed.assign list list
 )
 ident(
-  def tl2 "smv_to_tptp.ml" 695 19377 19384 "smv_to_tptp.ml" 698 19565 19600
+  def tl2 "smv_to_tptp.ml" 697 19365 19372 "smv_to_tptp.ml" 700 19558 19593
 )
-"smv_to_tptp.ml" 694 19349 19366 "smv_to_tptp.ml" 694 19349 19373
+"smv_to_tptp.ml" 696 19337 19354 "smv_to_tptp.ml" 696 19337 19361
 type(
   Parsed.assign list list
 )
-"smv_to_tptp.ml" 694 19349 19355 "smv_to_tptp.ml" 694 19349 19373
+"smv_to_tptp.ml" 696 19337 19343 "smv_to_tptp.ml" 696 19337 19361
 type(
   Parsed.var_decl list list * Parsed.assign list list
 )
-"smv_to_tptp.ml" 695 19377 19388 "smv_to_tptp.ml" 695 19377 19406
+"smv_to_tptp.ml" 697 19365 19376 "smv_to_tptp.ml" 697 19365 19394
 type(
   Parsed.var_decl list list
 )
 ident(
-  def vars_with_nxt_vals "smv_to_tptp.ml" 696 19447 19454 "smv_to_tptp.ml" 698 19565 19600
+  def vars_with_nxt_vals "smv_to_tptp.ml" 698 19435 19442 "smv_to_tptp.ml" 700 19558 19593
 )
-"smv_to_tptp.ml" 695 19377 19409 "smv_to_tptp.ml" 695 19377 19428
+"smv_to_tptp.ml" 697 19365 19397 "smv_to_tptp.ml" 697 19365 19416
 type(
   Parsed.var_decl list ->
   Parsed.var_decl list -> Parsed.var_decl list -> Parsed.var_decl list list
 )
 ident(
-  int_ref st_with_next_values "smv_to_tptp.ml" 665 18468 18476 "smv_to_tptp.ml" 665 18468 18495
+  int_ref st_with_next_values "smv_to_tptp.ml" 667 18457 18465 "smv_to_tptp.ml" 667 18457 18484
 )
-"smv_to_tptp.ml" 695 19377 19429 "smv_to_tptp.ml" 695 19377 19431
+"smv_to_tptp.ml" 697 19365 19417 "smv_to_tptp.ml" 697 19365 19419
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref h1 "smv_to_tptp.ml" 694 19349 19355 "smv_to_tptp.ml" 694 19349 19357
+  int_ref h1 "smv_to_tptp.ml" 696 19337 19343 "smv_to_tptp.ml" 696 19337 19345
 )
-"smv_to_tptp.ml" 695 19377 19432 "smv_to_tptp.ml" 695 19377 19436
+"smv_to_tptp.ml" 697 19365 19420 "smv_to_tptp.ml" 697 19365 19424
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref vars "smv_to_tptp.ml" 691 19229 19252 "smv_to_tptp.ml" 691 19229 19256
+  int_ref vars "smv_to_tptp.ml" 693 19217 19240 "smv_to_tptp.ml" 693 19217 19244
 )
-"smv_to_tptp.ml" 695 19377 19437 "smv_to_tptp.ml" 695 19377 19441
+"smv_to_tptp.ml" 697 19365 19425 "smv_to_tptp.ml" 697 19365 19429
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref vars "smv_to_tptp.ml" 691 19229 19252 "smv_to_tptp.ml" 691 19229 19256
+  int_ref vars "smv_to_tptp.ml" 693 19217 19240 "smv_to_tptp.ml" 693 19217 19244
 )
-"smv_to_tptp.ml" 695 19377 19409 "smv_to_tptp.ml" 695 19377 19441
+"smv_to_tptp.ml" 697 19365 19397 "smv_to_tptp.ml" 697 19365 19429
 call(
   stack
 )
 type(
   Parsed.var_decl list list
 )
-"smv_to_tptp.ml" 696 19447 19458 "smv_to_tptp.ml" 696 19447 19469
+"smv_to_tptp.ml" 698 19435 19446 "smv_to_tptp.ml" 698 19435 19457
 type(
   Parsed.var list list
 )
 ident(
-  def next_st_lst "smv_to_tptp.ml" 697 19513 19520 "smv_to_tptp.ml" 698 19565 19600
+  def next_st_lst "smv_to_tptp.ml" 699 19506 19513 "smv_to_tptp.ml" 700 19558 19593
 )
-"smv_to_tptp.ml" 696 19447 19472 "smv_to_tptp.ml" 696 19447 19498
+"smv_to_tptp.ml" 698 19435 19460 "smv_to_tptp.ml" 698 19435 19486
 type(
+  Parsed.var_decl list ->
   Parsed.var_decl list ->
   Parsed.var_decl list -> Parsed.assign list -> Parsed.var list list
 )
 ident(
   int_ref st_eqs_for_each_elem_value "smv_to_tptp.ml" 621 17250 17258 "smv_to_tptp.ml" 621 17250 17284
 )
-"smv_to_tptp.ml" 696 19447 19499 "smv_to_tptp.ml" 696 19447 19501
+"smv_to_tptp.ml" 698 19435 19487 "smv_to_tptp.ml" 698 19435 19489
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref h1 "smv_to_tptp.ml" 694 19349 19355 "smv_to_tptp.ml" 694 19349 19357
+  int_ref h1 "smv_to_tptp.ml" 696 19337 19343 "smv_to_tptp.ml" 696 19337 19345
 )
-"smv_to_tptp.ml" 696 19447 19502 "smv_to_tptp.ml" 696 19447 19506
+"smv_to_tptp.ml" 698 19435 19490 "smv_to_tptp.ml" 698 19435 19494
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref vars "smv_to_tptp.ml" 691 19229 19252 "smv_to_tptp.ml" 691 19229 19256
+  int_ref vars "smv_to_tptp.ml" 693 19217 19240 "smv_to_tptp.ml" 693 19217 19244
 )
-"smv_to_tptp.ml" 696 19447 19507 "smv_to_tptp.ml" 696 19447 19509
+"smv_to_tptp.ml" 698 19435 19495 "smv_to_tptp.ml" 698 19435 19499
+type(
+  Parsed.var_decl list
+)
+ident(
+  int_ref vars "smv_to_tptp.ml" 693 19217 19240 "smv_to_tptp.ml" 693 19217 19244
+)
+"smv_to_tptp.ml" 698 19435 19500 "smv_to_tptp.ml" 698 19435 19502
 type(
   Parsed.assign list
 )
 ident(
-  int_ref h2 "smv_to_tptp.ml" 694 19349 19366 "smv_to_tptp.ml" 694 19349 19368
+  int_ref h2 "smv_to_tptp.ml" 696 19337 19354 "smv_to_tptp.ml" 696 19337 19356
 )
-"smv_to_tptp.ml" 696 19447 19472 "smv_to_tptp.ml" 696 19447 19509
+"smv_to_tptp.ml" 698 19435 19460 "smv_to_tptp.ml" 698 19435 19502
 call(
   stack
 )
 type(
   Parsed.var list list
 )
-"smv_to_tptp.ml" 697 19513 19520 "smv_to_tptp.ml" 697 19513 19532
+"smv_to_tptp.ml" 699 19506 19513 "smv_to_tptp.ml" 699 19506 19525
 type(
   Parsed.var_decl list list -> Parsed.var list list -> unit
 )
 ident(
-  int_ref print_eqs_st "smv_to_tptp.ml" 673 18733 18741 "smv_to_tptp.ml" 673 18733 18753
+  int_ref print_eqs_st "smv_to_tptp.ml" 675 18721 18729 "smv_to_tptp.ml" 675 18721 18741
 )
-"smv_to_tptp.ml" 697 19513 19533 "smv_to_tptp.ml" 697 19513 19551
+"smv_to_tptp.ml" 699 19506 19526 "smv_to_tptp.ml" 699 19506 19544
 type(
   Parsed.var_decl list list
 )
 ident(
-  int_ref vars_with_nxt_vals "smv_to_tptp.ml" 695 19377 19388 "smv_to_tptp.ml" 695 19377 19406
+  int_ref vars_with_nxt_vals "smv_to_tptp.ml" 697 19365 19376 "smv_to_tptp.ml" 697 19365 19394
 )
-"smv_to_tptp.ml" 697 19513 19552 "smv_to_tptp.ml" 697 19513 19563
+"smv_to_tptp.ml" 699 19506 19545 "smv_to_tptp.ml" 699 19506 19556
 type(
   Parsed.var list list
 )
 ident(
-  int_ref next_st_lst "smv_to_tptp.ml" 696 19447 19458 "smv_to_tptp.ml" 696 19447 19469
+  int_ref next_st_lst "smv_to_tptp.ml" 698 19435 19446 "smv_to_tptp.ml" 698 19435 19457
 )
-"smv_to_tptp.ml" 697 19513 19520 "smv_to_tptp.ml" 697 19513 19563
+"smv_to_tptp.ml" 699 19506 19513 "smv_to_tptp.ml" 699 19506 19556
 call(
   stack
 )
 type(
   unit
 )
-"smv_to_tptp.ml" 698 19565 19572 "smv_to_tptp.ml" 698 19565 19584
+"smv_to_tptp.ml" 700 19558 19565 "smv_to_tptp.ml" 700 19558 19577
 type(
   Parsed.var_decl list ->
   Parsed.var_decl list list * Parsed.assign list list -> unit
 )
 ident(
-  int_ref st_eqs_print "smv_to_tptp.ml" 691 19229 19239 "smv_to_tptp.ml" 691 19229 19251
+  int_ref st_eqs_print "smv_to_tptp.ml" 693 19217 19227 "smv_to_tptp.ml" 693 19217 19239
 )
-"smv_to_tptp.ml" 698 19565 19585 "smv_to_tptp.ml" 698 19565 19589
+"smv_to_tptp.ml" 700 19558 19578 "smv_to_tptp.ml" 700 19558 19582
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref vars "smv_to_tptp.ml" 691 19229 19252 "smv_to_tptp.ml" 691 19229 19256
+  int_ref vars "smv_to_tptp.ml" 693 19217 19240 "smv_to_tptp.ml" 693 19217 19244
 )
-"smv_to_tptp.ml" 698 19565 19591 "smv_to_tptp.ml" 698 19565 19594
+"smv_to_tptp.ml" 700 19558 19584 "smv_to_tptp.ml" 700 19558 19587
 type(
   Parsed.var_decl list list
 )
 ident(
-  int_ref tl1 "smv_to_tptp.ml" 694 19349 19361 "smv_to_tptp.ml" 694 19349 19364
+  int_ref tl1 "smv_to_tptp.ml" 696 19337 19349 "smv_to_tptp.ml" 696 19337 19352
 )
-"smv_to_tptp.ml" 698 19565 19596 "smv_to_tptp.ml" 698 19565 19599
+"smv_to_tptp.ml" 700 19558 19589 "smv_to_tptp.ml" 700 19558 19592
 type(
   Parsed.assign list list
 )
 ident(
-  int_ref tl2 "smv_to_tptp.ml" 694 19349 19370 "smv_to_tptp.ml" 694 19349 19373
+  int_ref tl2 "smv_to_tptp.ml" 696 19337 19358 "smv_to_tptp.ml" 696 19337 19361
 )
-"smv_to_tptp.ml" 698 19565 19590 "smv_to_tptp.ml" 698 19565 19600
+"smv_to_tptp.ml" 700 19558 19583 "smv_to_tptp.ml" 700 19558 19593
 type(
   Parsed.var_decl list list * Parsed.assign list list
 )
-"smv_to_tptp.ml" 698 19565 19572 "smv_to_tptp.ml" 698 19565 19600
+"smv_to_tptp.ml" 700 19558 19565 "smv_to_tptp.ml" 700 19558 19593
 call(
   tail
 )
 type(
   unit
 )
-"smv_to_tptp.ml" 697 19513 19520 "smv_to_tptp.ml" 698 19565 19600
+"smv_to_tptp.ml" 699 19506 19513 "smv_to_tptp.ml" 700 19558 19593
 type(
   unit
 )
-"smv_to_tptp.ml" 696 19447 19454 "smv_to_tptp.ml" 698 19565 19600
+"smv_to_tptp.ml" 698 19435 19442 "smv_to_tptp.ml" 700 19558 19593
 type(
   unit
 )
-"smv_to_tptp.ml" 695 19377 19384 "smv_to_tptp.ml" 698 19565 19600
+"smv_to_tptp.ml" 697 19365 19372 "smv_to_tptp.ml" 700 19558 19593
 type(
   unit
 )
-"smv_to_tptp.ml" 699 19601 19607 "smv_to_tptp.ml" 699 19601 19608
+"smv_to_tptp.ml" 701 19594 19600 "smv_to_tptp.ml" 701 19594 19601
 type(
   Parsed.var_decl list list
 )
-"smv_to_tptp.ml" 699 19601 19609 "smv_to_tptp.ml" 699 19601 19610
+"smv_to_tptp.ml" 701 19594 19602 "smv_to_tptp.ml" 701 19594 19603
 type(
   Parsed.assign list list
 )
-"smv_to_tptp.ml" 699 19601 19607 "smv_to_tptp.ml" 699 19601 19610
+"smv_to_tptp.ml" 701 19594 19600 "smv_to_tptp.ml" 701 19594 19603
 type(
   Parsed.var_decl list list * Parsed.assign list list
 )
-"smv_to_tptp.ml" 699 19601 19614 "smv_to_tptp.ml" 699 19601 19616
+"smv_to_tptp.ml" 701 19594 19607 "smv_to_tptp.ml" 701 19594 19609
 type(
   unit
 )
-"smv_to_tptp.ml" 692 19288 19292 "smv_to_tptp.ml" 699 19601 19616
+"smv_to_tptp.ml" 694 19276 19280 "smv_to_tptp.ml" 701 19594 19609
 type(
   unit
 )
-"smv_to_tptp.ml" 700 19617 19622 "smv_to_tptp.ml" 700 19617 19634
+"smv_to_tptp.ml" 702 19610 19615 "smv_to_tptp.ml" 702 19610 19627
 type(
   Parsed.var_decl list ->
   Parsed.var_decl list list * Parsed.assign list list -> unit
 )
 ident(
-  int_ref st_eqs_print "smv_to_tptp.ml" 691 19229 19239 "smv_to_tptp.ml" 691 19229 19251
+  int_ref st_eqs_print "smv_to_tptp.ml" 693 19217 19227 "smv_to_tptp.ml" 693 19217 19239
 )
-"smv_to_tptp.ml" 700 19617 19635 "smv_to_tptp.ml" 700 19617 19639
+"smv_to_tptp.ml" 702 19610 19628 "smv_to_tptp.ml" 702 19610 19632
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref vars "smv_to_tptp.ml" 689 19145 19156 "smv_to_tptp.ml" 689 19145 19160
+  int_ref vars "smv_to_tptp.ml" 691 19133 19144 "smv_to_tptp.ml" 691 19133 19148
 )
-"smv_to_tptp.ml" 700 19617 19641 "smv_to_tptp.ml" 700 19617 19654
+"smv_to_tptp.ml" 702 19610 19634 "smv_to_tptp.ml" 702 19610 19647
 type(
   Parsed.var_decl list list
 )
 ident(
-  int_ref next_vars_lst "smv_to_tptp.ml" 690 19175 19181 "smv_to_tptp.ml" 690 19175 19194
+  int_ref next_vars_lst "smv_to_tptp.ml" 692 19163 19169 "smv_to_tptp.ml" 692 19163 19182
 )
-"smv_to_tptp.ml" 700 19617 19656 "smv_to_tptp.ml" 700 19617 19667
+"smv_to_tptp.ml" 702 19610 19649 "smv_to_tptp.ml" 702 19610 19660
 type(
   Parsed.assign list list
 )
 ident(
-  int_ref succ_assigs "smv_to_tptp.ml" 689 19145 19161 "smv_to_tptp.ml" 689 19145 19172
+  int_ref succ_assigs "smv_to_tptp.ml" 691 19133 19149 "smv_to_tptp.ml" 691 19133 19160
 )
-"smv_to_tptp.ml" 700 19617 19640 "smv_to_tptp.ml" 700 19617 19668
+"smv_to_tptp.ml" 702 19610 19633 "smv_to_tptp.ml" 702 19610 19661
 type(
   Parsed.var_decl list list * Parsed.assign list list
 )
-"smv_to_tptp.ml" 700 19617 19622 "smv_to_tptp.ml" 700 19617 19668
+"smv_to_tptp.ml" 702 19610 19615 "smv_to_tptp.ml" 702 19610 19661
 call(
   tail
 )
 type(
   unit
 )
-"smv_to_tptp.ml" 691 19229 19231 "smv_to_tptp.ml" 700 19617 19668
+"smv_to_tptp.ml" 693 19217 19219 "smv_to_tptp.ml" 702 19610 19661
 type(
   unit
 )
-"smv_to_tptp.ml" 690 19175 19177 "smv_to_tptp.ml" 700 19617 19668
+"smv_to_tptp.ml" 692 19163 19165 "smv_to_tptp.ml" 702 19610 19661
 type(
   unit
 )
-"smv_to_tptp.ml" 703 19671 19675 "smv_to_tptp.ml" 703 19671 19694
+"smv_to_tptp.ml" 705 19664 19668 "smv_to_tptp.ml" 705 19664 19687
 type(
   Parsed.var_decl list -> Parsed.assign list list -> unit
 )
 ident(
-  def r_shape_with_st_eqs "smv_to_tptp.ml" 715 20026 20026 "smv_to_tptp.ml" 1 0 -1
+  def r_shape_with_st_eqs "smv_to_tptp.ml" 717 20019 20019 "smv_to_tptp.ml" 1 0 -1
 )
-"smv_to_tptp.ml" 703 19671 19695 "smv_to_tptp.ml" 703 19671 19699
+"smv_to_tptp.ml" 705 19664 19688 "smv_to_tptp.ml" 705 19664 19692
 type(
   Parsed.var_decl list
 )
 ident(
-  def vars "smv_to_tptp.ml" 703 19671 19700 "smv_to_tptp.ml" 713 19999 20024
+  def vars "smv_to_tptp.ml" 705 19664 19693 "smv_to_tptp.ml" 715 19992 20017
 )
-"smv_to_tptp.ml" 703 19671 19700 "smv_to_tptp.ml" 703 19671 19711
+"smv_to_tptp.ml" 705 19664 19693 "smv_to_tptp.ml" 705 19664 19704
 type(
   Parsed.assign list list
 )
 ident(
-  def succ_assigs "smv_to_tptp.ml" 704 19714 19716 "smv_to_tptp.ml" 713 19999 20024
+  def succ_assigs "smv_to_tptp.ml" 706 19707 19709 "smv_to_tptp.ml" 715 19992 20017
 )
-"smv_to_tptp.ml" 704 19714 19720 "smv_to_tptp.ml" 704 19714 19733
+"smv_to_tptp.ml" 706 19707 19713 "smv_to_tptp.ml" 706 19707 19726
 type(
   Parsed.var_decl list list
 )
 ident(
-  def next_vars_lst "smv_to_tptp.ml" 705 19768 19770 "smv_to_tptp.ml" 713 19999 20024
+  def next_vars_lst "smv_to_tptp.ml" 707 19761 19763 "smv_to_tptp.ml" 715 19992 20017
 )
-"smv_to_tptp.ml" 704 19714 19736 "smv_to_tptp.ml" 704 19714 19747
+"smv_to_tptp.ml" 706 19707 19729 "smv_to_tptp.ml" 706 19707 19740
 type(
   Parsed.var_decl list ->
   Parsed.assign list list -> Parsed.var_decl list list
@@ -16635,1350 +16625,1343 @@ type(
 ident(
   int_ref r_with_case "smv_to_tptp.ml" 523 14737 14745 "smv_to_tptp.ml" 523 14737 14756
 )
-"smv_to_tptp.ml" 704 19714 19748 "smv_to_tptp.ml" 704 19714 19752
+"smv_to_tptp.ml" 706 19707 19741 "smv_to_tptp.ml" 706 19707 19745
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref vars "smv_to_tptp.ml" 703 19671 19695 "smv_to_tptp.ml" 703 19671 19699
+  int_ref vars "smv_to_tptp.ml" 705 19664 19688 "smv_to_tptp.ml" 705 19664 19692
 )
-"smv_to_tptp.ml" 704 19714 19753 "smv_to_tptp.ml" 704 19714 19764
+"smv_to_tptp.ml" 706 19707 19746 "smv_to_tptp.ml" 706 19707 19757
 type(
   Parsed.assign list list
 )
 ident(
-  int_ref succ_assigs "smv_to_tptp.ml" 703 19671 19700 "smv_to_tptp.ml" 703 19671 19711
+  int_ref succ_assigs "smv_to_tptp.ml" 705 19664 19693 "smv_to_tptp.ml" 705 19664 19704
 )
-"smv_to_tptp.ml" 704 19714 19736 "smv_to_tptp.ml" 704 19714 19764
+"smv_to_tptp.ml" 706 19707 19729 "smv_to_tptp.ml" 706 19707 19757
 call(
   stack
 )
 type(
   Parsed.var_decl list list
 )
-"smv_to_tptp.ml" 705 19768 19774 "smv_to_tptp.ml" 705 19768 19782
+"smv_to_tptp.ml" 707 19761 19767 "smv_to_tptp.ml" 707 19761 19775
 type(
   int
 )
 ident(
-  def succ_num "smv_to_tptp.ml" 706 19814 19816 "smv_to_tptp.ml" 713 19999 20024
+  def succ_num "smv_to_tptp.ml" 708 19807 19809 "smv_to_tptp.ml" 715 19992 20017
 )
-"smv_to_tptp.ml" 705 19768 19785 "smv_to_tptp.ml" 705 19768 19796
+"smv_to_tptp.ml" 707 19761 19778 "smv_to_tptp.ml" 707 19761 19789
 type(
   Parsed.var_decl list list -> int
 )
 ident(
   ext_ref List.length
 )
-"smv_to_tptp.ml" 705 19768 19797 "smv_to_tptp.ml" 705 19768 19810
+"smv_to_tptp.ml" 707 19761 19790 "smv_to_tptp.ml" 707 19761 19803
 type(
   Parsed.var_decl list list
 )
 ident(
-  int_ref next_vars_lst "smv_to_tptp.ml" 704 19714 19720 "smv_to_tptp.ml" 704 19714 19733
+  int_ref next_vars_lst "smv_to_tptp.ml" 706 19707 19713 "smv_to_tptp.ml" 706 19707 19726
 )
-"smv_to_tptp.ml" 705 19768 19785 "smv_to_tptp.ml" 705 19768 19810
+"smv_to_tptp.ml" 707 19761 19778 "smv_to_tptp.ml" 707 19761 19803
 call(
   stack
 )
 type(
   int
 )
-"smv_to_tptp.ml" 706 19814 19816 "smv_to_tptp.ml" 706 19814 19828
+"smv_to_tptp.ml" 708 19807 19809 "smv_to_tptp.ml" 708 19807 19821
 type(
   string -> unit
 )
 ident(
   ext_ref Pervasives.print_string
 )
-"smv_to_tptp.ml" 706 19814 19829 "smv_to_tptp.ml" 706 19814 19847
+"smv_to_tptp.ml" 708 19807 19822 "smv_to_tptp.ml" 708 19807 19840
 type(
   string
 )
-"smv_to_tptp.ml" 706 19814 19816 "smv_to_tptp.ml" 706 19814 19847
+"smv_to_tptp.ml" 708 19807 19809 "smv_to_tptp.ml" 708 19807 19840
 call(
   stack
 )
 type(
   unit
 )
-"smv_to_tptp.ml" 707 19849 19851 "smv_to_tptp.ml" 707 19849 19862
+"smv_to_tptp.ml" 709 19842 19844 "smv_to_tptp.ml" 709 19842 19855
 type(
   Parsed.var_decl list -> unit
 )
 ident(
   int_ref state_shape "smv_to_tptp.ml" 280 8159 8163 "smv_to_tptp.ml" 280 8159 8174
 )
-"smv_to_tptp.ml" 707 19849 19863 "smv_to_tptp.ml" 707 19849 19867
+"smv_to_tptp.ml" 709 19842 19856 "smv_to_tptp.ml" 709 19842 19860
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref vars "smv_to_tptp.ml" 703 19671 19695 "smv_to_tptp.ml" 703 19671 19699
+  int_ref vars "smv_to_tptp.ml" 705 19664 19688 "smv_to_tptp.ml" 705 19664 19692
 )
-"smv_to_tptp.ml" 707 19849 19851 "smv_to_tptp.ml" 707 19849 19867
+"smv_to_tptp.ml" 709 19842 19844 "smv_to_tptp.ml" 709 19842 19860
 call(
   stack
 )
 type(
   unit
 )
-"smv_to_tptp.ml" 708 19869 19871 "smv_to_tptp.ml" 708 19869 19883
+"smv_to_tptp.ml" 710 19862 19864 "smv_to_tptp.ml" 710 19862 19876
 type(
   string -> unit
 )
 ident(
   ext_ref Pervasives.print_string
 )
-"smv_to_tptp.ml" 708 19869 19884 "smv_to_tptp.ml" 708 19869 19888
+"smv_to_tptp.ml" 710 19862 19877 "smv_to_tptp.ml" 710 19862 19881
 type(
   string
 )
-"smv_to_tptp.ml" 708 19869 19871 "smv_to_tptp.ml" 708 19869 19888
+"smv_to_tptp.ml" 710 19862 19864 "smv_to_tptp.ml" 710 19862 19881
 call(
   stack
 )
 type(
   unit
 )
-"smv_to_tptp.ml" 709 19890 19892 "smv_to_tptp.ml" 709 19890 19907
+"smv_to_tptp.ml" 711 19883 19885 "smv_to_tptp.ml" 711 19883 19900
 type(
   int -> int -> unit
 )
 ident(
   int_ref print_succ_vars "smv_to_tptp.ml" 530 14896 14904 "smv_to_tptp.ml" 530 14896 14919
 )
-"smv_to_tptp.ml" 709 19890 19908 "smv_to_tptp.ml" 709 19890 19909
+"smv_to_tptp.ml" 711 19883 19901 "smv_to_tptp.ml" 711 19883 19902
 type(
   int
 )
-"smv_to_tptp.ml" 709 19890 19910 "smv_to_tptp.ml" 709 19890 19918
+"smv_to_tptp.ml" 711 19883 19903 "smv_to_tptp.ml" 711 19883 19911
 type(
   int
 )
 ident(
-  int_ref succ_num "smv_to_tptp.ml" 705 19768 19774 "smv_to_tptp.ml" 705 19768 19782
+  int_ref succ_num "smv_to_tptp.ml" 707 19761 19767 "smv_to_tptp.ml" 707 19761 19775
 )
-"smv_to_tptp.ml" 709 19890 19892 "smv_to_tptp.ml" 709 19890 19918
+"smv_to_tptp.ml" 711 19883 19885 "smv_to_tptp.ml" 711 19883 19911
 call(
   stack
 )
 type(
   unit
 )
-"smv_to_tptp.ml" 710 19920 19922 "smv_to_tptp.ml" 710 19920 19934
+"smv_to_tptp.ml" 712 19913 19915 "smv_to_tptp.ml" 712 19913 19927
 type(
   string -> unit
 )
 ident(
   ext_ref Pervasives.print_string
 )
-"smv_to_tptp.ml" 710 19920 19935 "smv_to_tptp.ml" 710 19920 19940
+"smv_to_tptp.ml" 712 19913 19928 "smv_to_tptp.ml" 712 19913 19933
 type(
   string
 )
-"smv_to_tptp.ml" 710 19920 19922 "smv_to_tptp.ml" 710 19920 19940
+"smv_to_tptp.ml" 712 19913 19915 "smv_to_tptp.ml" 712 19913 19933
 call(
   stack
 )
 type(
   unit
 )
-"smv_to_tptp.ml" 711 19942 19944 "smv_to_tptp.ml" 711 19942 19956
+"smv_to_tptp.ml" 713 19935 19937 "smv_to_tptp.ml" 713 19935 19949
 type(
   int -> Parsed.var_decl list list -> unit
 )
 ident(
   int_ref print_st_eqs "smv_to_tptp.ml" 541 15152 15160 "smv_to_tptp.ml" 541 15152 15172
 )
-"smv_to_tptp.ml" 711 19942 19957 "smv_to_tptp.ml" 711 19942 19958
+"smv_to_tptp.ml" 713 19935 19950 "smv_to_tptp.ml" 713 19935 19951
 type(
   int
 )
-"smv_to_tptp.ml" 711 19942 19959 "smv_to_tptp.ml" 711 19942 19972
+"smv_to_tptp.ml" 713 19935 19952 "smv_to_tptp.ml" 713 19935 19965
 type(
   Parsed.var_decl list list
 )
 ident(
-  int_ref next_vars_lst "smv_to_tptp.ml" 704 19714 19720 "smv_to_tptp.ml" 704 19714 19733
+  int_ref next_vars_lst "smv_to_tptp.ml" 706 19707 19713 "smv_to_tptp.ml" 706 19707 19726
 )
-"smv_to_tptp.ml" 711 19942 19944 "smv_to_tptp.ml" 711 19942 19972
+"smv_to_tptp.ml" 713 19935 19937 "smv_to_tptp.ml" 713 19935 19965
 call(
   stack
 )
 type(
   unit
 )
-"smv_to_tptp.ml" 712 19974 19976 "smv_to_tptp.ml" 712 19974 19988
+"smv_to_tptp.ml" 714 19967 19969 "smv_to_tptp.ml" 714 19967 19981
 type(
   string -> unit
 )
 ident(
   ext_ref Pervasives.print_string
 )
-"smv_to_tptp.ml" 712 19974 19989 "smv_to_tptp.ml" 712 19974 19997
+"smv_to_tptp.ml" 714 19967 19982 "smv_to_tptp.ml" 714 19967 19990
 type(
   string
 )
-"smv_to_tptp.ml" 712 19974 19976 "smv_to_tptp.ml" 712 19974 19997
+"smv_to_tptp.ml" 714 19967 19969 "smv_to_tptp.ml" 714 19967 19990
 call(
   stack
 )
 type(
   unit
 )
-"smv_to_tptp.ml" 713 19999 20001 "smv_to_tptp.ml" 713 19999 20007
+"smv_to_tptp.ml" 715 19992 19994 "smv_to_tptp.ml" 715 19992 20000
 type(
   Parsed.var_decl list -> Parsed.assign list list -> unit
 )
 ident(
-  int_ref st_eqs "smv_to_tptp.ml" 689 19145 19149 "smv_to_tptp.ml" 689 19145 19155
+  int_ref st_eqs "smv_to_tptp.ml" 691 19133 19137 "smv_to_tptp.ml" 691 19133 19143
 )
-"smv_to_tptp.ml" 713 19999 20008 "smv_to_tptp.ml" 713 19999 20012
+"smv_to_tptp.ml" 715 19992 20001 "smv_to_tptp.ml" 715 19992 20005
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref vars "smv_to_tptp.ml" 703 19671 19695 "smv_to_tptp.ml" 703 19671 19699
+  int_ref vars "smv_to_tptp.ml" 705 19664 19688 "smv_to_tptp.ml" 705 19664 19692
 )
-"smv_to_tptp.ml" 713 19999 20013 "smv_to_tptp.ml" 713 19999 20024
+"smv_to_tptp.ml" 715 19992 20006 "smv_to_tptp.ml" 715 19992 20017
 type(
   Parsed.assign list list
 )
 ident(
-  int_ref succ_assigs "smv_to_tptp.ml" 703 19671 19700 "smv_to_tptp.ml" 703 19671 19711
+  int_ref succ_assigs "smv_to_tptp.ml" 705 19664 19693 "smv_to_tptp.ml" 705 19664 19704
 )
-"smv_to_tptp.ml" 713 19999 20001 "smv_to_tptp.ml" 713 19999 20024
+"smv_to_tptp.ml" 715 19992 19994 "smv_to_tptp.ml" 715 19992 20017
 call(
   tail
 )
 type(
   unit
 )
-"smv_to_tptp.ml" 712 19974 19976 "smv_to_tptp.ml" 713 19999 20024
+"smv_to_tptp.ml" 714 19967 19969 "smv_to_tptp.ml" 715 19992 20017
 type(
   unit
 )
-"smv_to_tptp.ml" 711 19942 19944 "smv_to_tptp.ml" 713 19999 20024
+"smv_to_tptp.ml" 713 19935 19937 "smv_to_tptp.ml" 715 19992 20017
 type(
   unit
 )
-"smv_to_tptp.ml" 710 19920 19922 "smv_to_tptp.ml" 713 19999 20024
+"smv_to_tptp.ml" 712 19913 19915 "smv_to_tptp.ml" 715 19992 20017
 type(
   unit
 )
-"smv_to_tptp.ml" 709 19890 19892 "smv_to_tptp.ml" 713 19999 20024
+"smv_to_tptp.ml" 711 19883 19885 "smv_to_tptp.ml" 715 19992 20017
 type(
   unit
 )
-"smv_to_tptp.ml" 708 19869 19871 "smv_to_tptp.ml" 713 19999 20024
+"smv_to_tptp.ml" 710 19862 19864 "smv_to_tptp.ml" 715 19992 20017
 type(
   unit
 )
-"smv_to_tptp.ml" 707 19849 19851 "smv_to_tptp.ml" 713 19999 20024
+"smv_to_tptp.ml" 709 19842 19844 "smv_to_tptp.ml" 715 19992 20017
 type(
   unit
 )
-"smv_to_tptp.ml" 706 19814 19816 "smv_to_tptp.ml" 713 19999 20024
+"smv_to_tptp.ml" 708 19807 19809 "smv_to_tptp.ml" 715 19992 20017
 type(
   unit
 )
-"smv_to_tptp.ml" 705 19768 19770 "smv_to_tptp.ml" 713 19999 20024
+"smv_to_tptp.ml" 707 19761 19763 "smv_to_tptp.ml" 715 19992 20017
 type(
   unit
 )
-"smv_to_tptp.ml" 704 19714 19716 "smv_to_tptp.ml" 713 19999 20024
+"smv_to_tptp.ml" 706 19707 19709 "smv_to_tptp.ml" 715 19992 20017
 type(
   unit
 )
-"smv_to_tptp.ml" 715 20026 20034 "smv_to_tptp.ml" 715 20026 20041
+"smv_to_tptp.ml" 717 20019 20027 "smv_to_tptp.ml" 717 20019 20034
 type(
   Parsed.var_decl list ->
   Parsed.var_decl list -> Parsed.assign list list -> unit
 )
 ident(
-  def r_shape "smv_to_tptp.ml" 715 20026 20026 "smv_to_tptp.ml" 1 0 -1
+  def r_shape "smv_to_tptp.ml" 717 20019 20019 "smv_to_tptp.ml" 1 0 -1
 )
-"smv_to_tptp.ml" 715 20026 20042 "smv_to_tptp.ml" 715 20026 20047
+"smv_to_tptp.ml" 717 20019 20035 "smv_to_tptp.ml" 717 20019 20040
 type(
   Parsed.var_decl list
 )
 ident(
-  def vars1 "smv_to_tptp.ml" 715 20026 20048 "smv_to_tptp.ml" 721 20249 20293
+  def vars1 "smv_to_tptp.ml" 717 20019 20041 "smv_to_tptp.ml" 723 20242 20286
 )
-"smv_to_tptp.ml" 715 20026 20048 "smv_to_tptp.ml" 715 20026 20053
+"smv_to_tptp.ml" 717 20019 20041 "smv_to_tptp.ml" 717 20019 20046
 type(
   Parsed.var_decl list
 )
 ident(
-  def vars2 "smv_to_tptp.ml" 715 20026 20054 "smv_to_tptp.ml" 721 20249 20293
+  def vars2 "smv_to_tptp.ml" 717 20019 20047 "smv_to_tptp.ml" 723 20242 20286
 )
-"smv_to_tptp.ml" 715 20026 20054 "smv_to_tptp.ml" 715 20026 20066
+"smv_to_tptp.ml" 717 20019 20047 "smv_to_tptp.ml" 717 20019 20059
 type(
   Parsed.assign list list
 )
 ident(
-  def succ_assigns "smv_to_tptp.ml" 716 20069 20071 "smv_to_tptp.ml" 721 20249 20293
+  def succ_assigns "smv_to_tptp.ml" 718 20062 20064 "smv_to_tptp.ml" 723 20242 20286
 )
-"smv_to_tptp.ml" 716 20069 20077 "smv_to_tptp.ml" 716 20069 20082
+"smv_to_tptp.ml" 718 20062 20070 "smv_to_tptp.ml" 718 20062 20075
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref vars1 "smv_to_tptp.ml" 715 20026 20042 "smv_to_tptp.ml" 715 20026 20047
+  int_ref vars1 "smv_to_tptp.ml" 717 20019 20035 "smv_to_tptp.ml" 717 20019 20040
 )
-"smv_to_tptp.ml" 717 20088 20092 "smv_to_tptp.ml" 717 20088 20094
+"smv_to_tptp.ml" 719 20081 20085 "smv_to_tptp.ml" 719 20081 20087
 type(
   Parsed.var_decl list
 )
-"smv_to_tptp.ml" 717 20088 20102 "smv_to_tptp.ml" 717 20088 20106
+"smv_to_tptp.ml" 719 20081 20095 "smv_to_tptp.ml" 719 20081 20099
 type(
   Parsed.var list list
 )
 ident(
-  def succ "smv_to_tptp.ml" 718 20146 20149 "smv_to_tptp.ml" 718 20146 20180
+  def succ "smv_to_tptp.ml" 720 20139 20142 "smv_to_tptp.ml" 720 20139 20173
 )
-"smv_to_tptp.ml" 717 20088 20109 "smv_to_tptp.ml" 717 20088 20123
+"smv_to_tptp.ml" 719 20081 20102 "smv_to_tptp.ml" 719 20081 20116
 type(
   Parsed.var_decl list -> Parsed.assign list list -> Parsed.var list list
 )
 ident(
   int_ref r_without_case "smv_to_tptp.ml" 429 12322 12330 "smv_to_tptp.ml" 429 12322 12344
 )
-"smv_to_tptp.ml" 717 20088 20124 "smv_to_tptp.ml" 717 20088 20129
+"smv_to_tptp.ml" 719 20081 20117 "smv_to_tptp.ml" 719 20081 20122
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref vars2 "smv_to_tptp.ml" 715 20026 20048 "smv_to_tptp.ml" 715 20026 20053
+  int_ref vars2 "smv_to_tptp.ml" 717 20019 20041 "smv_to_tptp.ml" 717 20019 20046
 )
-"smv_to_tptp.ml" 717 20088 20130 "smv_to_tptp.ml" 717 20088 20142
+"smv_to_tptp.ml" 719 20081 20123 "smv_to_tptp.ml" 719 20081 20135
 type(
   Parsed.assign list list
 )
 ident(
-  int_ref succ_assigns "smv_to_tptp.ml" 715 20026 20054 "smv_to_tptp.ml" 715 20026 20066
+  int_ref succ_assigns "smv_to_tptp.ml" 717 20019 20047 "smv_to_tptp.ml" 717 20019 20059
 )
-"smv_to_tptp.ml" 717 20088 20109 "smv_to_tptp.ml" 717 20088 20142
+"smv_to_tptp.ml" 719 20081 20102 "smv_to_tptp.ml" 719 20081 20135
 call(
   stack
 )
 type(
   Parsed.var list list
 )
-"smv_to_tptp.ml" 718 20146 20149 "smv_to_tptp.ml" 718 20146 20169
+"smv_to_tptp.ml" 720 20139 20142 "smv_to_tptp.ml" 720 20139 20162
 type(
   Parsed.var_decl list -> Parsed.var list list -> unit
 )
 ident(
   int_ref r_shape_without_case "smv_to_tptp.ml" 464 13139 13143 "smv_to_tptp.ml" 464 13139 13163
 )
-"smv_to_tptp.ml" 718 20146 20170 "smv_to_tptp.ml" 718 20146 20175
+"smv_to_tptp.ml" 720 20139 20163 "smv_to_tptp.ml" 720 20139 20168
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref vars2 "smv_to_tptp.ml" 715 20026 20048 "smv_to_tptp.ml" 715 20026 20053
+  int_ref vars2 "smv_to_tptp.ml" 717 20019 20041 "smv_to_tptp.ml" 717 20019 20046
 )
-"smv_to_tptp.ml" 718 20146 20176 "smv_to_tptp.ml" 718 20146 20180
+"smv_to_tptp.ml" 720 20139 20169 "smv_to_tptp.ml" 720 20139 20173
 type(
   Parsed.var list list
 )
 ident(
-  int_ref succ "smv_to_tptp.ml" 717 20088 20102 "smv_to_tptp.ml" 717 20088 20106
+  int_ref succ "smv_to_tptp.ml" 719 20081 20095 "smv_to_tptp.ml" 719 20081 20099
 )
-"smv_to_tptp.ml" 718 20146 20149 "smv_to_tptp.ml" 718 20146 20180
+"smv_to_tptp.ml" 720 20139 20142 "smv_to_tptp.ml" 720 20139 20173
 call(
   tail
 )
 type(
   unit
 )
-"smv_to_tptp.ml" 717 20088 20098 "smv_to_tptp.ml" 718 20146 20180
+"smv_to_tptp.ml" 719 20081 20091 "smv_to_tptp.ml" 720 20139 20173
 type(
   unit
 )
-"smv_to_tptp.ml" 719 20181 20190 "smv_to_tptp.ml" 719 20181 20191
+"smv_to_tptp.ml" 721 20174 20183 "smv_to_tptp.ml" 721 20174 20184
 type(
   string
 )
-"smv_to_tptp.ml" 719 20181 20192 "smv_to_tptp.ml" 719 20181 20193
+"smv_to_tptp.ml" 721 20174 20185 "smv_to_tptp.ml" 721 20174 20186
 type(
   string list
 )
-"smv_to_tptp.ml" 719 20181 20185 "smv_to_tptp.ml" 719 20181 20194
+"smv_to_tptp.ml" 721 20174 20178 "smv_to_tptp.ml" 721 20174 20187
 type(
   Parsed.var_decl
 )
-"smv_to_tptp.ml" 719 20181 20198 "smv_to_tptp.ml" 719 20181 20200
+"smv_to_tptp.ml" 721 20174 20191 "smv_to_tptp.ml" 721 20174 20193
 type(
   Parsed.var_decl list
 )
 ident(
-  def tl "smv_to_tptp.ml" 720 20205 20210 "smv_to_tptp.ml" 720 20205 20248
+  def tl "smv_to_tptp.ml" 722 20198 20203 "smv_to_tptp.ml" 722 20198 20241
 )
-"smv_to_tptp.ml" 719 20181 20185 "smv_to_tptp.ml" 719 20181 20200
+"smv_to_tptp.ml" 721 20174 20178 "smv_to_tptp.ml" 721 20174 20193
 type(
   Parsed.var_decl list
 )
-"smv_to_tptp.ml" 720 20205 20210 "smv_to_tptp.ml" 720 20205 20229
+"smv_to_tptp.ml" 722 20198 20203 "smv_to_tptp.ml" 722 20198 20222
 type(
   Parsed.var_decl list -> Parsed.assign list list -> unit
 )
 ident(
-  int_ref r_shape_with_st_eqs "smv_to_tptp.ml" 703 19671 19675 "smv_to_tptp.ml" 703 19671 19694
+  int_ref r_shape_with_st_eqs "smv_to_tptp.ml" 705 19664 19668 "smv_to_tptp.ml" 705 19664 19687
 )
-"smv_to_tptp.ml" 720 20205 20230 "smv_to_tptp.ml" 720 20205 20235
+"smv_to_tptp.ml" 722 20198 20223 "smv_to_tptp.ml" 722 20198 20228
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref vars2 "smv_to_tptp.ml" 715 20026 20048 "smv_to_tptp.ml" 715 20026 20053
+  int_ref vars2 "smv_to_tptp.ml" 717 20019 20041 "smv_to_tptp.ml" 717 20019 20046
 )
-"smv_to_tptp.ml" 720 20205 20236 "smv_to_tptp.ml" 720 20205 20248
+"smv_to_tptp.ml" 722 20198 20229 "smv_to_tptp.ml" 722 20198 20241
 type(
   Parsed.assign list list
 )
 ident(
-  int_ref succ_assigns "smv_to_tptp.ml" 715 20026 20054 "smv_to_tptp.ml" 715 20026 20066
+  int_ref succ_assigns "smv_to_tptp.ml" 717 20019 20047 "smv_to_tptp.ml" 717 20019 20059
 )
-"smv_to_tptp.ml" 720 20205 20210 "smv_to_tptp.ml" 720 20205 20248
+"smv_to_tptp.ml" 722 20198 20203 "smv_to_tptp.ml" 722 20198 20241
 call(
   tail
 )
 type(
   unit
 )
-"smv_to_tptp.ml" 721 20249 20253 "smv_to_tptp.ml" 721 20249 20254
+"smv_to_tptp.ml" 723 20242 20246 "smv_to_tptp.ml" 723 20242 20247
 type(
   Parsed.var_decl
 )
-"smv_to_tptp.ml" 721 20249 20258 "smv_to_tptp.ml" 721 20249 20260
+"smv_to_tptp.ml" 723 20242 20251 "smv_to_tptp.ml" 723 20242 20253
 type(
   Parsed.var_decl list
 )
 ident(
-  def tl "smv_to_tptp.ml" 721 20249 20264 "smv_to_tptp.ml" 721 20249 20293
+  def tl "smv_to_tptp.ml" 723 20242 20257 "smv_to_tptp.ml" 723 20242 20286
 )
-"smv_to_tptp.ml" 721 20249 20253 "smv_to_tptp.ml" 721 20249 20260
+"smv_to_tptp.ml" 723 20242 20246 "smv_to_tptp.ml" 723 20242 20253
 type(
   Parsed.var_decl list
 )
-"smv_to_tptp.ml" 721 20249 20264 "smv_to_tptp.ml" 721 20249 20271
+"smv_to_tptp.ml" 723 20242 20257 "smv_to_tptp.ml" 723 20242 20264
 type(
   Parsed.var_decl list ->
   Parsed.var_decl list -> Parsed.assign list list -> unit
 )
 ident(
-  int_ref r_shape "smv_to_tptp.ml" 715 20026 20034 "smv_to_tptp.ml" 715 20026 20041
+  int_ref r_shape "smv_to_tptp.ml" 717 20019 20027 "smv_to_tptp.ml" 717 20019 20034
 )
-"smv_to_tptp.ml" 721 20249 20272 "smv_to_tptp.ml" 721 20249 20274
+"smv_to_tptp.ml" 723 20242 20265 "smv_to_tptp.ml" 723 20242 20267
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref tl "smv_to_tptp.ml" 721 20249 20258 "smv_to_tptp.ml" 721 20249 20260
+  int_ref tl "smv_to_tptp.ml" 723 20242 20251 "smv_to_tptp.ml" 723 20242 20253
 )
-"smv_to_tptp.ml" 721 20249 20275 "smv_to_tptp.ml" 721 20249 20280
+"smv_to_tptp.ml" 723 20242 20268 "smv_to_tptp.ml" 723 20242 20273
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref vars2 "smv_to_tptp.ml" 715 20026 20048 "smv_to_tptp.ml" 715 20026 20053
+  int_ref vars2 "smv_to_tptp.ml" 717 20019 20041 "smv_to_tptp.ml" 717 20019 20046
 )
-"smv_to_tptp.ml" 721 20249 20281 "smv_to_tptp.ml" 721 20249 20293
+"smv_to_tptp.ml" 723 20242 20274 "smv_to_tptp.ml" 723 20242 20286
 type(
   Parsed.assign list list
 )
 ident(
-  int_ref succ_assigns "smv_to_tptp.ml" 715 20026 20054 "smv_to_tptp.ml" 715 20026 20066
+  int_ref succ_assigns "smv_to_tptp.ml" 717 20019 20047 "smv_to_tptp.ml" 717 20019 20059
 )
-"smv_to_tptp.ml" 721 20249 20264 "smv_to_tptp.ml" 721 20249 20293
-call(
-  tail
-)
+"smv_to_tptp.ml" 723 20242 20257 "smv_to_tptp.ml" 723 20242 20286
 type(
   unit
 )
-"smv_to_tptp.ml" 716 20069 20071 "smv_to_tptp.ml" 721 20249 20293
+"smv_to_tptp.ml" 718 20062 20064 "smv_to_tptp.ml" 723 20242 20286
 type(
   unit
 )
-"smv_to_tptp.ml" 724 20296 20300 "smv_to_tptp.ml" 724 20296 20308
+"smv_to_tptp.ml" 726 20289 20293 "smv_to_tptp.ml" 726 20289 20301
 type(
   Parsed.decl -> 'a -> 'b
 )
 ident(
-  def relation "smv_to_tptp.ml" 731 20430 20430 "smv_to_tptp.ml" 1 0 -1
+  def relation "smv_to_tptp.ml" 733 20423 20423 "smv_to_tptp.ml" 1 0 -1
 )
-"smv_to_tptp.ml" 724 20296 20309 "smv_to_tptp.ml" 724 20296 20311
+"smv_to_tptp.ml" 726 20289 20302 "smv_to_tptp.ml" 726 20289 20304
 type(
   Parsed.decl
 )
 ident(
-  def md "smv_to_tptp.ml" 724 20296 20312 "smv_to_tptp.ml" 728 20397 20427
+  def md "smv_to_tptp.ml" 726 20289 20305 "smv_to_tptp.ml" 730 20390 20420
 )
-"smv_to_tptp.ml" 724 20296 20312 "smv_to_tptp.ml" 724 20296 20318
+"smv_to_tptp.ml" 726 20289 20305 "smv_to_tptp.ml" 726 20289 20311
 type(
   'a
 )
 ident(
-  def md_lst "smv_to_tptp.ml" 725 20321 20323 "smv_to_tptp.ml" 728 20397 20427
+  def md_lst "smv_to_tptp.ml" 727 20314 20316 "smv_to_tptp.ml" 730 20390 20420
 )
-"smv_to_tptp.ml" 725 20321 20329 "smv_to_tptp.ml" 725 20321 20331
+"smv_to_tptp.ml" 727 20314 20322 "smv_to_tptp.ml" 727 20314 20324
 type(
   Parsed.decl
 )
 ident(
-  int_ref md "smv_to_tptp.ml" 724 20296 20309 "smv_to_tptp.ml" 724 20296 20311
+  int_ref md "smv_to_tptp.ml" 726 20289 20302 "smv_to_tptp.ml" 726 20289 20304
 )
-"smv_to_tptp.ml" 726 20337 20349 "smv_to_tptp.ml" 726 20337 20353
+"smv_to_tptp.ml" 728 20330 20342 "smv_to_tptp.ml" 728 20330 20346
 type(
   string
 )
 ident(
-  def name "smv_to_tptp.ml" 727 20379 20384 "smv_to_tptp.ml" 727 20379 20396
+  def name "smv_to_tptp.ml" 729 20372 20377 "smv_to_tptp.ml" 729 20372 20389
 )
-"smv_to_tptp.ml" 726 20337 20355 "smv_to_tptp.ml" 726 20337 20359
+"smv_to_tptp.ml" 728 20330 20348 "smv_to_tptp.ml" 728 20330 20352
 type(
   Parsed.var_decl list
 )
 ident(
-  def vars "smv_to_tptp.ml" 727 20379 20384 "smv_to_tptp.ml" 727 20379 20396
+  def vars "smv_to_tptp.ml" 729 20372 20377 "smv_to_tptp.ml" 729 20372 20389
 )
-"smv_to_tptp.ml" 726 20337 20361 "smv_to_tptp.ml" 726 20337 20368
+"smv_to_tptp.ml" 728 20330 20354 "smv_to_tptp.ml" 728 20330 20361
 type(
   Parsed.assign list
 )
 ident(
-  def assigns "smv_to_tptp.ml" 727 20379 20384 "smv_to_tptp.ml" 727 20379 20396
+  def assigns "smv_to_tptp.ml" 729 20372 20377 "smv_to_tptp.ml" 729 20372 20389
 )
-"smv_to_tptp.ml" 726 20337 20370 "smv_to_tptp.ml" 726 20337 20374
+"smv_to_tptp.ml" 728 20330 20363 "smv_to_tptp.ml" 728 20330 20367
 type(
   Parsed.spec
 )
 ident(
-  def spec "smv_to_tptp.ml" 727 20379 20384 "smv_to_tptp.ml" 727 20379 20396
+  def spec "smv_to_tptp.ml" 729 20372 20377 "smv_to_tptp.ml" 729 20372 20389
 )
-"smv_to_tptp.ml" 726 20337 20341 "smv_to_tptp.ml" 726 20337 20375
+"smv_to_tptp.ml" 728 20330 20334 "smv_to_tptp.ml" 728 20330 20368
 type(
   Parsed.decl
 )
-"smv_to_tptp.ml" 727 20379 20391 "smv_to_tptp.ml" 727 20379 20396
-type(
-  bool
-)
-"smv_to_tptp.ml" 727 20379 20384 "smv_to_tptp.ml" 727 20379 20396
+"smv_to_tptp.ml" 729 20372 20377 "smv_to_tptp.ml" 729 20372 20389
 type(
   'b
 )
-"smv_to_tptp.ml" 728 20397 20401 "smv_to_tptp.ml" 728 20397 20402
+"smv_to_tptp.ml" 730 20390 20394 "smv_to_tptp.ml" 730 20390 20395
 type(
   Parsed.decl
 )
-"smv_to_tptp.ml" 728 20397 20406 "smv_to_tptp.ml" 728 20397 20411
+"smv_to_tptp.ml" 730 20390 20399 "smv_to_tptp.ml" 730 20390 20404
 type(
   exn -> 'b
 )
 ident(
   ext_ref Pervasives.raise
 )
-"smv_to_tptp.ml" 728 20397 20412 "smv_to_tptp.ml" 728 20397 20427
+"smv_to_tptp.ml" 730 20390 20405 "smv_to_tptp.ml" 730 20390 20420
 type(
   exn
 )
-"smv_to_tptp.ml" 728 20397 20406 "smv_to_tptp.ml" 728 20397 20427
+"smv_to_tptp.ml" 730 20390 20399 "smv_to_tptp.ml" 730 20390 20420
 type(
   'b
 )
-"smv_to_tptp.ml" 725 20321 20323 "smv_to_tptp.ml" 728 20397 20427
+"smv_to_tptp.ml" 727 20314 20316 "smv_to_tptp.ml" 730 20390 20420
 type(
   'b
 )
-"smv_to_tptp.ml" 731 20430 20434 "smv_to_tptp.ml" 731 20430 20436
+"smv_to_tptp.ml" 733 20423 20427 "smv_to_tptp.ml" 733 20423 20429
 type(
   unit
 )
-"smv_to_tptp.ml" 732 20439 20443 "smv_to_tptp.ml" 732 20439 20450
+"smv_to_tptp.ml" 734 20432 20436 "smv_to_tptp.ml" 734 20432 20443
 type(
   in_channel
 )
 ident(
-  def chan_in "smv_to_tptp.ml" 733 20477 20477 "smv_to_tptp.ml" 763 21637 21653
+  def chan_in "smv_to_tptp.ml" 735 20470 20470 "smv_to_tptp.ml" 765 21630 21646
 )
-"smv_to_tptp.ml" 732 20439 20453 "smv_to_tptp.ml" 732 20439 20460
+"smv_to_tptp.ml" 734 20432 20446 "smv_to_tptp.ml" 734 20432 20453
 type(
   string -> in_channel
 )
 ident(
   ext_ref Pervasives.open_in
 )
-"smv_to_tptp.ml" 732 20439 20461 "smv_to_tptp.ml" 732 20439 20469
+"smv_to_tptp.ml" 734 20432 20454 "smv_to_tptp.ml" 734 20432 20462
 type(
   string array
 )
 ident(
   ext_ref Sys.argv
 )
-"smv_to_tptp.ml" 732 20439 20471 "smv_to_tptp.ml" 732 20439 20472
+"smv_to_tptp.ml" 734 20432 20464 "smv_to_tptp.ml" 734 20432 20465
 type(
   int
 )
-"smv_to_tptp.ml" 732 20439 20461 "smv_to_tptp.ml" 732 20439 20473
+"smv_to_tptp.ml" 734 20432 20454 "smv_to_tptp.ml" 734 20432 20466
 type(
   string
 )
-"smv_to_tptp.ml" 732 20439 20453 "smv_to_tptp.ml" 732 20439 20473
+"smv_to_tptp.ml" 734 20432 20446 "smv_to_tptp.ml" 734 20432 20466
 call(
   stack
 )
 type(
   in_channel
 )
-"smv_to_tptp.ml" 733 20477 20481 "smv_to_tptp.ml" 733 20477 20487
+"smv_to_tptp.ml" 735 20470 20474 "smv_to_tptp.ml" 735 20470 20480
 type(
   Lexing.lexbuf
 )
 ident(
-  def lexbuf "smv_to_tptp.ml" 734 20521 20521 "smv_to_tptp.ml" 763 21637 21653
+  def lexbuf "smv_to_tptp.ml" 736 20514 20514 "smv_to_tptp.ml" 765 21630 21646
 )
-"smv_to_tptp.ml" 733 20477 20490 "smv_to_tptp.ml" 733 20477 20509
+"smv_to_tptp.ml" 735 20470 20483 "smv_to_tptp.ml" 735 20470 20502
 type(
   in_channel -> Lexing.lexbuf
 )
 ident(
   ext_ref Lexing.from_channel
 )
-"smv_to_tptp.ml" 733 20477 20510 "smv_to_tptp.ml" 733 20477 20517
+"smv_to_tptp.ml" 735 20470 20503 "smv_to_tptp.ml" 735 20470 20510
 type(
   in_channel
 )
 ident(
-  int_ref chan_in "smv_to_tptp.ml" 732 20439 20443 "smv_to_tptp.ml" 732 20439 20450
+  int_ref chan_in "smv_to_tptp.ml" 734 20432 20436 "smv_to_tptp.ml" 734 20432 20443
 )
-"smv_to_tptp.ml" 733 20477 20490 "smv_to_tptp.ml" 733 20477 20517
+"smv_to_tptp.ml" 735 20470 20483 "smv_to_tptp.ml" 735 20470 20510
 call(
   stack
 )
 type(
   Lexing.lexbuf
 )
-"smv_to_tptp.ml" 734 20521 20525 "smv_to_tptp.ml" 734 20521 20531
+"smv_to_tptp.ml" 736 20514 20518 "smv_to_tptp.ml" 736 20514 20524
 type(
   Parsed.file
 )
 ident(
-  def result "smv_to_tptp.ml" 735 20568 20568 "smv_to_tptp.ml" 763 21637 21653
+  def result "smv_to_tptp.ml" 737 20561 20561 "smv_to_tptp.ml" 765 21630 21646
 )
-"smv_to_tptp.ml" 734 20521 20534 "smv_to_tptp.ml" 734 20521 20545
+"smv_to_tptp.ml" 736 20514 20527 "smv_to_tptp.ml" 736 20514 20538
 type(
   (Lexing.lexbuf -> Parser.token) -> Lexing.lexbuf -> Parsed.file
 )
 ident(
   ext_ref Parser.file
 )
-"smv_to_tptp.ml" 734 20521 20546 "smv_to_tptp.ml" 734 20521 20557
+"smv_to_tptp.ml" 736 20514 20539 "smv_to_tptp.ml" 736 20514 20550
 type(
   Lexing.lexbuf -> Parser.token
 )
 ident(
   ext_ref Lexer.token
 )
-"smv_to_tptp.ml" 734 20521 20558 "smv_to_tptp.ml" 734 20521 20564
+"smv_to_tptp.ml" 736 20514 20551 "smv_to_tptp.ml" 736 20514 20557
 type(
   Lexing.lexbuf
 )
 ident(
-  int_ref lexbuf "smv_to_tptp.ml" 733 20477 20481 "smv_to_tptp.ml" 733 20477 20487
+  int_ref lexbuf "smv_to_tptp.ml" 735 20470 20474 "smv_to_tptp.ml" 735 20470 20480
 )
-"smv_to_tptp.ml" 734 20521 20534 "smv_to_tptp.ml" 734 20521 20564
+"smv_to_tptp.ml" 736 20514 20527 "smv_to_tptp.ml" 736 20514 20557
 call(
   stack
 )
 type(
   Parsed.file
 )
-"smv_to_tptp.ml" 735 20568 20572 "smv_to_tptp.ml" 735 20568 20577
+"smv_to_tptp.ml" 737 20561 20565 "smv_to_tptp.ml" 737 20561 20570
 type(
   Parsed.var_decl list
 )
 ident(
-  def inits "smv_to_tptp.ml" 736 20628 20628 "smv_to_tptp.ml" 763 21637 21653
+  def inits "smv_to_tptp.ml" 738 20621 20621 "smv_to_tptp.ml" 765 21630 21646
 )
-"smv_to_tptp.ml" 735 20568 20580 "smv_to_tptp.ml" 735 20568 20590
+"smv_to_tptp.ml" 737 20561 20573 "smv_to_tptp.ml" 737 20561 20583
 type(
   Parsed.decl -> Parsed.decl list -> Parsed.var_decl list
 )
 ident(
   int_ref init_state "smv_to_tptp.ml" 188 5284 5288 "smv_to_tptp.ml" 188 5284 5298
 )
-"smv_to_tptp.ml" 735 20568 20592 "smv_to_tptp.ml" 735 20568 20599
+"smv_to_tptp.ml" 737 20561 20585 "smv_to_tptp.ml" 737 20561 20592
 type(
   Parsed.file -> Parsed.decl
 )
 ident(
   ext_ref List.hd
 )
-"smv_to_tptp.ml" 735 20568 20600 "smv_to_tptp.ml" 735 20568 20606
+"smv_to_tptp.ml" 737 20561 20593 "smv_to_tptp.ml" 737 20561 20599
 type(
   Parsed.file
 )
 ident(
-  int_ref result "smv_to_tptp.ml" 734 20521 20525 "smv_to_tptp.ml" 734 20521 20531
+  int_ref result "smv_to_tptp.ml" 736 20514 20518 "smv_to_tptp.ml" 736 20514 20524
 )
-"smv_to_tptp.ml" 735 20568 20591 "smv_to_tptp.ml" 735 20568 20607
+"smv_to_tptp.ml" 737 20561 20584 "smv_to_tptp.ml" 737 20561 20600
 call(
   stack
 )
 type(
   Parsed.decl
 )
-"smv_to_tptp.ml" 735 20568 20609 "smv_to_tptp.ml" 735 20568 20616
+"smv_to_tptp.ml" 737 20561 20602 "smv_to_tptp.ml" 737 20561 20609
 type(
   Parsed.file -> Parsed.decl list
 )
 ident(
   ext_ref List.tl
 )
-"smv_to_tptp.ml" 735 20568 20617 "smv_to_tptp.ml" 735 20568 20623
+"smv_to_tptp.ml" 737 20561 20610 "smv_to_tptp.ml" 737 20561 20616
 type(
   Parsed.file
 )
 ident(
-  int_ref result "smv_to_tptp.ml" 734 20521 20525 "smv_to_tptp.ml" 734 20521 20531
+  int_ref result "smv_to_tptp.ml" 736 20514 20518 "smv_to_tptp.ml" 736 20514 20524
 )
-"smv_to_tptp.ml" 735 20568 20608 "smv_to_tptp.ml" 735 20568 20624
+"smv_to_tptp.ml" 737 20561 20601 "smv_to_tptp.ml" 737 20561 20617
 call(
   stack
 )
 type(
   Parsed.decl list
 )
-"smv_to_tptp.ml" 735 20568 20580 "smv_to_tptp.ml" 735 20568 20624
+"smv_to_tptp.ml" 737 20561 20573 "smv_to_tptp.ml" 737 20561 20617
 call(
   stack
 )
 type(
   Parsed.var_decl list
 )
-"smv_to_tptp.ml" 736 20628 20632 "smv_to_tptp.ml" 736 20628 20636
+"smv_to_tptp.ml" 738 20621 20625 "smv_to_tptp.ml" 738 20621 20629
 type(
   string
 )
 ident(
-  def spec "smv_to_tptp.ml" 737 20672 20672 "smv_to_tptp.ml" 763 21637 21653
+  def spec "smv_to_tptp.ml" 739 20665 20665 "smv_to_tptp.ml" 765 21630 21646
 )
-"smv_to_tptp.ml" 736 20628 20639 "smv_to_tptp.ml" 736 20628 20651
+"smv_to_tptp.ml" 738 20621 20632 "smv_to_tptp.ml" 738 20621 20644
 type(
   Parsed.decl -> string
 )
 ident(
   int_ref spec_in_main "smv_to_tptp.ml" 273 8036 8040 "smv_to_tptp.ml" 273 8036 8052
 )
-"smv_to_tptp.ml" 736 20628 20653 "smv_to_tptp.ml" 736 20628 20660
+"smv_to_tptp.ml" 738 20621 20646 "smv_to_tptp.ml" 738 20621 20653
 type(
   Parsed.file -> Parsed.decl
 )
 ident(
   ext_ref List.hd
 )
-"smv_to_tptp.ml" 736 20628 20661 "smv_to_tptp.ml" 736 20628 20667
+"smv_to_tptp.ml" 738 20621 20654 "smv_to_tptp.ml" 738 20621 20660
 type(
   Parsed.file
 )
 ident(
-  int_ref result "smv_to_tptp.ml" 734 20521 20525 "smv_to_tptp.ml" 734 20521 20531
+  int_ref result "smv_to_tptp.ml" 736 20514 20518 "smv_to_tptp.ml" 736 20514 20524
 )
-"smv_to_tptp.ml" 736 20628 20652 "smv_to_tptp.ml" 736 20628 20668
+"smv_to_tptp.ml" 738 20621 20645 "smv_to_tptp.ml" 738 20621 20661
 call(
   stack
 )
 type(
   Parsed.decl
 )
-"smv_to_tptp.ml" 736 20628 20639 "smv_to_tptp.ml" 736 20628 20668
+"smv_to_tptp.ml" 738 20621 20632 "smv_to_tptp.ml" 738 20621 20661
 call(
   stack
 )
 type(
   string
 )
-"smv_to_tptp.ml" 737 20672 20676 "smv_to_tptp.ml" 737 20672 20682
+"smv_to_tptp.ml" 739 20665 20669 "smv_to_tptp.ml" 739 20665 20675
 type(
   Parsed.var_decl list
 )
 ident(
-  def inits' "smv_to_tptp.ml" 738 20714 20714 "smv_to_tptp.ml" 763 21637 21653
+  def inits' "smv_to_tptp.ml" 740 20707 20707 "smv_to_tptp.ml" 765 21630 21646
 )
-"smv_to_tptp.ml" 737 20672 20685 "smv_to_tptp.ml" 737 20672 20704
+"smv_to_tptp.ml" 739 20665 20678 "smv_to_tptp.ml" 739 20665 20697
 type(
   Parsed.var_decl list -> Parsed.var_decl list
 )
 ident(
   int_ref put_ahead_elem_vars "smv_to_tptp.ml" 194 5448 5452 "smv_to_tptp.ml" 194 5448 5471
 )
-"smv_to_tptp.ml" 737 20672 20705 "smv_to_tptp.ml" 737 20672 20710
+"smv_to_tptp.ml" 739 20665 20698 "smv_to_tptp.ml" 739 20665 20703
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref inits "smv_to_tptp.ml" 735 20568 20572 "smv_to_tptp.ml" 735 20568 20577
+  int_ref inits "smv_to_tptp.ml" 737 20561 20565 "smv_to_tptp.ml" 737 20561 20570
 )
-"smv_to_tptp.ml" 737 20672 20685 "smv_to_tptp.ml" 737 20672 20710
+"smv_to_tptp.ml" 739 20665 20678 "smv_to_tptp.ml" 739 20665 20703
 call(
   stack
 )
 type(
   Parsed.var_decl list
 )
-"smv_to_tptp.ml" 738 20714 20718 "smv_to_tptp.ml" 738 20714 20725
+"smv_to_tptp.ml" 740 20707 20711 "smv_to_tptp.ml" 740 20707 20718
 type(
   string list
 )
 ident(
-  def var_lst "smv_to_tptp.ml" 739 20780 20780 "smv_to_tptp.ml" 763 21637 21653
+  def var_lst "smv_to_tptp.ml" 741 20773 20773 "smv_to_tptp.ml" 765 21630 21646
 )
-"smv_to_tptp.ml" 738 20714 20728 "smv_to_tptp.ml" 738 20714 20742
+"smv_to_tptp.ml" 740 20707 20721 "smv_to_tptp.ml" 740 20707 20735
 type(
   Parsed.decl -> Parsed.decl list -> string list
 )
 ident(
   int_ref state_var_list "smv_to_tptp.ml" 102 2948 2952 "smv_to_tptp.ml" 102 2948 2966
 )
-"smv_to_tptp.ml" 738 20714 20744 "smv_to_tptp.ml" 738 20714 20751
+"smv_to_tptp.ml" 740 20707 20737 "smv_to_tptp.ml" 740 20707 20744
 type(
   Parsed.file -> Parsed.decl
 )
 ident(
   ext_ref List.hd
 )
-"smv_to_tptp.ml" 738 20714 20752 "smv_to_tptp.ml" 738 20714 20758
+"smv_to_tptp.ml" 740 20707 20745 "smv_to_tptp.ml" 740 20707 20751
 type(
   Parsed.file
 )
 ident(
-  int_ref result "smv_to_tptp.ml" 734 20521 20525 "smv_to_tptp.ml" 734 20521 20531
+  int_ref result "smv_to_tptp.ml" 736 20514 20518 "smv_to_tptp.ml" 736 20514 20524
 )
-"smv_to_tptp.ml" 738 20714 20743 "smv_to_tptp.ml" 738 20714 20759
+"smv_to_tptp.ml" 740 20707 20736 "smv_to_tptp.ml" 740 20707 20752
 call(
   stack
 )
 type(
   Parsed.decl
 )
-"smv_to_tptp.ml" 738 20714 20761 "smv_to_tptp.ml" 738 20714 20768
+"smv_to_tptp.ml" 740 20707 20754 "smv_to_tptp.ml" 740 20707 20761
 type(
   Parsed.file -> Parsed.decl list
 )
 ident(
   ext_ref List.tl
 )
-"smv_to_tptp.ml" 738 20714 20769 "smv_to_tptp.ml" 738 20714 20775
+"smv_to_tptp.ml" 740 20707 20762 "smv_to_tptp.ml" 740 20707 20768
 type(
   Parsed.file
 )
 ident(
-  int_ref result "smv_to_tptp.ml" 734 20521 20525 "smv_to_tptp.ml" 734 20521 20531
+  int_ref result "smv_to_tptp.ml" 736 20514 20518 "smv_to_tptp.ml" 736 20514 20524
 )
-"smv_to_tptp.ml" 738 20714 20760 "smv_to_tptp.ml" 738 20714 20776
+"smv_to_tptp.ml" 740 20707 20753 "smv_to_tptp.ml" 740 20707 20769
 call(
   stack
 )
 type(
   Parsed.decl list
 )
-"smv_to_tptp.ml" 738 20714 20728 "smv_to_tptp.ml" 738 20714 20776
+"smv_to_tptp.ml" 740 20707 20721 "smv_to_tptp.ml" 740 20707 20769
 call(
   stack
 )
 type(
   string list
 )
-"smv_to_tptp.ml" 739 20780 20784 "smv_to_tptp.ml" 739 20780 20792
+"smv_to_tptp.ml" 741 20773 20777 "smv_to_tptp.ml" 741 20773 20785
 type(
   Parsed.var_decl list
 )
 ident(
-  def var_lst' "smv_to_tptp.ml" 740 20848 20848 "smv_to_tptp.ml" 763 21637 21653
+  def var_lst' "smv_to_tptp.ml" 742 20841 20841 "smv_to_tptp.ml" 765 21630 21646
 )
-"smv_to_tptp.ml" 739 20780 20795 "smv_to_tptp.ml" 739 20780 20810
+"smv_to_tptp.ml" 741 20773 20788 "smv_to_tptp.ml" 741 20773 20803
 type(
   Parsed.decl -> Parsed.decl list -> Parsed.var_decl list
 )
 ident(
   int_ref state_var_list' "smv_to_tptp.ml" 107 3085 3089 "smv_to_tptp.ml" 107 3085 3104
 )
-"smv_to_tptp.ml" 739 20780 20812 "smv_to_tptp.ml" 739 20780 20819
+"smv_to_tptp.ml" 741 20773 20805 "smv_to_tptp.ml" 741 20773 20812
 type(
   Parsed.file -> Parsed.decl
 )
 ident(
   ext_ref List.hd
 )
-"smv_to_tptp.ml" 739 20780 20820 "smv_to_tptp.ml" 739 20780 20826
+"smv_to_tptp.ml" 741 20773 20813 "smv_to_tptp.ml" 741 20773 20819
 type(
   Parsed.file
 )
 ident(
-  int_ref result "smv_to_tptp.ml" 734 20521 20525 "smv_to_tptp.ml" 734 20521 20531
+  int_ref result "smv_to_tptp.ml" 736 20514 20518 "smv_to_tptp.ml" 736 20514 20524
 )
-"smv_to_tptp.ml" 739 20780 20811 "smv_to_tptp.ml" 739 20780 20827
+"smv_to_tptp.ml" 741 20773 20804 "smv_to_tptp.ml" 741 20773 20820
 call(
   stack
 )
 type(
   Parsed.decl
 )
-"smv_to_tptp.ml" 739 20780 20829 "smv_to_tptp.ml" 739 20780 20836
+"smv_to_tptp.ml" 741 20773 20822 "smv_to_tptp.ml" 741 20773 20829
 type(
   Parsed.file -> Parsed.decl list
 )
 ident(
   ext_ref List.tl
 )
-"smv_to_tptp.ml" 739 20780 20837 "smv_to_tptp.ml" 739 20780 20843
+"smv_to_tptp.ml" 741 20773 20830 "smv_to_tptp.ml" 741 20773 20836
 type(
   Parsed.file
 )
 ident(
-  int_ref result "smv_to_tptp.ml" 734 20521 20525 "smv_to_tptp.ml" 734 20521 20531
+  int_ref result "smv_to_tptp.ml" 736 20514 20518 "smv_to_tptp.ml" 736 20514 20524
 )
-"smv_to_tptp.ml" 739 20780 20828 "smv_to_tptp.ml" 739 20780 20844
+"smv_to_tptp.ml" 741 20773 20821 "smv_to_tptp.ml" 741 20773 20837
 call(
   stack
 )
 type(
   Parsed.decl list
 )
-"smv_to_tptp.ml" 739 20780 20795 "smv_to_tptp.ml" 739 20780 20844
+"smv_to_tptp.ml" 741 20773 20788 "smv_to_tptp.ml" 741 20773 20837
 call(
   stack
 )
 type(
   Parsed.var_decl list
 )
-"smv_to_tptp.ml" 740 20848 20852 "smv_to_tptp.ml" 740 20848 20861
+"smv_to_tptp.ml" 742 20841 20845 "smv_to_tptp.ml" 742 20841 20854
 type(
   Parsed.var_decl list
 )
 ident(
-  def var_lst'' "smv_to_tptp.ml" 741 20896 20896 "smv_to_tptp.ml" 763 21637 21653
+  def var_lst'' "smv_to_tptp.ml" 743 20889 20889 "smv_to_tptp.ml" 765 21630 21646
 )
-"smv_to_tptp.ml" 740 20848 20864 "smv_to_tptp.ml" 740 20848 20883
+"smv_to_tptp.ml" 742 20841 20857 "smv_to_tptp.ml" 742 20841 20876
 type(
   Parsed.var_decl list -> Parsed.var_decl list
 )
 ident(
   int_ref put_ahead_elem_vars "smv_to_tptp.ml" 194 5448 5452 "smv_to_tptp.ml" 194 5448 5471
 )
-"smv_to_tptp.ml" 740 20848 20884 "smv_to_tptp.ml" 740 20848 20892
+"smv_to_tptp.ml" 742 20841 20877 "smv_to_tptp.ml" 742 20841 20885
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref var_lst' "smv_to_tptp.ml" 739 20780 20784 "smv_to_tptp.ml" 739 20780 20792
+  int_ref var_lst' "smv_to_tptp.ml" 741 20773 20777 "smv_to_tptp.ml" 741 20773 20785
 )
-"smv_to_tptp.ml" 740 20848 20864 "smv_to_tptp.ml" 740 20848 20892
+"smv_to_tptp.ml" 742 20841 20857 "smv_to_tptp.ml" 742 20841 20885
 call(
   stack
 )
 type(
   Parsed.var_decl list
 )
-"smv_to_tptp.ml" 741 20896 20900 "smv_to_tptp.ml" 741 20896 20916
+"smv_to_tptp.ml" 743 20889 20893 "smv_to_tptp.ml" 743 20889 20909
 type(
   Parsed.assign list
 )
 ident(
-  def main_succ_assign "smv_to_tptp.ml" 742 20958 20958 "smv_to_tptp.ml" 763 21637 21653
+  def main_succ_assign "smv_to_tptp.ml" 744 20951 20951 "smv_to_tptp.ml" 765 21630 21646
 )
-"smv_to_tptp.ml" 741 20896 20919 "smv_to_tptp.ml" 741 20896 20937
+"smv_to_tptp.ml" 743 20889 20912 "smv_to_tptp.ml" 743 20889 20930
 type(
   Parsed.decl -> Parsed.assign list
 )
 ident(
   int_ref succ_assig_in_main "smv_to_tptp.ml" 389 11248 11252 "smv_to_tptp.ml" 389 11248 11270
 )
-"smv_to_tptp.ml" 741 20896 20939 "smv_to_tptp.ml" 741 20896 20946
+"smv_to_tptp.ml" 743 20889 20932 "smv_to_tptp.ml" 743 20889 20939
 type(
   Parsed.file -> Parsed.decl
 )
 ident(
   ext_ref List.hd
 )
-"smv_to_tptp.ml" 741 20896 20947 "smv_to_tptp.ml" 741 20896 20953
+"smv_to_tptp.ml" 743 20889 20940 "smv_to_tptp.ml" 743 20889 20946
 type(
   Parsed.file
 )
 ident(
-  int_ref result "smv_to_tptp.ml" 734 20521 20525 "smv_to_tptp.ml" 734 20521 20531
+  int_ref result "smv_to_tptp.ml" 736 20514 20518 "smv_to_tptp.ml" 736 20514 20524
 )
-"smv_to_tptp.ml" 741 20896 20938 "smv_to_tptp.ml" 741 20896 20954
+"smv_to_tptp.ml" 743 20889 20931 "smv_to_tptp.ml" 743 20889 20947
 call(
   stack
 )
 type(
   Parsed.decl
 )
-"smv_to_tptp.ml" 741 20896 20919 "smv_to_tptp.ml" 741 20896 20954
+"smv_to_tptp.ml" 743 20889 20912 "smv_to_tptp.ml" 743 20889 20947
 call(
   stack
 )
 type(
   Parsed.assign list
 )
-"smv_to_tptp.ml" 742 20958 20962 "smv_to_tptp.ml" 742 20958 20967
+"smv_to_tptp.ml" 744 20951 20955 "smv_to_tptp.ml" 744 20951 20960
 type(
   Parsed.var_decl list
 )
 ident(
-  def procs "smv_to_tptp.ml" 743 21004 21004 "smv_to_tptp.ml" 763 21637 21653
+  def procs "smv_to_tptp.ml" 745 20997 20997 "smv_to_tptp.ml" 765 21630 21646
 )
-"smv_to_tptp.ml" 742 20958 20970 "smv_to_tptp.ml" 742 20958 20983
+"smv_to_tptp.ml" 744 20951 20963 "smv_to_tptp.ml" 744 20951 20976
 type(
   Parsed.decl -> Parsed.var_decl list
 )
 ident(
   int_ref list_of_procs "smv_to_tptp.ml" 301 8591 8595 "smv_to_tptp.ml" 301 8591 8608
 )
-"smv_to_tptp.ml" 742 20958 20985 "smv_to_tptp.ml" 742 20958 20992
+"smv_to_tptp.ml" 744 20951 20978 "smv_to_tptp.ml" 744 20951 20985
 type(
   Parsed.file -> Parsed.decl
 )
 ident(
   ext_ref List.hd
 )
-"smv_to_tptp.ml" 742 20958 20993 "smv_to_tptp.ml" 742 20958 20999
+"smv_to_tptp.ml" 744 20951 20986 "smv_to_tptp.ml" 744 20951 20992
 type(
   Parsed.file
 )
 ident(
-  int_ref result "smv_to_tptp.ml" 734 20521 20525 "smv_to_tptp.ml" 734 20521 20531
+  int_ref result "smv_to_tptp.ml" 736 20514 20518 "smv_to_tptp.ml" 736 20514 20524
 )
-"smv_to_tptp.ml" 742 20958 20984 "smv_to_tptp.ml" 742 20958 21000
+"smv_to_tptp.ml" 744 20951 20977 "smv_to_tptp.ml" 744 20951 20993
 call(
   stack
 )
 type(
   Parsed.decl
 )
-"smv_to_tptp.ml" 742 20958 20970 "smv_to_tptp.ml" 742 20958 21000
+"smv_to_tptp.ml" 744 20951 20963 "smv_to_tptp.ml" 744 20951 20993
 call(
   stack
 )
 type(
   Parsed.var_decl list
 )
-"smv_to_tptp.ml" 743 21004 21008 "smv_to_tptp.ml" 743 21004 21020
+"smv_to_tptp.ml" 745 20997 21001 "smv_to_tptp.ml" 745 20997 21013
 type(
   Parsed.assign list list
 )
 ident(
-  def succ_assigns "smv_to_tptp.ml" 756 21418 21418 "smv_to_tptp.ml" 763 21637 21653
+  def succ_assigns "smv_to_tptp.ml" 758 21411 21411 "smv_to_tptp.ml" 765 21630 21646
 )
-"smv_to_tptp.ml" 743 21004 21023 "smv_to_tptp.ml" 743 21004 21046
+"smv_to_tptp.ml" 745 20997 21016 "smv_to_tptp.ml" 745 20997 21039
 type(
   Parsed.var_decl list -> Parsed.decl list -> Parsed.assign list list
 )
 ident(
   int_ref succ_assig_in_each_proc "smv_to_tptp.ml" 377 10878 10886 "smv_to_tptp.ml" 377 10878 10909
 )
-"smv_to_tptp.ml" 743 21004 21047 "smv_to_tptp.ml" 743 21004 21052
+"smv_to_tptp.ml" 745 20997 21040 "smv_to_tptp.ml" 745 20997 21045
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref procs "smv_to_tptp.ml" 742 20958 20962 "smv_to_tptp.ml" 742 20958 20967
+  int_ref procs "smv_to_tptp.ml" 744 20951 20955 "smv_to_tptp.ml" 744 20951 20960
 )
-"smv_to_tptp.ml" 743 21004 21054 "smv_to_tptp.ml" 743 21004 21061
+"smv_to_tptp.ml" 745 20997 21047 "smv_to_tptp.ml" 745 20997 21054
 type(
   Parsed.file -> Parsed.decl list
 )
 ident(
   ext_ref List.tl
 )
-"smv_to_tptp.ml" 743 21004 21062 "smv_to_tptp.ml" 743 21004 21068
+"smv_to_tptp.ml" 745 20997 21055 "smv_to_tptp.ml" 745 20997 21061
 type(
   Parsed.file
 )
 ident(
-  int_ref result "smv_to_tptp.ml" 734 20521 20525 "smv_to_tptp.ml" 734 20521 20531
+  int_ref result "smv_to_tptp.ml" 736 20514 20518 "smv_to_tptp.ml" 736 20514 20524
 )
-"smv_to_tptp.ml" 743 21004 21053 "smv_to_tptp.ml" 743 21004 21069
+"smv_to_tptp.ml" 745 20997 21046 "smv_to_tptp.ml" 745 20997 21062
 call(
   stack
 )
 type(
   Parsed.decl list
 )
-"smv_to_tptp.ml" 743 21004 21023 "smv_to_tptp.ml" 743 21004 21069
+"smv_to_tptp.ml" 745 20997 21016 "smv_to_tptp.ml" 745 20997 21062
 call(
   stack
 )
 type(
   Parsed.assign list list
 )
-"smv_to_tptp.ml" 756 21418 21418 "smv_to_tptp.ml" 756 21418 21438
+"smv_to_tptp.ml" 758 21411 21411 "smv_to_tptp.ml" 758 21411 21431
 type(
   Parsed.decl -> string list -> unit
 )
 ident(
   int_ref atomic_prop_in_state "smv_to_tptp.ml" 238 6735 6739 "smv_to_tptp.ml" 238 6735 6759
 )
-"smv_to_tptp.ml" 756 21418 21440 "smv_to_tptp.ml" 756 21418 21447
+"smv_to_tptp.ml" 758 21411 21433 "smv_to_tptp.ml" 758 21411 21440
 type(
   Parsed.file -> Parsed.decl
 )
 ident(
   ext_ref List.hd
 )
-"smv_to_tptp.ml" 756 21418 21448 "smv_to_tptp.ml" 756 21418 21454
+"smv_to_tptp.ml" 758 21411 21441 "smv_to_tptp.ml" 758 21411 21447
 type(
   Parsed.file
 )
 ident(
-  int_ref result "smv_to_tptp.ml" 734 20521 20525 "smv_to_tptp.ml" 734 20521 20531
+  int_ref result "smv_to_tptp.ml" 736 20514 20518 "smv_to_tptp.ml" 736 20514 20524
 )
-"smv_to_tptp.ml" 756 21418 21439 "smv_to_tptp.ml" 756 21418 21455
+"smv_to_tptp.ml" 758 21411 21432 "smv_to_tptp.ml" 758 21411 21448
 call(
   stack
 )
 type(
   Parsed.decl
 )
-"smv_to_tptp.ml" 756 21418 21456 "smv_to_tptp.ml" 756 21418 21463
+"smv_to_tptp.ml" 758 21411 21449 "smv_to_tptp.ml" 758 21411 21456
 type(
   string list
 )
 ident(
-  int_ref var_lst "smv_to_tptp.ml" 738 20714 20718 "smv_to_tptp.ml" 738 20714 20725
+  int_ref var_lst "smv_to_tptp.ml" 740 20707 20711 "smv_to_tptp.ml" 740 20707 20718
 )
-"smv_to_tptp.ml" 756 21418 21418 "smv_to_tptp.ml" 756 21418 21463
+"smv_to_tptp.ml" 758 21411 21411 "smv_to_tptp.ml" 758 21411 21456
 call(
   stack
 )
 type(
   unit
 )
-"smv_to_tptp.ml" 757 21465 21465 "smv_to_tptp.ml" 757 21465 21478
+"smv_to_tptp.ml" 759 21458 21458 "smv_to_tptp.ml" 759 21458 21471
 type(
   unit -> unit
 )
 ident(
   ext_ref Pervasives.print_newline
 )
-"smv_to_tptp.ml" 757 21465 21478 "smv_to_tptp.ml" 757 21465 21480
+"smv_to_tptp.ml" 759 21458 21471 "smv_to_tptp.ml" 759 21458 21473
 type(
   unit
 )
-"smv_to_tptp.ml" 757 21465 21465 "smv_to_tptp.ml" 757 21465 21480
+"smv_to_tptp.ml" 759 21458 21458 "smv_to_tptp.ml" 759 21458 21473
 call(
   stack
 )
 type(
   unit
 )
-"smv_to_tptp.ml" 759 21523 21523 "smv_to_tptp.ml" 759 21523 21530
+"smv_to_tptp.ml" 761 21516 21516 "smv_to_tptp.ml" 761 21516 21523
 type(
   Parsed.var_decl list ->
   Parsed.var_decl list -> Parsed.assign list list -> unit
 )
 ident(
-  int_ref r_shape "smv_to_tptp.ml" 715 20026 20034 "smv_to_tptp.ml" 715 20026 20041
+  int_ref r_shape "smv_to_tptp.ml" 717 20019 20027 "smv_to_tptp.ml" 717 20019 20034
 )
-"smv_to_tptp.ml" 759 21523 21531 "smv_to_tptp.ml" 759 21523 21540
+"smv_to_tptp.ml" 761 21516 21524 "smv_to_tptp.ml" 761 21516 21533
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref var_lst'' "smv_to_tptp.ml" 740 20848 20852 "smv_to_tptp.ml" 740 20848 20861
+  int_ref var_lst'' "smv_to_tptp.ml" 742 20841 20845 "smv_to_tptp.ml" 742 20841 20854
 )
-"smv_to_tptp.ml" 759 21523 21541 "smv_to_tptp.ml" 759 21523 21550
+"smv_to_tptp.ml" 761 21516 21534 "smv_to_tptp.ml" 761 21516 21543
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref var_lst'' "smv_to_tptp.ml" 740 20848 20852 "smv_to_tptp.ml" 740 20848 20861
+  int_ref var_lst'' "smv_to_tptp.ml" 742 20841 20845 "smv_to_tptp.ml" 742 20841 20854
 )
-"smv_to_tptp.ml" 759 21523 21552 "smv_to_tptp.ml" 759 21523 21568
+"smv_to_tptp.ml" 761 21516 21545 "smv_to_tptp.ml" 761 21516 21561
 type(
   Parsed.assign list
 )
 ident(
-  int_ref main_succ_assign "smv_to_tptp.ml" 741 20896 20900 "smv_to_tptp.ml" 741 20896 20916
+  int_ref main_succ_assign "smv_to_tptp.ml" 743 20889 20893 "smv_to_tptp.ml" 743 20889 20909
 )
-"smv_to_tptp.ml" 759 21523 21570 "smv_to_tptp.ml" 759 21523 21582
+"smv_to_tptp.ml" 761 21516 21563 "smv_to_tptp.ml" 761 21516 21575
 type(
   Parsed.assign list list
 )
 ident(
-  int_ref succ_assigns "smv_to_tptp.ml" 743 21004 21008 "smv_to_tptp.ml" 743 21004 21020
+  int_ref succ_assigns "smv_to_tptp.ml" 745 20997 21001 "smv_to_tptp.ml" 745 20997 21013
 )
-"smv_to_tptp.ml" 759 21523 21551 "smv_to_tptp.ml" 759 21523 21583
+"smv_to_tptp.ml" 761 21516 21544 "smv_to_tptp.ml" 761 21516 21576
 type(
   Parsed.assign list list
 )
-"smv_to_tptp.ml" 759 21523 21523 "smv_to_tptp.ml" 759 21523 21583
+"smv_to_tptp.ml" 761 21516 21516 "smv_to_tptp.ml" 761 21516 21576
 call(
   stack
 )
 type(
   unit
 )
-"smv_to_tptp.ml" 760 21585 21585 "smv_to_tptp.ml" 760 21585 21598
+"smv_to_tptp.ml" 762 21578 21578 "smv_to_tptp.ml" 762 21578 21591
 type(
   unit -> unit
 )
 ident(
   ext_ref Pervasives.print_newline
 )
-"smv_to_tptp.ml" 760 21585 21598 "smv_to_tptp.ml" 760 21585 21600
+"smv_to_tptp.ml" 762 21578 21591 "smv_to_tptp.ml" 762 21578 21593
 type(
   unit
 )
-"smv_to_tptp.ml" 760 21585 21585 "smv_to_tptp.ml" 760 21585 21600
+"smv_to_tptp.ml" 762 21578 21578 "smv_to_tptp.ml" 762 21578 21593
 call(
   stack
 )
 type(
   unit
 )
-"smv_to_tptp.ml" 761 21602 21602 "smv_to_tptp.ml" 761 21602 21606
+"smv_to_tptp.ml" 763 21595 21595 "smv_to_tptp.ml" 763 21595 21599
 type(
   string -> Parsed.var_decl list -> unit
 )
 ident(
   int_ref goal "smv_to_tptp.ml" 286 8263 8267 "smv_to_tptp.ml" 286 8263 8271
 )
-"smv_to_tptp.ml" 761 21602 21607 "smv_to_tptp.ml" 761 21602 21611
+"smv_to_tptp.ml" 763 21595 21600 "smv_to_tptp.ml" 763 21595 21604
 type(
   string
 )
 ident(
-  int_ref spec "smv_to_tptp.ml" 736 20628 20632 "smv_to_tptp.ml" 736 20628 20636
+  int_ref spec "smv_to_tptp.ml" 738 20621 20625 "smv_to_tptp.ml" 738 20621 20629
 )
-"smv_to_tptp.ml" 761 21602 21612 "smv_to_tptp.ml" 761 21602 21618
+"smv_to_tptp.ml" 763 21595 21605 "smv_to_tptp.ml" 763 21595 21611
 type(
   Parsed.var_decl list
 )
 ident(
-  int_ref inits' "smv_to_tptp.ml" 737 20672 20676 "smv_to_tptp.ml" 737 20672 20682
+  int_ref inits' "smv_to_tptp.ml" 739 20665 20669 "smv_to_tptp.ml" 739 20665 20675
 )
-"smv_to_tptp.ml" 761 21602 21602 "smv_to_tptp.ml" 761 21602 21618
+"smv_to_tptp.ml" 763 21595 21595 "smv_to_tptp.ml" 763 21595 21611
 call(
   stack
 )
 type(
   unit
 )
-"smv_to_tptp.ml" 762 21620 21620 "smv_to_tptp.ml" 762 21620 21633
+"smv_to_tptp.ml" 764 21613 21613 "smv_to_tptp.ml" 764 21613 21626
 type(
   unit -> unit
 )
 ident(
   ext_ref Pervasives.print_newline
 )
-"smv_to_tptp.ml" 762 21620 21633 "smv_to_tptp.ml" 762 21620 21635
+"smv_to_tptp.ml" 764 21613 21626 "smv_to_tptp.ml" 764 21613 21628
 type(
   unit
 )
-"smv_to_tptp.ml" 762 21620 21620 "smv_to_tptp.ml" 762 21620 21635
+"smv_to_tptp.ml" 764 21613 21613 "smv_to_tptp.ml" 764 21613 21628
 call(
   stack
 )
 type(
   unit
 )
-"smv_to_tptp.ml" 763 21637 21637 "smv_to_tptp.ml" 763 21637 21645
+"smv_to_tptp.ml" 765 21630 21630 "smv_to_tptp.ml" 765 21630 21638
 type(
   in_channel -> unit
 )
 ident(
   ext_ref Pervasives.close_in
 )
-"smv_to_tptp.ml" 763 21637 21646 "smv_to_tptp.ml" 763 21637 21653
+"smv_to_tptp.ml" 765 21630 21639 "smv_to_tptp.ml" 765 21630 21646
 type(
   in_channel
 )
 ident(
-  int_ref chan_in "smv_to_tptp.ml" 732 20439 20443 "smv_to_tptp.ml" 732 20439 20450
+  int_ref chan_in "smv_to_tptp.ml" 734 20432 20436 "smv_to_tptp.ml" 734 20432 20443
 )
-"smv_to_tptp.ml" 763 21637 21637 "smv_to_tptp.ml" 763 21637 21653
+"smv_to_tptp.ml" 765 21630 21630 "smv_to_tptp.ml" 765 21630 21646
 call(
   stack
 )
 type(
   unit
 )
-"smv_to_tptp.ml" 762 21620 21620 "smv_to_tptp.ml" 763 21637 21653
+"smv_to_tptp.ml" 764 21613 21613 "smv_to_tptp.ml" 765 21630 21646
 type(
   unit
 )
-"smv_to_tptp.ml" 761 21602 21602 "smv_to_tptp.ml" 763 21637 21653
+"smv_to_tptp.ml" 763 21595 21595 "smv_to_tptp.ml" 765 21630 21646
 type(
   unit
 )
-"smv_to_tptp.ml" 760 21585 21585 "smv_to_tptp.ml" 763 21637 21653
+"smv_to_tptp.ml" 762 21578 21578 "smv_to_tptp.ml" 765 21630 21646
 type(
   unit
 )
-"smv_to_tptp.ml" 759 21523 21523 "smv_to_tptp.ml" 763 21637 21653
+"smv_to_tptp.ml" 761 21516 21516 "smv_to_tptp.ml" 765 21630 21646
 type(
   unit
 )
-"smv_to_tptp.ml" 757 21465 21465 "smv_to_tptp.ml" 763 21637 21653
+"smv_to_tptp.ml" 759 21458 21458 "smv_to_tptp.ml" 765 21630 21646
 type(
   unit
 )
-"smv_to_tptp.ml" 756 21418 21418 "smv_to_tptp.ml" 763 21637 21653
+"smv_to_tptp.ml" 758 21411 21411 "smv_to_tptp.ml" 765 21630 21646
 type(
   unit
 )
-"smv_to_tptp.ml" 743 21004 21004 "smv_to_tptp.ml" 763 21637 21653
+"smv_to_tptp.ml" 745 20997 20997 "smv_to_tptp.ml" 765 21630 21646
 type(
   unit
 )
-"smv_to_tptp.ml" 742 20958 20958 "smv_to_tptp.ml" 763 21637 21653
+"smv_to_tptp.ml" 744 20951 20951 "smv_to_tptp.ml" 765 21630 21646
 type(
   unit
 )
-"smv_to_tptp.ml" 741 20896 20896 "smv_to_tptp.ml" 763 21637 21653
+"smv_to_tptp.ml" 743 20889 20889 "smv_to_tptp.ml" 765 21630 21646
 type(
   unit
 )
-"smv_to_tptp.ml" 740 20848 20848 "smv_to_tptp.ml" 763 21637 21653
+"smv_to_tptp.ml" 742 20841 20841 "smv_to_tptp.ml" 765 21630 21646
 type(
   unit
 )
-"smv_to_tptp.ml" 739 20780 20780 "smv_to_tptp.ml" 763 21637 21653
+"smv_to_tptp.ml" 741 20773 20773 "smv_to_tptp.ml" 765 21630 21646
 type(
   unit
 )
-"smv_to_tptp.ml" 738 20714 20714 "smv_to_tptp.ml" 763 21637 21653
+"smv_to_tptp.ml" 740 20707 20707 "smv_to_tptp.ml" 765 21630 21646
 type(
   unit
 )
-"smv_to_tptp.ml" 737 20672 20672 "smv_to_tptp.ml" 763 21637 21653
+"smv_to_tptp.ml" 739 20665 20665 "smv_to_tptp.ml" 765 21630 21646
 type(
   unit
 )
-"smv_to_tptp.ml" 736 20628 20628 "smv_to_tptp.ml" 763 21637 21653
+"smv_to_tptp.ml" 738 20621 20621 "smv_to_tptp.ml" 765 21630 21646
 type(
   unit
 )
-"smv_to_tptp.ml" 735 20568 20568 "smv_to_tptp.ml" 763 21637 21653
+"smv_to_tptp.ml" 737 20561 20561 "smv_to_tptp.ml" 765 21630 21646
 type(
   unit
 )
-"smv_to_tptp.ml" 734 20521 20521 "smv_to_tptp.ml" 763 21637 21653
+"smv_to_tptp.ml" 736 20514 20514 "smv_to_tptp.ml" 765 21630 21646
 type(
   unit
 )
-"smv_to_tptp.ml" 733 20477 20477 "smv_to_tptp.ml" 763 21637 21653
+"smv_to_tptp.ml" 735 20470 20470 "smv_to_tptp.ml" 765 21630 21646
 type(
   unit
 )
-"smv_to_tptp.ml" 732 20439 20439 "smv_to_tptp.ml" 763 21637 21653
+"smv_to_tptp.ml" 734 20432 20432 "smv_to_tptp.ml" 765 21630 21646
 type(
   unit
 )

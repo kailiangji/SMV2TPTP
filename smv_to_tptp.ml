@@ -618,20 +618,21 @@ let rec succ_with_case elem vars succ_assig =
   | _ -> raise Not_Elem
 
 
-let rec st_eqs_for_each_elem_value next_vars vars succ_assig =
-  match next_vars with
-  | [] -> []
-  | h :: tl ->
-       match h with
+let rec st_eqs_for_each_elem_value next_vars vars1 vars2 succ_assig =
+  match next_vars, vars1 with
+  | [],[] -> []
+  | h1 :: tl1, h2::tl2 ->
+     begin
+       match h1 with
        | Elem(var, val_lst) ->
-	  if (String.sub var 0 5 ) = "next(" then
-	    let var'= (String.sub var 5 ((String.length var) - 6)) in
-	    (succ_with_case (Elem(var', val_lst)) vars succ_assig
-	     @ st_eqs_for_each_elem_value tl vars succ_assig )
+	  if h1 = h2 then st_eqs_for_each_elem_value tl1 tl2 vars2 succ_assig
 	  else
-	    st_eqs_for_each_elem_value tl vars succ_assig
-       | _ -> st_eqs_for_each_elem_value tl vars succ_assig 
-
+	    (succ_with_case h2 vars2 succ_assig
+	     @ st_eqs_for_each_elem_value tl1 tl2 vars2 succ_assig )
+       | _ -> st_eqs_for_each_elem_value tl1 tl2 vars2 succ_assig 
+     end
+  | _, [] -> []
+  | [], _ -> []
 
 let rec st_with_next_value' elem e_val vars =
   match vars with
@@ -694,7 +695,7 @@ let st_eqs vars succ_assigs =
     | [], [] -> ()
     | h1 :: tl1, h2::tl2 ->
        let vars_with_nxt_vals = st_with_next_values h1 vars vars in  
-       let next_st_lst = st_eqs_for_each_elem_value h1 vars h2 in
+       let next_st_lst = st_eqs_for_each_elem_value h1 vars vars h2 in
        print_eqs_st vars_with_nxt_vals next_st_lst;
        st_eqs_print vars (tl1, tl2)
     | _,_ -> ()
