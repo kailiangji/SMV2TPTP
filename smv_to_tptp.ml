@@ -70,32 +70,93 @@ let rec lst_str_of_vars' ?var_md:(var_md ="") vars md_lst =
 let rec print_vars_with_types vars =
   match vars with
   | [] -> ()
-  | h1::((h2::tl') as tl) ->( match h1 with
-    | Boolean(v) -> print_string ("Boolean(" ^ v ^ "), ");
-      print_vars_with_types tl
-    | Elem(elm,_) -> print_string ("Elem("^elm^"), ");
-      print_vars_with_types tl
-    | _ -> print_vars_with_types tl
-  )
-  | [h] -> ( match h with
-    | Boolean(v) -> print_string ("Boolean(" ^ v ^ ")");
-    | Elem(elm,_) -> print_string ("Elem(" ^ elm ^ ")");
-    | _ -> ()
-  )
+  | h1::((h2::tl') as tl) ->
+     begin
+       match h1 with
+       | Boolean(v) -> print_string ("Boolean(" ^ v ^ "), ");
+	 print_vars_with_types tl
+       | Elem(elm,_) -> print_string ("Elem("^elm^"), ");
+	 print_vars_with_types tl
+       | _ -> print_vars_with_types tl
+     end
+  | [h] ->
+     begin
+       match h with
+       | Boolean(v) -> print_string ("Boolean(" ^ v ^ ")");
+       | Elem(elm,_) -> print_string ("Elem(" ^ elm ^ ")");
+       | _ -> ()
+     end
 
 let rec print_vars_without_types vars =
   match vars with
   | [] -> ()
+  | h1::((h2::tl') as tl) ->
+     begin
+       match h1 with
+       | Boolean(v) -> print_string (v ^ ", ");
+	 print_vars_without_types tl
+       | Elem(elm,_) -> print_string (elm^", ");
+	 print_vars_without_types tl
+       | _ -> print_vars_without_types tl
+     end
+  | [h] ->
+     begin
+       match h with
+       | Boolean(v) -> print_string ( v );
+       | Elem(elm,_) -> print_string ( elm );
+       | _ -> ()
+     end
+
+let rec print_vars_up_with_next vars1 vars2 =
+  match vars1,vars2 with
+  | [],[] -> ()
+  | [h1], [h2] ->
+     if h1 = h2 then
+       begin
+	 match h1 with
+	 | Boolean(v) -> print_string ((String.uppercase v));
+	 | Elem(elm,_) -> print_string ((String.uppercase elm));
+	 | _ -> ()
+       end
+     else
+       begin
+	 match h2 with
+	 | Elem(elm,_) -> print_string ("next("^( String.uppercase elm)^") ");
+	 | _ -> ()
+       end
+  | h1 :: tl1, h2 :: tl2 ->
+     if h1 = h2 then
+      begin
+	match h1 with
+	| Boolean(v) -> print_string ((String.uppercase v) ^ ", ");
+	  print_vars_up_with_next tl1 tl2
+	| Elem(elm,_) -> print_string ((String.uppercase elm)^", ");
+	  print_vars_up_with_next tl1 tl2
+	| _ -> print_vars_up_with_next tl1 tl2
+      end
+     else
+       begin
+	 match h2 with
+	 | Elem(elm,_) -> print_string ("next("^( String.uppercase elm)^"), ");
+	   print_vars_up_with_next tl1 tl2
+	 | _ -> print_vars_up_with_next tl1 tl2
+       end
+  | _ , []
+  | [], _ -> ()
+
+let rec print_vars_up_without_types vars =
+  match vars with
+  | [] -> ()
   | h1::((h2::tl') as tl) ->( match h1 with
-    | Boolean(v) -> print_string (v ^ ", ");
-      print_vars_without_types tl
-    | Elem(elm,_) -> print_string (elm^", ");
-      print_vars_without_types tl
-    | _ -> print_vars_without_types tl
+    | Boolean(v) -> print_string ((String.uppercase v) ^ ", ");
+      print_vars_up_without_types tl
+    | Elem(elm,_) -> print_string ((String.uppercase elm)^", ");
+      print_vars_up_without_types tl
+    | _ -> print_vars_up_without_types tl
   )
   | [h] -> ( match h with
-    | Boolean(v) -> print_string ( v );
-    | Elem(elm,_) -> print_string ( elm );
+    | Boolean(v) -> print_string (String.uppercase v );
+    | Elem(elm,_) -> print_string (String.uppercase elm );
     | _ -> ()
   )
 
@@ -282,10 +343,19 @@ let state_shape var_lst =
   print_vars_without_types var_lst;
   print_string ")"
 
+let state_shape_up var_lst =
+  print_string "s(";
+  print_vars_up_without_types var_lst;
+  print_string ")"
+
+let state_shape_up_with_next vars1 vars2 =
+  print_string "s(";
+  print_vars_up_with_next vars1 vars2;
+  print_string ")"
 
 let goal spec s =
 print_string "cnf(check, negated_conjecture, pi0(";
-print_string (spec^",\n              ");
+print_string (spec^",\n         ");
 state_shape s;
 print_string ")."
 
@@ -463,7 +533,7 @@ let rec print_succs_without_case succs =
 
 let r_shape_without_case vars succs =
   print_string "cnf(r, axiom, r(";
-  state_shape vars;
+  state_shape_up vars;
   print_string ",\n";
   print_succs_without_case succs;
   print_string ")).\n"
@@ -538,21 +608,21 @@ let rec print_succ_vars num1 num2 =
     print_string "nil"
   else ()
 
-let rec print_st_eqs num next_vars_lst =
+let rec print_st_eqs num next_vars_lst vars=
   match next_vars_lst with
   | [] -> ()
   | [h] ->
      begin
        print_string "              | ~st_eq(";
-       state_shape h;
+       state_shape_up_with_next h vars;
        print_string (", S"^(string_of_int num)^")");
      end
   | h :: tl -> 
      begin
        print_string "              | ~st_eq(";
-       state_shape h;
+       state_shape_up_with_next h vars;
        print_string (", S"^(string_of_int num)^")\n");
-       print_st_eqs (num+1) tl;
+       print_st_eqs (num+1) tl vars;
      end
 
 
@@ -706,11 +776,11 @@ let r_shape_with_st_eqs vars succ_assigs =
   let next_vars_lst = r_with_case vars succ_assigs in
   let succ_num = List.length next_vars_lst in
   print_string "cnf(r, axiom, r(";
-  state_shape vars;
+  state_shape_up vars;
   print_string ", ";
   print_succ_vars 0 succ_num;
   print_string ")\n";
-  print_st_eqs 0 next_vars_lst;
+  print_st_eqs 0 next_vars_lst vars;
   print_string ").\n\n";
   st_eqs vars succ_assigs
 
@@ -743,21 +813,8 @@ let var_lst'' = put_ahead_elem_vars var_lst' in
 let main_succ_assign = succ_assig_in_main (List.hd result) in
 let procs = list_of_procs (List.hd result) in
 let succ_assigns = succ_assig_in_each_proc procs (List.tl result) in
-(*
-let succ = r_without_case var_lst'' (main_succ_assign::succ_assigns) in
-let c_succ = r_with_case var_lst'' (main_succ_assign::succ_assigns) in
-List.iter (fun x -> print_string (x^"\n")) var_lst;
-*)
-(*print_vars_with_types var_lst';
-print_newline();
-print_vars_with_types var_lst'';
-print_newline();
-state_shape var_lst'';
-print_newline();
-*)
 atomic_prop_in_state (List.hd result) var_lst;
 print_newline();
-(*r_shape_without_case var_lst'' succ;*)
 r_shape var_lst'' var_lst'' (main_succ_assign::succ_assigns);
 print_newline();
 goal spec inits';
