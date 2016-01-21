@@ -538,13 +538,24 @@ let rec var_of_exp1 val_lst exp =
      ("eq("^var_of_exp1 val_lst e1 ^", "^ var_of_exp1 val_lst e2^")")
 
 
+let rec var_of_exp2 exp =
+  match exp with
+  | Var(str) -> String.uppercase str
+  | True -> "b(tt,ff)"
+  | False -> "b(ff,tt)"
+  | Neg(e) -> ("not("^var_of_exp2 e^")")
+  | And(e1,e2) -> ("and("^var_of_exp2 e1 ^", "^ var_of_exp2 e2^")")
+  | Or(e1,e2) -> ("or("^var_of_exp2 e1 ^", "^ var_of_exp2 e2^")")
+  | Eq(e1,e2) -> ("eq("^var_of_exp2 e1 ^", "^ var_of_exp2 e2^")")
+
+
 let rec find_next_var var succ_assig =
   match succ_assig with
-  | [] -> var
+  | [] -> String.uppercase var
   | h :: tl -> 
      match h with
      | Next(var', exp) -> 
-	if var=var' then var_of_exp exp
+	if var=var' then var_of_exp2 exp
 	else find_next_var var tl
      | _ -> find_next_var var tl
 
