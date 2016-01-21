@@ -121,7 +121,8 @@ let rec print_vars_up_with_next vars1 vars2 =
      else
        begin
 	 match h2 with
-	 | Elem(elm,_) -> print_string ("next("^( String.uppercase elm)^") ");
+	 | Elem(elm,_) -> 
+	    print_string ("next("^( String.uppercase elm)^") ");
 	 | _ -> ()
        end
   | h1 :: tl1, h2 :: tl2 ->
@@ -137,12 +138,53 @@ let rec print_vars_up_with_next vars1 vars2 =
      else
        begin
 	 match h2 with
-	 | Elem(elm,_) -> print_string ("next("^( String.uppercase elm)^"), ");
+	 | Elem(elm,_) -> 
+	    print_string ("next("^( String.uppercase elm)^"), ");
 	   print_vars_up_with_next tl1 tl2
 	 | _ -> print_vars_up_with_next tl1 tl2
        end
   | _ , []
   | [], _ -> ()
+
+
+let rec print_vars_up_with_next_const vars1 vars2 =
+  match vars1,vars2 with
+  | [],[] -> ()
+  | [h1], [h2] ->
+     if h1 = h2 then
+       begin
+	 match h1 with
+	 | Boolean(v) -> print_string ((String.uppercase v));
+	 | Elem(elm,_) -> print_string ((String.uppercase elm));
+	 | _ -> ()
+       end
+     else
+       begin
+	 match h1 with
+	 | Elem(elm,_) -> print_string (elm);
+	 | _ -> ()
+       end
+  | h1 :: tl1, h2 :: tl2 ->
+     if h1 = h2 then
+      begin
+	match h1 with
+	| Boolean(v) -> print_string ((String.uppercase v) ^ ", ");
+	  print_vars_up_with_next_const tl1 tl2
+	| Elem(elm,_) -> print_string ((String.uppercase elm)^", ");
+	  print_vars_up_with_next_const tl1 tl2
+	| _ -> print_vars_up_with_next_const tl1 tl2
+      end
+     else
+       begin
+	 match h1 with
+	 | Elem(elm,_) -> 
+	    print_string ( elm^", " );
+	   print_vars_up_with_next_const tl1 tl2
+	 | _ -> print_vars_up_with_next_const tl1 tl2
+       end
+  | _ , []
+  | [], _ -> ()
+
 
 let rec print_vars_up_without_types vars =
   match vars with
@@ -353,6 +395,12 @@ let state_shape_up_with_next vars1 vars2 =
   print_vars_up_with_next vars1 vars2;
   print_string ")"
 
+let state_shape_up_in_st_eq vars1 vars2 =
+  print_string "s(";
+  print_vars_up_with_next_const vars1 vars2;
+  print_string ")"
+
+
 let goal spec s =
 print_string "cnf(check, negated_conjecture, pi0(";
 print_string (spec^",\n         ");
@@ -472,6 +520,22 @@ let rec var_of_exp exp =
   | And(e1,e2) -> ("and("^var_of_exp e1 ^", "^ var_of_exp e2^")")
   | Or(e1,e2) -> ("or("^var_of_exp e1 ^", "^ var_of_exp e2^")")
   | Eq(e1,e2) -> ("eq("^var_of_exp e1 ^", "^ var_of_exp e2^")")
+
+
+let rec var_of_exp1 val_lst exp =
+  match exp with
+  | Var(str) -> 
+     if List.mem str val_lst then str
+     else String.uppercase str
+  | True -> "b(tt,ff)"
+  | False -> "b(ff,tt)"
+  | Neg(e) -> ("not("^var_of_exp1 val_lst e^")")
+  | And(e1,e2) -> 
+     ("and("^var_of_exp1 val_lst e1 ^", "^ var_of_exp1 val_lst e2^")")
+  | Or(e1,e2) -> 
+     ("or("^var_of_exp1 val_lst e1 ^", "^ var_of_exp1 val_lst e2^")")
+  | Eq(e1,e2) ->
+     ("eq("^var_of_exp1 val_lst e1 ^", "^ var_of_exp1 val_lst e2^")")
 
 
 let rec find_next_var var succ_assig =
@@ -640,9 +704,9 @@ let rec find_var_of_c_assigs elem e_val c_assig_lst =
 	  | Var(_) -> raise Not_Condition_Exp
 	  | Eq(e1', e2') ->
 	     if (var_of_exp e1' = var) && (var_of_exp e2' = e_val)
-	     then var_of_exp e2
+	     then var_of_exp1 val_lst e2
 	     else find_var_of_c_assigs elem e_val tl
-	  | True -> var_of_exp e2
+	  | True -> var_of_exp1 val_lst e2
 	  | _ -> raise Not_Condition_Exp
 	end
      | _ -> raise Not_Elem
@@ -651,7 +715,7 @@ exception  Not_Next_CNext
 	
 let rec find_case_next_value elem e_val var succ_assig =
   match succ_assig with
-  | [] -> var
+  | [] -> String.uppercase var
   | h :: tl -> 
      match h with
      | Next(var', exp) -> 
@@ -662,28 +726,28 @@ let rec find_case_next_value elem e_val var succ_assig =
 	else find_case_next_value elem e_val var tl
      | _ -> raise Not_Next_CNext
 
-let rec succ_with_case' elem e_val vars succ_assig =
+let rec succ_with_case' elem1 elem2 e_val vars succ_assig =
   match vars with
   | [] -> []
   | h :: tl ->
      match h with
      | Elem(var, val_lst) ->
-	find_case_next_value elem e_val var succ_assig
-	:: succ_with_case' elem e_val tl succ_assig
+	find_case_next_value  elem2 e_val var succ_assig
+	:: succ_with_case' elem1 elem2 e_val tl succ_assig
      | Boolean(var) ->
-	find_case_next_value elem e_val var succ_assig
-	:: succ_with_case' elem e_val tl succ_assig
+	find_case_next_value  elem2 e_val var succ_assig
+	:: succ_with_case' elem1 elem2 e_val tl succ_assig
      | _ -> raise Not_State_Variable
 	
-let rec succ_with_case elem vars succ_assig =
-  match elem with
+let rec succ_with_case elem1 elem2 vars succ_assig =
+  match elem1 with
   | Elem(var, val_lst) ->
      begin
        match val_lst with
        | [] -> []
        | h :: tl ->
-	  succ_with_case' elem h vars succ_assig
-	  :: succ_with_case (Elem(var, tl)) vars succ_assig
+	  succ_with_case' elem1 elem2 h vars succ_assig
+	  :: succ_with_case (Elem(var, tl)) elem2 vars succ_assig
      end
   | _ -> raise Not_Elem
 
@@ -695,9 +759,10 @@ let rec st_eqs_for_each_elem_value next_vars vars1 vars2 succ_assig =
      begin
        match h1 with
        | Elem(var, val_lst) ->
-	  if h1 = h2 then st_eqs_for_each_elem_value tl1 tl2 vars2 succ_assig
+	  if h1 = h2 then 
+	    st_eqs_for_each_elem_value tl1 tl2 vars2 succ_assig
 	  else
-	    (succ_with_case h2 vars2 succ_assig
+	    (succ_with_case h2 h2 vars2 succ_assig
 	     @ st_eqs_for_each_elem_value tl1 tl2 vars2 succ_assig )
        | _ -> st_eqs_for_each_elem_value tl1 tl2 vars2 succ_assig 
      end
@@ -742,16 +807,16 @@ let rec st_with_next_values next_vars vars1 vars2=
      else st_with_next_value h2 vars2
   | _, _ -> raise Not_the_same_number_of_vars
 
-let rec print_eqs_st vars_with_nxt_vals next_st_lst =
+let rec print_eqs_st vars vars_with_nxt_vals next_st_lst =
   match vars_with_nxt_vals, next_st_lst with
   | h1::tl1, h2::tl2 -> 
      begin
        print_string "cnf(next_st, axiom, st_eq(";
-       state_shape h1;
+       state_shape_up_in_st_eq h1 vars;
        print_string ",\n          s(";
        print_var_list h2;
        print_string "))).\n\n";
-       print_eqs_st tl1 tl2
+       print_eqs_st vars tl1 tl2
      end
   | h1:: tl1, [] -> ()
   | [], h2::tl2 -> ()
@@ -766,7 +831,7 @@ let st_eqs vars succ_assigs =
     | h1 :: tl1, h2::tl2 ->
        let vars_with_nxt_vals = st_with_next_values h1 vars vars in  
        let next_st_lst = st_eqs_for_each_elem_value h1 vars vars h2 in
-       print_eqs_st vars_with_nxt_vals next_st_lst;
+       print_eqs_st vars vars_with_nxt_vals next_st_lst;
        st_eqs_print vars (tl1, tl2)
     | _,_ -> ()
   in st_eqs_print vars (next_vars_lst, succ_assigs)
