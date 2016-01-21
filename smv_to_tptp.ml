@@ -114,7 +114,7 @@ let rec print_vars_up_with_next vars1 vars2 =
      if h1 = h2 then
        begin
 	 match h1 with
-	 | Boolean(v) -> print_string ((String.uppercase v));
+	 | Boolean(v) -> print_string ("b("^"T"^v^","^"F"^v^") ");
 	 | Elem(elm,_) -> print_string ((String.uppercase elm));
 	 | _ -> ()
        end
@@ -129,7 +129,7 @@ let rec print_vars_up_with_next vars1 vars2 =
      if h1 = h2 then
       begin
 	match h1 with
-	| Boolean(v) -> print_string ((String.uppercase v) ^ ", ");
+	| Boolean(v) -> print_string ("b("^"T"^v^","^"F"^v^"), ");
 	  print_vars_up_with_next tl1 tl2
 	| Elem(elm,_) -> print_string ((String.uppercase elm)^", ");
 	  print_vars_up_with_next tl1 tl2
@@ -154,7 +154,7 @@ let rec print_vars_up_with_next_const vars1 vars2 =
      if h1 = h2 then
        begin
 	 match h1 with
-	 | Boolean(v) -> print_string ((String.uppercase v));
+	 | Boolean(v) -> print_string ("b("^"T"^v^","^"F"^v^") ");
 	 | Elem(elm,_) -> print_string ((String.uppercase elm));
 	 | _ -> ()
        end
@@ -168,7 +168,7 @@ let rec print_vars_up_with_next_const vars1 vars2 =
      if h1 = h2 then
       begin
 	match h1 with
-	| Boolean(v) -> print_string ((String.uppercase v) ^ ", ");
+	| Boolean(v) -> print_string ("b("^"T"^v^","^"F"^v^"), ");
 	  print_vars_up_with_next_const tl1 tl2
 	| Elem(elm,_) -> print_string ((String.uppercase elm)^", ");
 	  print_vars_up_with_next_const tl1 tl2
@@ -201,6 +201,24 @@ let rec print_vars_up_without_types vars =
     | Elem(elm,_) -> print_string (String.uppercase elm );
     | _ -> ()
   )
+
+
+let rec print_vars_up_boolpair vars =
+  match vars with
+  | [] -> ()
+  | h1::((h2::tl') as tl) ->( match h1 with
+    | Boolean(v) -> print_string ("b("^"T"^v^","^"F"^v^"), ");
+      print_vars_up_boolpair tl
+    | Elem(elm,_) -> print_string ((String.uppercase elm)^", ");
+      print_vars_up_boolpair tl
+    | _ -> print_vars_up_boolpair tl
+  )
+  | [h] -> ( match h with
+    | Boolean(v) -> print_string ("b("^"T"^v^","^"F"^v^") " );
+    | Elem(elm,_) -> print_string (String.uppercase elm );
+    | _ -> ()
+  )
+
 
 let state_var_list md md_lst=
   match md with
@@ -304,26 +322,60 @@ let put_ahead_elem_vars var_lst =
   in put_ahead_elem_vars' [] [] var_lst
   
 
+exception  Not_State_Variable_Element
+
 let rec false_var_state v var_l =
   match var_l with
   | [] -> ""
   | h1::((h2::tl') as tl) -> 
-     if v=h1 then 
-       "b(ff,tt), "^ false_var_state v tl
-     else
-       (String.uppercase h1)^", "^false_var_state v tl
-  | [h] -> if v=h then "b(ff,tt) " else String.uppercase h
+     begin
+     match h1 with
+     | Boolean(bvar) ->
+	if v=bvar then 
+	  "b(ff,tt), "^ false_var_state v tl
+	else
+	  String.uppercase bvar^", "^false_var_state v tl
+     | Elem(evar, _) -> 
+	String.uppercase evar^", "^false_var_state v tl
+     | _ -> raise Not_State_Variable_Element 
+     end
+  | [h] -> 
+     match h with
+     | Boolean(bvar) ->
+	if v=bvar then 
+	  "b(ff,tt) "
+	else
+	  String.uppercase bvar
+     | Elem(evar, _) -> 
+	String.uppercase evar
+     | _ -> raise Not_State_Variable_Element 
 
 let rec true_var_state v var_l =
   match var_l with
   | [] -> ""
   | h1::((h2::tl') as tl) -> 
-     if v=h1 then 
-       "b(tt,ff), "^ true_var_state v tl
-     else
-       (String.uppercase h1)^", "^true_var_state v tl
-  | [h] -> if v=h then "b(tt,ff) " else String.uppercase h
-
+     begin
+     match h1 with
+     | Boolean(bvar) ->
+	if v=bvar then 
+	  "b(tt,ff), "^ true_var_state v tl
+	else
+	  String.uppercase bvar^", "^true_var_state v tl
+     | Elem(evar, _) -> 
+	String.uppercase evar^", "^true_var_state v tl
+     | _ -> raise Not_State_Variable_Element 
+     end
+  | [h] -> 
+     match h with
+     | Boolean(bvar) ->
+	if v=bvar then 
+	  "b(tt,ff) "
+	else
+	  String.uppercase bvar
+     | Elem(evar, _) -> 
+	String.uppercase evar
+     | _ -> raise Not_State_Variable_Element 
+     
 
 let rec atomic_prop_in_state' var_l1 var_l2 =
   match var_l1 with
@@ -336,7 +388,7 @@ let rec atomic_prop_in_state' var_l1 var_l2 =
        ^ "cnf(" ^ v ^ "t, axiom,  pi0("^ v ^", s("
        ^ (true_var_state v var_l2) ^ "))).\n");
       atomic_prop_in_state' tl var_l2
-    |_ -> ()
+    |_ -> atomic_prop_in_state' tl var_l2
 
 let atomic_prop_in_state md var_lst =
   match md with
@@ -400,12 +452,16 @@ let state_shape_up_in_st_eq vars1 vars2 =
   print_vars_up_with_next_const vars1 vars2;
   print_string ")"
 
+let state_shape_up_boolpair vars =
+  print_string "s(";
+  print_vars_up_boolpair vars;
+  print_string ")"
 
 let goal spec s =
 print_string "cnf(check, negated_conjecture, pi0(";
 print_string (spec^",\n         ");
 state_shape s;
-print_string ")."
+print_string "))."
 
 
 let rec list_of_procs' vars' =
@@ -522,36 +578,61 @@ let rec var_of_exp exp =
   | Eq(e1,e2) -> ("eq("^var_of_exp e1 ^", "^ var_of_exp e2^")")
 
 
-let rec var_of_exp1 val_lst exp =
+let rec vars_mem str vars =
+  match vars with
+  | [] -> false
+  | Boolean(str') :: tl ->
+     if str=str' then true
+     else vars_mem str tl
+  | _ :: tl -> vars_mem str tl
+
+
+let neg_boolpair  (t,f) = (f,t)
+
+let and_boolpair (t1,f1) (t2,f2) =
+("and("^t1^","^t2^")"), ("or("^f1^","^f2^")")
+
+let or_boolpair (t1,f1) (t2,f2) =
+("or("^t1^","^t2^")"), ("and("^f1^","^f2^")")
+
+let eq_boolpair (t1,f1) (t2, f2) =
+("eq("^t1^","^t2^")"), ("eq("^f1^","^f2^")")
+
+
+let rec var_of_exp1' val_lst vars exp =
   match exp with
   | Var(str) -> 
-     if List.mem str val_lst then str
-     else String.uppercase str
-  | True -> "b(tt,ff)"
-  | False -> "b(ff,tt)"
-  | Neg(e) -> ("not("^var_of_exp1 val_lst e^")")
-  | And(e1,e2) -> 
-     ("and("^var_of_exp1 val_lst e1 ^", "^ var_of_exp1 val_lst e2^")")
-  | Or(e1,e2) -> 
-     ("or("^var_of_exp1 val_lst e1 ^", "^ var_of_exp1 val_lst e2^")")
-  | Eq(e1,e2) ->
-     ("eq("^var_of_exp1 val_lst e1 ^", "^ var_of_exp1 val_lst e2^")")
+     if List.mem str val_lst then str, "elem_val"
+     else 
+       if vars_mem str vars then "T"^str,"F"^str
+       else String.uppercase str, "elem_var"
+  | True -> "tt","ff"
+  | False -> "ff","tt"
+  | Neg(e) -> (neg_boolpair (var_of_exp1' val_lst vars e))
+  | And(e1,e2) -> (and_boolpair (var_of_exp1' val_lst vars e1) (var_of_exp1' val_lst vars e2))
+  | Or(e1,e2) -> (or_boolpair (var_of_exp1' val_lst vars e1) (var_of_exp1' val_lst vars e2))
+  | Eq(e1,e2) -> (eq_boolpair (var_of_exp1' val_lst vars e1) (var_of_exp1' val_lst vars e2))
 
+let var_of_exp1 val_lst vars exp =
+  let (a,b) = var_of_exp1' val_lst vars exp in
+  if b = "elem_val" || b = "elem_var" then
+    a
+  else ("b("^a^","^b^")")
 
 let rec var_of_exp2 exp =
   match exp with
-  | Var(str) -> String.uppercase str
-  | True -> "b(tt,ff)"
-  | False -> "b(ff,tt)"
-  | Neg(e) -> ("not("^var_of_exp2 e^")")
-  | And(e1,e2) -> ("and("^var_of_exp2 e1 ^", "^ var_of_exp2 e2^")")
-  | Or(e1,e2) -> ("or("^var_of_exp2 e1 ^", "^ var_of_exp2 e2^")")
-  | Eq(e1,e2) -> ("eq("^var_of_exp2 e1 ^", "^ var_of_exp2 e2^")")
+  | Var(str) -> "T"^str, "F"^str
+  | True -> "tt","ff"
+  | False -> "ff","tt"
+  | Neg(e) -> (neg_boolpair (var_of_exp2 e))
+  | And(e1,e2) -> (and_boolpair (var_of_exp2 e1) (var_of_exp2 e2))
+  | Or(e1,e2) -> (or_boolpair (var_of_exp2 e1) (var_of_exp2 e2))
+  | Eq(e1,e2) -> (eq_boolpair (var_of_exp2 e1) (var_of_exp2 e2))
 
 
 let rec find_next_var var succ_assig =
   match succ_assig with
-  | [] -> String.uppercase var
+  | [] -> "T"^var, "F"^var
   | h :: tl -> 
      match h with
      | Next(var', exp) -> 
@@ -577,13 +658,23 @@ let rec r_without_case vars succ_assigs =
   | h :: tl ->
      succ_without_case vars h :: r_without_case vars tl
 
-let rec print_var_list vars =
+let print_var_list vars =
   match vars with
   | [] -> ()
   | h::tl -> 
      (print_string h;
       List.iter (fun v -> print_string (", "^v)) tl
      )
+
+let print_var_list_boolpair vars =
+  match vars with
+  | [] -> ()
+  | (t,f)::tl -> 
+     (print_string ("b("^t^","^f^")");
+      List.iter (fun (t,f) -> print_string (", "^"b("^t^","^f^")") ) tl
+     )
+
+
 let rec print_succs_without_case succs =
   match succs with
   | [] -> print_string "nil"
@@ -591,7 +682,7 @@ let rec print_succs_without_case succs =
      begin
        print_string "              con(";
        print_string "s(";
-       print_var_list h;
+       print_var_list_boolpair h;
        print_string "), ";
        print_string "nil";
        print_string ")"
@@ -600,7 +691,7 @@ let rec print_succs_without_case succs =
      begin
        print_string "              con(";
        print_string "s(";
-       print_var_list h;
+       print_var_list_boolpair h;
        print_string "),\n";
        print_succs_without_case tl;
        print_string ")"
@@ -608,7 +699,7 @@ let rec print_succs_without_case succs =
 
 let r_shape_without_case vars succs =
   print_string "cnf(r, axiom, r(";
-  state_shape_up vars;
+  state_shape_up_boolpair vars;
   print_string ",\n";
   print_succs_without_case succs;
   print_string ")).\n"
@@ -704,7 +795,7 @@ let rec print_st_eqs num next_vars_lst vars=
 exception No_Such_Condition
 exception Not_Elem
   
-let rec find_var_of_c_assigs elem e_val c_assig_lst =
+let rec find_var_of_c_assigs elem e_val c_assig_lst vars=
   match c_assig_lst with
   | [] -> raise No_Such_Condition
   | (e1,e2) :: tl ->
@@ -715,39 +806,39 @@ let rec find_var_of_c_assigs elem e_val c_assig_lst =
 	  | Var(_) -> raise Not_Condition_Exp
 	  | Eq(e1', e2') ->
 	     if (var_of_exp e1' = var) && (var_of_exp e2' = e_val)
-	     then var_of_exp1 val_lst e2
-	     else find_var_of_c_assigs elem e_val tl
-	  | True -> var_of_exp1 val_lst e2
+	     then var_of_exp1 val_lst vars e2 
+	     else find_var_of_c_assigs elem e_val tl vars
+	  | True -> var_of_exp1 val_lst vars e2
 	  | _ -> raise Not_Condition_Exp
 	end
      | _ -> raise Not_Elem
 
 exception  Not_Next_CNext
 	
-let rec find_case_next_value elem e_val var succ_assig =
+let rec find_case_next_value elem e_val var succ_assig vars =
   match succ_assig with
   | [] -> String.uppercase var
   | h :: tl -> 
      match h with
      | Next(var', exp) -> 
 	if var=var' then var_of_exp exp
-	else find_case_next_value elem e_val var tl
+	else find_case_next_value elem e_val var tl vars
      | CNext(var', c_assig_lst) ->
-	if var=var' then find_var_of_c_assigs elem e_val c_assig_lst
-	else find_case_next_value elem e_val var tl
+	if var=var' then find_var_of_c_assigs elem e_val c_assig_lst vars
+	else find_case_next_value elem e_val var tl vars
      | _ -> raise Not_Next_CNext
 
-let rec succ_with_case' elem1 elem2 e_val vars succ_assig =
-  match vars with
+let rec succ_with_case' elem1 elem2 e_val vars1 succ_assig vars2 =
+  match vars1 with
   | [] -> []
   | h :: tl ->
      match h with
      | Elem(var, val_lst) ->
-	find_case_next_value  elem2 e_val var succ_assig
-	:: succ_with_case' elem1 elem2 e_val tl succ_assig
+	find_case_next_value  elem2 e_val var succ_assig vars2
+	:: succ_with_case' elem1 elem2 e_val tl succ_assig vars2
      | Boolean(var) ->
-	find_case_next_value  elem2 e_val var succ_assig
-	:: succ_with_case' elem1 elem2 e_val tl succ_assig
+	find_case_next_value  elem2 e_val var succ_assig vars2
+	:: succ_with_case' elem1 elem2 e_val tl succ_assig vars2
      | _ -> raise Not_State_Variable
 	
 let rec succ_with_case elem1 elem2 vars succ_assig =
@@ -757,7 +848,7 @@ let rec succ_with_case elem1 elem2 vars succ_assig =
        match val_lst with
        | [] -> []
        | h :: tl ->
-	  succ_with_case' elem1 elem2 h vars succ_assig
+	  succ_with_case' elem1 elem2 h vars succ_assig vars
 	  :: succ_with_case (Elem(var, tl)) elem2 vars succ_assig
      end
   | _ -> raise Not_Elem
@@ -852,7 +943,7 @@ let r_shape_with_st_eqs vars succ_assigs =
   let next_vars_lst = r_with_case vars succ_assigs in
   let succ_num = List.length next_vars_lst in
   print_string "cnf(r, axiom, r(";
-  state_shape_up vars;
+  state_shape_up_boolpair vars;
   print_string ", ";
   print_succ_vars 0 succ_num;
   print_string ")\n";
@@ -889,7 +980,7 @@ let var_lst'' = put_ahead_elem_vars var_lst' in
 let main_succ_assign = succ_assig_in_main (List.hd result) in
 let procs = list_of_procs (List.hd result) in
 let succ_assigns = succ_assig_in_each_proc procs (List.tl result) in
-atomic_prop_in_state (List.hd result) var_lst;
+atomic_prop_in_state (List.hd result) var_lst'';
 print_newline();
 r_shape var_lst'' var_lst'' (main_succ_assign::succ_assigns);
 print_newline();
