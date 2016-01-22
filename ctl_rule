@@ -54,28 +54,3 @@ cnf(ctl_lor4, axiom, ~ pi3(lor(P), nil, Y)).
 cnf(neq1, axiom, neq(b(ff,tt), b(tt,ff))).
 cnf(neq2, axiom, neq(b(tt,ff), b(ff,tt))).
 
-cnf(v1f, axiom, ~pi0(v1, s(b(ff,tt), V2, V3, V4, V5, V6, V7, V8, P1_V9, P1_V10, P2_V11, P2_V12))).
-cnf(v1t, axiom,  pi0(v1, s(b(tt,ff), V2, V3, V4, V5, V6, V7, V8, P1_V9, P1_V10, P2_V11, P2_V12))).
-cnf(v2f, axiom, ~pi0(v2, s(V1, b(ff,tt), V3, V4, V5, V6, V7, V8, P1_V9, P1_V10, P2_V11, P2_V12))).
-cnf(v2t, axiom,  pi0(v2, s(V1, b(tt,ff), V3, V4, V5, V6, V7, V8, P1_V9, P1_V10, P2_V11, P2_V12))).
-cnf(v3f, axiom, ~pi0(v3, s(V1, V2, b(ff,tt), V4, V5, V6, V7, V8, P1_V9, P1_V10, P2_V11, P2_V12))).
-cnf(v3t, axiom,  pi0(v3, s(V1, V2, b(tt,ff), V4, V5, V6, V7, V8, P1_V9, P1_V10, P2_V11, P2_V12))).
-cnf(v4f, axiom, ~pi0(v4, s(V1, V2, V3, b(ff,tt), V5, V6, V7, V8, P1_V9, P1_V10, P2_V11, P2_V12))).
-cnf(v4t, axiom,  pi0(v4, s(V1, V2, V3, b(tt,ff), V5, V6, V7, V8, P1_V9, P1_V10, P2_V11, P2_V12))).
-cnf(v5f, axiom, ~pi0(v5, s(V1, V2, V3, V4, b(ff,tt), V6, V7, V8, P1_V9, P1_V10, P2_V11, P2_V12))).
-cnf(v5t, axiom,  pi0(v5, s(V1, V2, V3, V4, b(tt,ff), V6, V7, V8, P1_V9, P1_V10, P2_V11, P2_V12))).
-cnf(v6f, axiom, ~pi0(v6, s(V1, V2, V3, V4, V5, b(ff,tt), V7, V8, P1_V9, P1_V10, P2_V11, P2_V12))).
-cnf(v6t, axiom,  pi0(v6, s(V1, V2, V3, V4, V5, b(tt,ff), V7, V8, P1_V9, P1_V10, P2_V11, P2_V12))).
-cnf(v7f, axiom, ~pi0(v7, s(V1, V2, V3, V4, V5, V6, b(ff,tt), V8, P1_V9, P1_V10, P2_V11, P2_V12))).
-cnf(v7t, axiom,  pi0(v7, s(V1, V2, V3, V4, V5, V6, b(tt,ff), V8, P1_V9, P1_V10, P2_V11, P2_V12))).
-cnf(v8f, axiom, ~pi0(v8, s(V1, V2, V3, V4, V5, V6, V7, b(ff,tt), P1_V9, P1_V10, P2_V11, P2_V12))).
-cnf(v8t, axiom,  pi0(v8, s(V1, V2, V3, V4, V5, V6, V7, b(tt,ff), P1_V9, P1_V10, P2_V11, P2_V12))).
-
-
-cnf(r, axiom, r(s(b(Tv1,Fv1), b(Tv2,Fv2), b(Tv3,Fv3), b(Tv4,Fv4), b(Tv5,Fv5), b(Tv6,Fv6), b(Tv7,Fv7), b(Tv8,Fv8), b(Tp1_v9,Fp1_v9), b(Tp1_v10,Fp1_v10), b(Tp2_v11,Fp2_v11), b(Tp2_v12,Fp2_v12) ),
-              con(s(b(Fv6,Tv6), b(Fv4, Tv4), b(Fv4, Tv4), b(Fv6, Tv6), b(Fv2, Tv2), b(Fv6, Tv6), b(Fv3, Tv3), b(Fv5, Tv5), b(Tp1_v9, Fp1_v9), b(Tp1_v10, Fp1_v10), b(Tp2_v11, Fp2_v11), b(Tp2_v12, Fp2_v12)),
-              con(s(b(Fv4,Tv4), b(Fp1_v10, Tp1_v10), b(Fp1_v9, Tp1_v9), b(Fp1_v10, Tp1_v10), b(Fv3, Tv3), b(Fv3, Tv3), b(Tv7, Fv7), b(Tv8, Fv8), b(Fv5, Tv5), b(Fv2, Tv2), b(Tp2_v11, Fp2_v11), b(Tp2_v12, Fp2_v12)),
-              con(s(b(Fv6,Tv6), b(Fp2_v12, Tp2_v12), b(Fv3, Tv3), b(Fv6, Tv6), b(Fv3, Tv3), b(Fv4, Tv4), b(Tv7, Fv7), b(Tv8, Fv8), b(Tp1_v9, Fp1_v9), b(Tp1_v10, Fp1_v10), b(Fv6, Tv6), b(Fp2_v11, Tp2_v11)), nil))))).
-
-cnf(check, negated_conjecture, pi0(ag(or(v1,or(v2,or(v3,or(v4,or(v5,v6)))))),
-         s(b(ff,tt), b(tt,ff), b(ff,tt), b(tt,ff), b(tt,ff), b(ff,tt), b(ff,tt), b(ff,tt), b(ff,tt), b(ff,tt), b(ff,tt), b(ff,tt)))).

@@ -54,64 +54,66 @@ cnf(ctl_lor4, axiom, ~ pi3(lor(P), nil, Y)).
 cnf(neq1, axiom, neq(b(ff,tt), b(tt,ff))).
 cnf(neq2, axiom, neq(b(tt,ff), b(ff,tt))).
 
-
-cnf(p1f, axiom, ~pi0(p1, s(C1, C2, b(ff,tt), B2, B3, B4, B5, B6, B7, B8, B9, B10, B11, B12))).
-cnf(p1t, axiom,  pi0(p1, s(C1, C2, b(tt,ff), B2, B3, B4, B5, B6, B7, B8, B9, B10, B11, B12))).
-cnf(p2f, axiom, ~pi0(p2, s(C1, C2, B1, b(ff,tt), B3, B4, B5, B6, B7, B8, B9, B10, B11, B12))).
-cnf(p2t, axiom,  pi0(p2, s(C1, C2, B1, b(tt,ff), B3, B4, B5, B6, B7, B8, B9, B10, B11, B12))).
-cnf(p3f, axiom, ~pi0(p3, s(C1, C2, B1, B2, b(ff,tt), B4, B5, B6, B7, B8, B9, B10, B11, B12))).
-cnf(p3t, axiom,  pi0(p3, s(C1, C2, B1, B2, b(tt,ff), B4, B5, B6, B7, B8, B9, B10, B11, B12))).
-cnf(p4f, axiom, ~pi0(p4, s(C1, C2, B1, B2, B3, b(ff,tt), B5, B6, B7, B8, B9, B10, B11, B12))).
-cnf(p4t, axiom,  pi0(p4, s(C1, C2, B1, B2, B3, b(tt,ff), B5, B6, B7, B8, B9, B10, B11, B12))).
-cnf(p5f, axiom, ~pi0(p5, s(C1, C2, B1, B2, B3, B4, b(ff,tt), B6, B7, B8, B9, B10, B11, B12))).
-cnf(p5t, axiom,  pi0(p5, s(C1, C2, B1, B2, B3, B4, b(tt,ff), B6, B7, B8, B9, B10, B11, B12))).
-cnf(p6f, axiom, ~pi0(p6, s(C1, C2, B1, B2, B3, B4, B5, b(ff,tt), B7, B8, B9, B10, B11, B12))).
-cnf(p6t, axiom,  pi0(p6, s(C1, C2, B1, B2, B3, B4, B5, b(tt,ff), B7, B8, B9, B10, B11, B12))).
-
-cnf(r, axiom, r(s(C1, C2, B1, B2, B3, B4, B5, B6, B7, B8, B9, B10, B11, B12), con(S1, con(S2, nil)))
-              | ~st_eq(s(next(C1), C2, B1, B2, B3, B4, B5, B6, B7, B8, B9, B10, B11, B12), S1)
-              | ~st_eq(s(C1, next(C2), B1, B2, B3, B4, B5, B6, B7, B8, B9, B10, B11, B12), S2)).
-
-cnf(next_st, axiom, st_eq(s(next(c0), C2, b(T1,F1), b(T2,F2), b(T3,F3), b(T4,F4), b(T5,F5), b(T6,F6), b(T7,F7), b(T8,F8), b(T9,F9), b(T10,F10), b(T11,F11), b(T12,F12)),
-                          s(c1, C2, b(F9,T9),b(F4,T4),b(T3,F3),b(T4,F4), b(F8,T8),b(T6,F6),b(F6,T6),b(T8,F8),b(T9,F9),b(T10,F10),b(T11,F11),b(T12,F12)))).
+cnf(v1f, axiom, ~pi0(v1, s(CP, P1_CP, b(ff,tt), V2, V3, V4, V5, V6, V7, V8, V9, P1_V10, P1_V11, P1_V12))).
+cnf(v1t, axiom,  pi0(v1, s(CP, P1_CP, b(tt,ff), V2, V3, V4, V5, V6, V7, V8, V9, P1_V10, P1_V11, P1_V12))).
+cnf(v2f, axiom, ~pi0(v2, s(CP, P1_CP, V1, b(ff,tt), V3, V4, V5, V6, V7, V8, V9, P1_V10, P1_V11, P1_V12))).
+cnf(v2t, axiom,  pi0(v2, s(CP, P1_CP, V1, b(tt,ff), V3, V4, V5, V6, V7, V8, V9, P1_V10, P1_V11, P1_V12))).
+cnf(v3f, axiom, ~pi0(v3, s(CP, P1_CP, V1, V2, b(ff,tt), V4, V5, V6, V7, V8, V9, P1_V10, P1_V11, P1_V12))).
+cnf(v3t, axiom,  pi0(v3, s(CP, P1_CP, V1, V2, b(tt,ff), V4, V5, V6, V7, V8, V9, P1_V10, P1_V11, P1_V12))).
+cnf(v4f, axiom, ~pi0(v4, s(CP, P1_CP, V1, V2, V3, b(ff,tt), V5, V6, V7, V8, V9, P1_V10, P1_V11, P1_V12))).
+cnf(v4t, axiom,  pi0(v4, s(CP, P1_CP, V1, V2, V3, b(tt,ff), V5, V6, V7, V8, V9, P1_V10, P1_V11, P1_V12))).
+cnf(v5f, axiom, ~pi0(v5, s(CP, P1_CP, V1, V2, V3, V4, b(ff,tt), V6, V7, V8, V9, P1_V10, P1_V11, P1_V12))).
+cnf(v5t, axiom,  pi0(v5, s(CP, P1_CP, V1, V2, V3, V4, b(tt,ff), V6, V7, V8, V9, P1_V10, P1_V11, P1_V12))).
+cnf(v6f, axiom, ~pi0(v6, s(CP, P1_CP, V1, V2, V3, V4, V5, b(ff,tt), V7, V8, V9, P1_V10, P1_V11, P1_V12))).
+cnf(v6t, axiom,  pi0(v6, s(CP, P1_CP, V1, V2, V3, V4, V5, b(tt,ff), V7, V8, V9, P1_V10, P1_V11, P1_V12))).
+cnf(v7f, axiom, ~pi0(v7, s(CP, P1_CP, V1, V2, V3, V4, V5, V6, b(ff,tt), V8, V9, P1_V10, P1_V11, P1_V12))).
+cnf(v7t, axiom,  pi0(v7, s(CP, P1_CP, V1, V2, V3, V4, V5, V6, b(tt,ff), V8, V9, P1_V10, P1_V11, P1_V12))).
+cnf(v8f, axiom, ~pi0(v8, s(CP, P1_CP, V1, V2, V3, V4, V5, V6, V7, b(ff,tt), V9, P1_V10, P1_V11, P1_V12))).
+cnf(v8t, axiom,  pi0(v8, s(CP, P1_CP, V1, V2, V3, V4, V5, V6, V7, b(tt,ff), V9, P1_V10, P1_V11, P1_V12))).
+cnf(v9f, axiom, ~pi0(v9, s(CP, P1_CP, V1, V2, V3, V4, V5, V6, V7, V8, b(ff,tt), P1_V10, P1_V11, P1_V12))).
+cnf(v9t, axiom,  pi0(v9, s(CP, P1_CP, V1, V2, V3, V4, V5, V6, V7, V8, b(tt,ff), P1_V10, P1_V11, P1_V12))).
 
 
-cnf(next_st, axiom, st_eq(s(next(c1), C2, b(T1,F1), b(T2,F2), b(T3,F3), b(T4,F4), b(T5,F5), b(T6,F6), b(T7,F7), b(T8,F8), b(T9,F9), b(T10,F10), b(T11,F11), b(T12,F12)),
-                          s(c2, C2, b(T1,F1),b(T2,F2),b(T3,F3),b(F8,T8),b(F2,T2),b(F1,T1),b(T7,F7),b(T8,F8),b(F7,T7),b(T10,F10),b(T11,F11),b(T12,F12)))).
+cnf(r, axiom, r(s(CP, P1_CP, b(Tv1,Fv1), b(Tv2,Fv2), b(Tv3,Fv3), b(Tv4,Fv4), b(Tv5,Fv5), b(Tv6,Fv6), b(Tv7,Fv7), b(Tv8,Fv8), b(Tv9,Fv9), b(Tp1_v10,Fp1_v10), b(Tp1_v11,Fp1_v11), b(Tp1_v12,Fp1_v12) ), con(S0, con(S1, nil)))
+              | ~st_eq(s(next(CP), P1_CP, b(Tv1,Fv1), b(Tv2,Fv2), b(Tv3,Fv3), b(Tv4,Fv4), b(Tv5,Fv5), b(Tv6,Fv6), b(Tv7,Fv7), b(Tv8,Fv8), b(Tv9,Fv9), b(Tp1_v10,Fp1_v10), b(Tp1_v11,Fp1_v11), b(Tp1_v12,Fp1_v12) ), S0)
+              | ~st_eq(s(CP, next(P1_CP), b(Tv1,Fv1), b(Tv2,Fv2), b(Tv3,Fv3), b(Tv4,Fv4), b(Tv5,Fv5), b(Tv6,Fv6), b(Tv7,Fv7), b(Tv8,Fv8), b(Tv9,Fv9), b(Tp1_v10,Fp1_v10), b(Tp1_v11,Fp1_v11), b(Tp1_v12,Fp1_v12) ), S1)).
 
-cnf(next_st, axiom, st_eq(s(next(c2), C2, b(T1,F1), b(T2,F2), b(T3,F3), b(T4,F4), b(T5,F5), b(T6,F6), b(T7,F7), b(T8,F8), b(T9,F9), b(T10,F10), b(T11,F11), b(T12,F12)),
-                          s(c3, C2, b(T1,F1),b(T2,F2),b(F6,T6),b(F2,T2),b(F8,T8),b(T6,F6),b(F1,T1),b(T8,F8),b(T9,F9),b(T10,F10),b(T11,F11),b(T12,F12)))).
+cnf(next_st, axiom, st_eq(s(next(c0), P1_CP, b(Tv1,Fv1), b(Tv2,Fv2), b(Tv3,Fv3), b(Tv4,Fv4), b(Tv5,Fv5), b(Tv6,Fv6), b(Tv7,Fv7), b(Tv8,Fv8), b(Tv9,Fv9), b(Tp1_v10,Fp1_v10), b(Tp1_v11,Fp1_v11), b(Tp1_v12,Fp1_v12) ),
+          s(c1, P1_CP, b(Fv9,Tv9), b(Fv4,Tv4), b(Tv3,Fv3), b(Tv4,Fv4), b(Fv8,Tv8), b(Tv6,Fv6), b(Fv6,Tv6), b(Tv8,Fv8), b(Tv9,Fv9), P1_V10, P1_V11, P1_V12))).
 
-cnf(next_st, axiom, st_eq(s(next(c3), C2, b(T1,F1), b(T2,F2), b(T3,F3), b(T4,F4), b(T5,F5), b(T6,F6), b(T7,F7), b(T8,F8), b(T9,F9), b(T10,F10), b(T11,F11), b(T12,F12)),
-                          s(c4, C2, b(F6,T6),b(F9,T9),b(F8,T8),b(T4,F4),b(F7,T7),b(T6,F6),b(T7,F7),b(T8,F8),b(T9,F9),b(T10,F10),b(T11,F11),b(T12,F12)))).
+cnf(next_st, axiom, st_eq(s(next(c1), P1_CP, b(Tv1,Fv1), b(Tv2,Fv2), b(Tv3,Fv3), b(Tv4,Fv4), b(Tv5,Fv5), b(Tv6,Fv6), b(Tv7,Fv7), b(Tv8,Fv8), b(Tv9,Fv9), b(Tp1_v10,Fp1_v10), b(Tp1_v11,Fp1_v11), b(Tp1_v12,Fp1_v12) ),
+          s(c2, P1_CP, b(Tv1,Fv1), b(Tv2,Fv2), b(Tv3,Fv3), b(Fv8,Tv8), b(Fv2,Tv2), b(Fv1,Tv1), b(Tv7,Fv7), b(Tv8,Fv8), b(Fv7,Tv7), P1_V10, P1_V11, P1_V12))).
 
-cnf(next_st, axiom, st_eq(s(next(c4), C2, b(T1,F1), b(T2,F2), b(T3,F3), b(T4,F4), b(T5,F5), b(T6,F6), b(T7,F7), b(T8,F8), b(T9,F9), b(T10,F10), b(T11,F11), b(T12,F12)),
-                          s(c5, C2, b(T1,F1),b(T2,F2),b(F1,T1),b(F5,T5),b(T5,F5),b(T6,F6),b(F6,T6),b(F9,T9),b(T9,F9),b(T10,F10),b(T11,F11),b(T12,F12)))).
+cnf(next_st, axiom, st_eq(s(next(c2), P1_CP, b(Tv1,Fv1), b(Tv2,Fv2), b(Tv3,Fv3), b(Tv4,Fv4), b(Tv5,Fv5), b(Tv6,Fv6), b(Tv7,Fv7), b(Tv8,Fv8), b(Tv9,Fv9), b(Tp1_v10,Fp1_v10), b(Tp1_v11,Fp1_v11), b(Tp1_v12,Fp1_v12) ),
+          s(c3, P1_CP, b(Tv1,Fv1), b(Tv2,Fv2), b(Fv6,Tv6), b(Fv2,Tv2), b(Fv8,Tv8), b(Tv6,Fv6), b(Fv1,Tv1), b(Tv8,Fv8), b(Tv9,Fv9), P1_V10, P1_V11, P1_V12))).
 
-cnf(next_st, axiom, st_eq(s(next(c5), C2, b(T1,F1), b(T2,F2), b(T3,F3), b(T4,F4), b(T5,F5), b(T6,F6), b(T7,F7), b(T8,F8), b(T9,F9), b(T10,F10), b(T11,F11), b(T12,F12)),
-                          s(c0, C2, b(F8,T8),b(T2,F2),b(T3,F3),b(T4,F4),b(T5,F5),b(F4,T4),b(F3,T3),b(T8,F8),b(F2,T2),b(T10,F10),b(T11,F11),b(T12,F12)))).
+cnf(next_st, axiom, st_eq(s(next(c3), P1_CP, b(Tv1,Fv1), b(Tv2,Fv2), b(Tv3,Fv3), b(Tv4,Fv4), b(Tv5,Fv5), b(Tv6,Fv6), b(Tv7,Fv7), b(Tv8,Fv8), b(Tv9,Fv9), b(Tp1_v10,Fp1_v10), b(Tp1_v11,Fp1_v11), b(Tp1_v12,Fp1_v12) ),
+          s(c4, P1_CP, b(Fv6,Tv6), b(Fv9,Tv9), b(Fv8,Tv8), b(Tv4,Fv4), b(Fv7,Tv7), b(Tv6,Fv6), b(Tv7,Fv7), b(Tv8,Fv8), b(Tv9,Fv9), P1_V10, P1_V11, P1_V12))).
 
-cnf(next_st, axiom, st_eq(s(C1, next(c0), b(T1,F1), b(T2,F2), b(T3,F3), b(T4,F4), b(T5,F5), b(T6,F6), b(T7,F7), b(T8,F8), b(T9,F9), b(T10,F10), b(T11,F11), b(T12,F12)),
-                          s(C1, c1, b(F4,T4),b(T2,F2),b(F2,T2),b(T4,F4),b(T5,F5),b(T6,F6),b(T7,F7),b(T8,F8),b(T9,F9),b(F11,T11),b(T11,F11),b(F6,T6)))).
+cnf(next_st, axiom, st_eq(s(next(c4), P1_CP, b(Tv1,Fv1), b(Tv2,Fv2), b(Tv3,Fv3), b(Tv4,Fv4), b(Tv5,Fv5), b(Tv6,Fv6), b(Tv7,Fv7), b(Tv8,Fv8), b(Tv9,Fv9), b(Tp1_v10,Fp1_v10), b(Tp1_v11,Fp1_v11), b(Tp1_v12,Fp1_v12) ),
+          s(c5, P1_CP, b(Tv1,Fv1), b(Tv2,Fv2), b(Fv1,Tv1), b(Fv5,Tv5), b(Tv5,Fv5), b(Tv6,Fv6), b(Fv6,Tv6), b(Fv9,Tv9), b(Tv9,Fv9), P1_V10, P1_V11, P1_V12))).
 
-cnf(next_st, axiom, st_eq(s(C1, next(c1), b(T1,F1), b(T2,F2), b(T3,F3), b(T4,F4), b(T5,F5), b(T6,F6), b(T7,F7), b(T8,F8), b(T9,F9), b(T10,F10), b(T11,F11), b(T12,F12)),
-                          s(C1, c2, b(T1,F1),b(T2,F2),b(F11,T11),b(T4,F4),b(F1,T1),b(T6,F6),b(T7,F7),b(T8,F8),b(T9,F9),b(F6,T6),b(T11,F11),b(F2,T2)))).
+cnf(next_st, axiom, st_eq(s(next(c5), P1_CP, b(Tv1,Fv1), b(Tv2,Fv2), b(Tv3,Fv3), b(Tv4,Fv4), b(Tv5,Fv5), b(Tv6,Fv6), b(Tv7,Fv7), b(Tv8,Fv8), b(Tv9,Fv9), b(Tp1_v10,Fp1_v10), b(Tp1_v11,Fp1_v11), b(Tp1_v12,Fp1_v12) ),
+          s(c0, P1_CP, b(Fv8,Tv8), b(Tv2,Fv2), b(Tv3,Fv3), b(Tv4,Fv4), b(Tv5,Fv5), b(Fv4,Tv4), b(Fv3,Tv3), b(Tv8,Fv8), b(Fv2,Tv2), P1_V10, P1_V11, P1_V12))).
 
-cnf(next_st, axiom, st_eq(s(C1, next(c2), b(T1,F1), b(T2,F2), b(T3,F3), b(T4,F4), b(T5,F5), b(T6,F6), b(T7,F7), b(T8,F8), b(T9,F9), b(T10,F10), b(T11,F11), b(T12,F12)),
-                          s(C1, c3, b(F11,T11),b(T2,F2),b(F4,T4),b(T4,F4),b(F10,T10),b(F2,T2),b(T7,F7),b(T8,F8),b(T9,F9),b(T10,F10),b(T11,F11),b(T12,F12)))).
+cnf(next_st, axiom, st_eq(s(CP, next(c0), b(Tv1,Fv1), b(Tv2,Fv2), b(Tv3,Fv3), b(Tv4,Fv4), b(Tv5,Fv5), b(Tv6,Fv6), b(Tv7,Fv7), b(Tv8,Fv8), b(Tv9,Fv9), b(Tp1_v10,Fp1_v10), b(Tp1_v11,Fp1_v11), b(Tp1_v12,Fp1_v12) ),
+          s(CP, c1, b(Fv4,Tv4), b(Tv2,Fv2), b(Fv2,Tv2), b(Tv4,Fv4), b(Tv5,Fv5), b(Tv6,Fv6), V7, V8, V9, b(Fp1_v11,Tp1_v11), b(Tp1_v11,Fp1_v11), b(Fv6,Tv6)))).
 
-cnf(next_st, axiom, st_eq(s(C1, next(c3), b(T1,F1), b(T2,F2), b(T3,F3), b(T4,F4), b(T5,F5), b(T6,F6), b(T7,F7), b(T8,F8), b(T9,F9), b(T10,F10), b(T11,F11), b(T12,F12)),
-                          s(C1, c4, b(T1,F1),b(T2,F2),b(T3,F3),b(F3,T3),b(T5,F5),b(T6,F6),b(T7,F7),b(T8,F8),b(T9,F9),b(F6,T6),b(F5,T5),b(F1,T1)))).
+cnf(next_st, axiom, st_eq(s(CP, next(c1), b(Tv1,Fv1), b(Tv2,Fv2), b(Tv3,Fv3), b(Tv4,Fv4), b(Tv5,Fv5), b(Tv6,Fv6), b(Tv7,Fv7), b(Tv8,Fv8), b(Tv9,Fv9), b(Tp1_v10,Fp1_v10), b(Tp1_v11,Fp1_v11), b(Tp1_v12,Fp1_v12) ),
+          s(CP, c2, b(Tv1,Fv1), b(Tv2,Fv2), b(Fp1_v11,Tp1_v11), b(Tv4,Fv4), b(Fv1,Tv1), b(Tv6,Fv6), V7, V8, V9, b(Fv6,Tv6), b(Tp1_v11,Fp1_v11), b(Fv2,Tv2)))).
 
-cnf(next_st, axiom, st_eq(s(C1, next(c4), b(T1,F1), b(T2,F2), b(T3,F3), b(T4,F4), b(T5,F5), b(T6,F6), b(T7,F7), b(T8,F8), b(T9,F9), b(T10,F10), b(T11,F11), b(T12,F12)),
-                          s(C1, c5, b(T1,F1),b(F3,T3),b(T3,F3),b(T4,F4),b(T5,F5),b(F1,T1),b(T7,F7),b(T8,F8),b(T9,F9),b(F5,T5),b(F12,T12),b(T12,F12)))).
+cnf(next_st, axiom, st_eq(s(CP, next(c2), b(Tv1,Fv1), b(Tv2,Fv2), b(Tv3,Fv3), b(Tv4,Fv4), b(Tv5,Fv5), b(Tv6,Fv6), b(Tv7,Fv7), b(Tv8,Fv8), b(Tv9,Fv9), b(Tp1_v10,Fp1_v10), b(Tp1_v11,Fp1_v11), b(Tp1_v12,Fp1_v12) ),
+          s(CP, c3, b(Fp1_v11,Tp1_v11), b(Tv2,Fv2), b(Fv4,Tv4), b(Tv4,Fv4), b(Fp1_v10,Tp1_v10), b(Fv2,Tv2), V7, V8, V9, b(Tp1_v10,Fp1_v10), b(Tp1_v11,Fp1_v11), b(Tp1_v12,Fp1_v12)))).
 
-cnf(next_st, axiom, st_eq(s(C1, next(c5), b(T1,F1), b(T2,F2), b(T3,F3), b(T4,F4), b(T5,F5), b(T6,F6), b(T7,F7), b(T8,F8), b(T9,F9), b(T10,F10), b(T11,F11), b(T12,F12)),
-                          s(C1, c0, b(F11,T11),b(T2,F2),b(F2,T2),b(T4,F4),b(T5,F5),b(F4,T4),b(T7,F7),b(T8,F8),b(T9,F9),b(T10,F10),b(T11,F11),b(F5,T5)))).
+cnf(next_st, axiom, st_eq(s(CP, next(c3), b(Tv1,Fv1), b(Tv2,Fv2), b(Tv3,Fv3), b(Tv4,Fv4), b(Tv5,Fv5), b(Tv6,Fv6), b(Tv7,Fv7), b(Tv8,Fv8), b(Tv9,Fv9), b(Tp1_v10,Fp1_v10), b(Tp1_v11,Fp1_v11), b(Tp1_v12,Fp1_v12) ),
+          s(CP, c4, b(Tv1,Fv1), b(Tv2,Fv2), b(Tv3,Fv3), b(Fv3,Tv3), b(Tv5,Fv5), b(Tv6,Fv6), V7, V8, V9, b(Fv6,Tv6), b(Fv5,Tv5), b(Fv1,Tv1)))).
+
+cnf(next_st, axiom, st_eq(s(CP, next(c4), b(Tv1,Fv1), b(Tv2,Fv2), b(Tv3,Fv3), b(Tv4,Fv4), b(Tv5,Fv5), b(Tv6,Fv6), b(Tv7,Fv7), b(Tv8,Fv8), b(Tv9,Fv9), b(Tp1_v10,Fp1_v10), b(Tp1_v11,Fp1_v11), b(Tp1_v12,Fp1_v12) ),
+          s(CP, c5, b(Tv1,Fv1), b(Fv3,Tv3), b(Tv3,Fv3), b(Tv4,Fv4), b(Tv5,Fv5), b(Fv1,Tv1), V7, V8, V9, b(Fv5,Tv5), b(Fp1_v12,Tp1_v12), b(Tp1_v12,Fp1_v12)))).
+
+cnf(next_st, axiom, st_eq(s(CP, next(c5), b(Tv1,Fv1), b(Tv2,Fv2), b(Tv3,Fv3), b(Tv4,Fv4), b(Tv5,Fv5), b(Tv6,Fv6), b(Tv7,Fv7), b(Tv8,Fv8), b(Tv9,Fv9), b(Tp1_v10,Fp1_v10), b(Tp1_v11,Fp1_v11), b(Tp1_v12,Fp1_v12) ),
+          s(CP, c0, b(Fp1_v11,Tp1_v11), b(Tv2,Fv2), b(Fv2,Tv2), b(Tv4,Fv4), b(Tv5,Fv5), b(Fv4,Tv4), V7, V8, V9, b(Tp1_v10,Fp1_v10), b(Tp1_v11,Fp1_v11), b(Fv5,Tv5)))).
 
 
-
-
-cnf(check, negated_conjecture, pi0(ag(or(p1, or(p2, or(p3, or(p4, or(p5, p6)))))), s(c0, c0, b(tt, ff), b(ff, tt), b(tt, ff), b(tt, ff), b(tt, ff), b(tt, ff), b(ff, tt), b(ff, tt), b(ff, tt), b(ff, tt), b(ff, tt), b(ff, tt)))).
-
-
+cnf(check, negated_conjecture, pi0(ag(or(v1,or(v2,or(v3,or(v4,or(v5,v6)))))),
+         s(c0, c0, b(tt,ff), b(ff,tt), b(tt,ff), b(tt,ff), b(tt,ff), b(tt,ff), b(ff,tt), b(ff,tt), b(ff,tt), b(ff,tt), b(ff,tt), b(ff,tt)))).

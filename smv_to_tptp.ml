@@ -1,5 +1,6 @@
 open Parsed
 open Parser
+open Printf
 
 let str_of_md2_name f var_lst =
   match var_lst with
@@ -87,100 +88,157 @@ let rec print_vars_with_types vars =
        | _ -> ()
      end
 
-let rec print_vars_without_types vars =
+let rec print_vars_without_types chan_out vars =
   match vars with
   | [] -> ()
   | h1::((h2::tl') as tl) ->
      begin
        match h1 with
-       | Boolean(v) -> print_string (v ^ ", ");
-	 print_vars_without_types tl
-       | Elem(elm,_) -> print_string (elm^", ");
-	 print_vars_without_types tl
-       | _ -> print_vars_without_types tl
+       | Boolean(v) -> 
+	  begin
+	    print_string (v ^ ", ");
+	    fprintf chan_out "%s, " v;
+	    print_vars_without_types chan_out tl
+	  end
+       | Elem(elm,_) -> 
+	  begin
+	    print_string (elm^", ");
+	    fprintf chan_out "%s, " elm;
+	    print_vars_without_types chan_out tl
+	  end
+       | _ -> print_vars_without_types chan_out tl
      end
   | [h] ->
      begin
        match h with
-       | Boolean(v) -> print_string ( v );
-       | Elem(elm,_) -> print_string ( elm );
+       | Boolean(v) ->
+	  begin
+	    print_string v; 
+	    fprintf chan_out "%s" v
+	  end
+       | Elem(elm,_) ->
+	  begin
+	    print_string elm;
+	    fprintf chan_out "%s" elm
+	  end
        | _ -> ()
      end
 
-let rec print_vars_up_with_next vars1 vars2 =
+let rec print_vars_up_with_next chan_out vars1 vars2 =
   match vars1,vars2 with
   | [],[] -> ()
   | [h1], [h2] ->
      if h1 = h2 then
        begin
 	 match h1 with
-	 | Boolean(v) -> print_string ("b("^"T"^v^","^"F"^v^") ");
-	 | Elem(elm,_) -> print_string ((String.uppercase elm));
+	 | Boolean(v) ->
+	    begin
+	      print_string ("b("^"T"^v^","^"F"^v^") ");
+	      fprintf chan_out "b(T%s,F%s) " v v
+	    end
+	 | Elem(elm,_) ->
+	    begin
+	      print_string ((String.uppercase elm));
+	      fprintf chan_out "%s" (String.uppercase elm)
+	    end
 	 | _ -> ()
        end
      else
        begin
 	 match h2 with
 	 | Elem(elm,_) -> 
-	    print_string ("next("^( String.uppercase elm)^") ");
+	    begin
+	      print_string ("next("^( String.uppercase elm)^") ");
+	      fprintf chan_out "next(%s)" (String.uppercase elm)
+	    end
 	 | _ -> ()
        end
   | h1 :: tl1, h2 :: tl2 ->
      if h1 = h2 then
       begin
 	match h1 with
-	| Boolean(v) -> print_string ("b("^"T"^v^","^"F"^v^"), ");
-	  print_vars_up_with_next tl1 tl2
-	| Elem(elm,_) -> print_string ((String.uppercase elm)^", ");
-	  print_vars_up_with_next tl1 tl2
-	| _ -> print_vars_up_with_next tl1 tl2
+	| Boolean(v) ->
+	   begin
+	     print_string ("b("^"T"^v^","^"F"^v^"), ");
+	     fprintf chan_out "b(T%s,F%s), " v v;
+	     print_vars_up_with_next chan_out tl1 tl2
+	   end
+	| Elem(elm,_) ->
+	   begin
+	     print_string ((String.uppercase elm)^", ");
+	     fprintf chan_out "%s, " (String.uppercase elm);
+	     print_vars_up_with_next chan_out tl1 tl2
+	   end
+	| _ -> print_vars_up_with_next chan_out tl1 tl2
       end
      else
        begin
 	 match h2 with
 	 | Elem(elm,_) -> 
-	    print_string ("next("^( String.uppercase elm)^"), ");
-	   print_vars_up_with_next tl1 tl2
-	 | _ -> print_vars_up_with_next tl1 tl2
+	    begin
+	      print_string ("next("^( String.uppercase elm)^"), ");
+	      fprintf chan_out "next(%s), " (String.uppercase elm);
+	      print_vars_up_with_next chan_out tl1 tl2
+	    end
+	 | _ -> print_vars_up_with_next chan_out tl1 tl2
        end
   | _ , []
   | [], _ -> ()
 
 
-let rec print_vars_up_with_next_const vars1 vars2 =
+let rec print_vars_up_with_next_const chan_out vars1 vars2 =
   match vars1,vars2 with
   | [],[] -> ()
   | [h1], [h2] ->
      if h1 = h2 then
        begin
 	 match h1 with
-	 | Boolean(v) -> print_string ("b("^"T"^v^","^"F"^v^") ");
-	 | Elem(elm,_) -> print_string ((String.uppercase elm));
+	 | Boolean(v) ->
+	    begin
+	      print_string ("b("^"T"^v^","^"F"^v^") ");
+	      fprintf chan_out "b(T%s,F%s) " v v
+	    end
+	 | Elem(elm,_) ->
+	    begin
+	      print_string ((String.uppercase elm));
+	      fprintf chan_out "%s" (String.uppercase elm)
+	    end
 	 | _ -> ()
        end
      else
        begin
 	 match h1 with
-	 | Elem(elm,_) -> print_string (elm);
+	 | Elem(elm,_) -> print_string elm; fprintf chan_out "%s" elm
 	 | _ -> ()
        end
   | h1 :: tl1, h2 :: tl2 ->
      if h1 = h2 then
       begin
 	match h1 with
-	| Boolean(v) -> print_string ("b("^"T"^v^","^"F"^v^"), ");
-	  print_vars_up_with_next_const tl1 tl2
-	| Elem(elm,_) -> print_string ((String.uppercase elm)^", ");
-	  print_vars_up_with_next_const tl1 tl2
-	| _ -> print_vars_up_with_next_const tl1 tl2
+	| Boolean(v) -> 
+	   begin
+	     print_string ("b("^"T"^v^","^"F"^v^"), ");
+	     fprintf chan_out "b(T%s,F%s), " v v;
+	     print_vars_up_with_next_const chan_out tl1 tl2
+	   end
+	| Elem(elm,_) -> 
+	   begin
+	     print_string ((String.uppercase elm)^", ");
+	     fprintf chan_out "%s, " (String.uppercase elm);
+	     print_vars_up_with_next_const chan_out tl1 tl2
+	   end
+	| _ -> print_vars_up_with_next_const chan_out tl1 tl2
       end
      else
        begin
 	 match h1 with
 	 | Elem(elm,_) -> 
-	    print_string ( elm^", " );
-	   print_vars_up_with_next_const tl1 tl2
-	 | _ -> print_vars_up_with_next_const tl1 tl2
+	    begin
+	      print_string ( elm^", " );
+	      fprintf chan_out "%s, " elm;
+	      print_vars_up_with_next_const chan_out tl1 tl2
+	    end
+	 | _ -> print_vars_up_with_next_const chan_out tl1 tl2
        end
   | _ , []
   | [], _ -> ()
@@ -203,19 +261,35 @@ let rec print_vars_up_without_types vars =
   )
 
 
-let rec print_vars_up_boolpair vars =
+let rec print_vars_up_boolpair chan_out vars =
   match vars with
   | [] -> ()
   | h1::((h2::tl') as tl) ->( match h1 with
-    | Boolean(v) -> print_string ("b("^"T"^v^","^"F"^v^"), ");
-      print_vars_up_boolpair tl
-    | Elem(elm,_) -> print_string ((String.uppercase elm)^", ");
-      print_vars_up_boolpair tl
-    | _ -> print_vars_up_boolpair tl
+    | Boolean(v) -> 
+       begin
+	 print_string ("b("^"T"^v^","^"F"^v^"), ");
+	 fprintf chan_out "b(T%s,F%s), " v v ;
+	 print_vars_up_boolpair chan_out tl
+       end
+    | Elem(elm,_) ->
+       begin 
+	 print_string ((String.uppercase elm)^", ");
+	 fprintf chan_out "%s, " (String.uppercase elm);
+	 print_vars_up_boolpair chan_out tl
+       end
+    | _ -> print_vars_up_boolpair chan_out tl
   )
   | [h] -> ( match h with
-    | Boolean(v) -> print_string ("b("^"T"^v^","^"F"^v^") " );
-    | Elem(elm,_) -> print_string (String.uppercase elm );
+    | Boolean(v) -> 
+       begin
+	 print_string ("b("^"T"^v^","^"F"^v^") " );
+	 fprintf chan_out "b(T%s,F%s) " v v ;
+       end
+    | Elem(elm,_) -> 
+       begin 
+	 print_string (String.uppercase elm );
+	 fprintf chan_out "%s" (String.uppercase elm)
+       end
     | _ -> ()
   )
 
@@ -377,9 +451,9 @@ let rec true_var_state v var_l =
      | _ -> raise Not_State_Variable_Element 
      
 
-let rec atomic_prop_in_state' var_l1 var_l2 =
+let rec atomic_prop_in_state' chan_out var_l1 var_l2 =
   match var_l1 with
-  | [] -> print_string "\n"
+  | [] -> print_string "\n"; fprintf chan_out "\n"
   | h::tl -> match h with
     | Boolean(v) -> 
        print_string 
@@ -387,13 +461,16 @@ let rec atomic_prop_in_state' var_l1 var_l2 =
        ^ (false_var_state v var_l2) ^ "))).\n" 
        ^ "cnf(" ^ v ^ "t, axiom,  pi0("^ v ^", s("
        ^ (true_var_state v var_l2) ^ "))).\n");
-      atomic_prop_in_state' tl var_l2
-    |_ -> atomic_prop_in_state' tl var_l2
+      fprintf chan_out 
+	"cnf(%sf, axiom, ~pi0(%s, s(%s))).\ncnf(%st, axiom,  pi0(%s, s(%s))).\n"
+	v v (false_var_state v var_l2) v v (true_var_state v var_l2);
+      atomic_prop_in_state' chan_out tl var_l2
+    |_ -> atomic_prop_in_state' chan_out tl var_l2
 
-let atomic_prop_in_state md var_lst =
+let atomic_prop_in_state chan_out  md var_lst =
   match md with
   | Module1(_, vars, _, _) ->
-     atomic_prop_in_state' vars var_lst
+     atomic_prop_in_state' chan_out vars var_lst
   | _ -> raise Not_Main_Module
 
 exception Not_Consider_Yet
@@ -432,36 +509,47 @@ let spec_in_main md =
   | _ -> raise Not_Main_Module
 
 
-let state_shape var_lst =
+let state_shape chan_out var_lst =
   print_string "s(";
-  print_vars_without_types var_lst;
-  print_string ")"
+  fprintf chan_out "s(";
+  print_vars_without_types chan_out var_lst;
+  print_string ")";
+  fprintf chan_out ")"
 
 let state_shape_up var_lst =
   print_string "s(";
   print_vars_up_without_types var_lst;
   print_string ")"
 
-let state_shape_up_with_next vars1 vars2 =
+let state_shape_up_with_next chan_out vars1 vars2 =
   print_string "s(";
-  print_vars_up_with_next vars1 vars2;
-  print_string ")"
+  fprintf chan_out "s(";
+  print_vars_up_with_next chan_out vars1 vars2;
+  print_string ")";
+  fprintf chan_out ")"
 
-let state_shape_up_in_st_eq vars1 vars2 =
+let state_shape_up_in_st_eq chan_out vars1 vars2 =
   print_string "s(";
-  print_vars_up_with_next_const vars1 vars2;
-  print_string ")"
+  fprintf chan_out "s(";
+  print_vars_up_with_next_const chan_out vars1 vars2;
+  print_string ")";
+  fprintf chan_out ")"
 
-let state_shape_up_boolpair vars =
+let state_shape_up_boolpair chan_out vars =
   print_string "s(";
-  print_vars_up_boolpair vars;
-  print_string ")"
+  fprintf chan_out "s(";
+  print_vars_up_boolpair chan_out vars;
+  print_string ")";
+  fprintf chan_out ")"
 
-let goal spec s =
+let goal chan_out spec s =
 print_string "cnf(check, negated_conjecture, pi0(";
+fprintf chan_out "cnf(check, negated_conjecture, pi0(";
 print_string (spec^",\n         ");
-state_shape s;
-print_string "))."
+fprintf chan_out "%s,\n         " spec;
+state_shape chan_out s;
+print_string ")).";
+fprintf chan_out "))."
 
 
 let rec list_of_procs' vars' =
@@ -658,51 +746,63 @@ let rec r_without_case vars succ_assigs =
   | h :: tl ->
      succ_without_case vars h :: r_without_case vars tl
 
-let print_var_list vars =
+let print_var_list chan_out vars =
   match vars with
   | [] -> ()
-  | h::tl -> 
-     (print_string h;
-      List.iter (fun v -> print_string (", "^v)) tl
-     )
+  | h::tl ->
+     begin 
+       print_string h; 
+       fprintf chan_out "%s" h;
+       List.iter (fun v -> print_string (", "^v)) tl;
+       let print_in_file = fprintf chan_out in
+       List.iter (fun v -> print_in_file ", %s" v) tl
+     end
 
-let print_var_list_boolpair vars =
+let print_var_list_boolpair chan_out vars =
   match vars with
   | [] -> ()
   | (t,f)::tl -> 
      (print_string ("b("^t^","^f^")");
-      List.iter (fun (t,f) -> print_string (", "^"b("^t^","^f^")") ) tl
+      fprintf chan_out "b(%s,%s)" t f;
+      List.iter (fun (t,f) -> print_string (", "^"b("^t^","^f^")") ) tl;
+      let print_to_file = fprintf chan_out in
+      List.iter (fun (t,f) -> print_to_file ", b(%s, %s)" t f ) tl;
+
      )
 
 
-let rec print_succs_without_case succs =
+let rec print_succs_without_case chan_out succs =
   match succs with
-  | [] -> print_string "nil"
+  | [] -> print_string "nil"; fprintf chan_out "nil"
   | [h] ->
      begin
-       print_string "              con(";
-       print_string "s(";
-       print_var_list_boolpair h;
-       print_string "), ";
-       print_string "nil";
-       print_string ")"
+       print_string "              con(s(";
+       fprintf chan_out "              con(s(";
+       print_var_list_boolpair chan_out h;
+       print_string "), nil)";
+       fprintf chan_out "), nil)"
      end
   | h :: tl ->
      begin
-       print_string "              con(";
-       print_string "s(";
-       print_var_list_boolpair h;
+       print_string "              con(s(";
+       fprintf chan_out "              con(s(";
+       print_var_list_boolpair chan_out h;
        print_string "),\n";
-       print_succs_without_case tl;
-       print_string ")"
+       fprintf chan_out "),\n";
+       print_succs_without_case chan_out tl;
+       print_string ")";
+       fprintf chan_out ")"
      end
 
-let r_shape_without_case vars succs =
+let r_shape_without_case chan_out vars succs =
   print_string "cnf(r, axiom, r(";
-  state_shape_up_boolpair vars;
+  fprintf chan_out "cnf(r, axiom, r(";
+  state_shape_up_boolpair chan_out vars;
   print_string ",\n";
-  print_succs_without_case succs;
-  print_string ")).\n"
+  fprintf chan_out ",\n";
+  print_succs_without_case chan_out succs;
+  print_string ")).\n";
+  fprintf chan_out ")).\n";
 
 exception Not_State_Variable
 
@@ -763,32 +863,41 @@ let rec r_with_case vars succ_assigs =
      add_next_symb_to_case_var vars h
      :: r_with_case vars tl
 
-let rec print_succ_vars num1 num2 =
+let rec print_succ_vars chan_out num1 num2 =
   if num1 < num2 then
     begin
       print_string ("con("^"S"^(string_of_int num1)^", ");
-      print_succ_vars (num1+1) num2;
+      fprintf chan_out "con(S%d, " num1;
+      print_succ_vars chan_out (num1+1) num2;
       print_string ")";
+      fprintf chan_out ")"
     end 
   else if num1=num2 then
-    print_string "nil"
+    begin
+      print_string "nil";
+      fprintf chan_out "nil"
+    end
   else ()
 
-let rec print_st_eqs num next_vars_lst vars=
+let rec print_st_eqs chan_out num next_vars_lst vars=
   match next_vars_lst with
   | [] -> ()
   | [h] ->
      begin
        print_string "              | ~st_eq(";
-       state_shape_up_with_next h vars;
+       fprintf chan_out "              | ~st_eq(";
+       state_shape_up_with_next chan_out h vars;
        print_string (", S"^(string_of_int num)^")");
+       fprintf chan_out ", S%d)" num
      end
   | h :: tl -> 
      begin
        print_string "              | ~st_eq(";
-       state_shape_up_with_next h vars;
+       fprintf chan_out "              | ~st_eq(";
+       state_shape_up_with_next chan_out h vars;
        print_string (", S"^(string_of_int num)^")\n");
-       print_st_eqs (num+1) tl vars;
+       fprintf chan_out ", S%d)\n" num;
+       print_st_eqs chan_out (num+1) tl vars;
      end
 
 
@@ -909,55 +1018,62 @@ let rec st_with_next_values next_vars vars1 vars2=
      else st_with_next_value h2 vars2
   | _, _ -> raise Not_the_same_number_of_vars
 
-let rec print_eqs_st vars vars_with_nxt_vals next_st_lst =
+let rec print_eqs_st chan_out vars vars_with_nxt_vals next_st_lst =
   match vars_with_nxt_vals, next_st_lst with
   | h1::tl1, h2::tl2 -> 
      begin
        print_string "cnf(next_st, axiom, st_eq(";
-       state_shape_up_in_st_eq h1 vars;
+       fprintf chan_out "cnf(next_st, axiom, st_eq(";
+       state_shape_up_in_st_eq chan_out h1 vars;
        print_string ",\n          s(";
-       print_var_list h2;
+       fprintf chan_out ",\n          s(";
+       print_var_list chan_out h2;
        print_string "))).\n\n";
-       print_eqs_st vars tl1 tl2
+       fprintf chan_out "))).\n\n";
+       print_eqs_st chan_out vars tl1 tl2
      end
   | h1:: tl1, [] -> ()
   | [], h2::tl2 -> ()
   | [], [] -> ()
       
 
-let st_eqs vars succ_assigs =
+let st_eqs chan_out vars succ_assigs =
   let next_vars_lst = r_with_case vars succ_assigs in
-  let rec st_eqs_print vars (next_var_list, succ_assigs) =
+  let rec st_eqs_print chan_out vars (next_var_list, succ_assigs) =
     match next_var_list, succ_assigs with
     | [], [] -> ()
     | h1 :: tl1, h2::tl2 ->
        let vars_with_nxt_vals = st_with_next_values h1 vars vars in  
        let next_st_lst = st_eqs_for_each_elem_value h1 vars vars h2 in
-       print_eqs_st vars vars_with_nxt_vals next_st_lst;
-       st_eqs_print vars (tl1, tl2)
+       print_eqs_st chan_out vars vars_with_nxt_vals next_st_lst;
+       st_eqs_print chan_out vars (tl1, tl2)
     | _,_ -> ()
-  in st_eqs_print vars (next_vars_lst, succ_assigs)
+  in st_eqs_print chan_out vars (next_vars_lst, succ_assigs)
 
 
-let r_shape_with_st_eqs vars succ_assigs =
+let r_shape_with_st_eqs chan_out vars succ_assigs =
   let next_vars_lst = r_with_case vars succ_assigs in
   let succ_num = List.length next_vars_lst in
   print_string "cnf(r, axiom, r(";
-  state_shape_up_boolpair vars;
+  fprintf chan_out "cnf(r, axiom, r(";
+  state_shape_up_boolpair chan_out vars;
   print_string ", ";
-  print_succ_vars 0 succ_num;
+  fprintf chan_out ", ";
+  print_succ_vars chan_out 0 succ_num;
   print_string ")\n";
-  print_st_eqs 0 next_vars_lst vars;
+  fprintf chan_out ")\n";
+  print_st_eqs chan_out 0 next_vars_lst vars;
   print_string ").\n\n";
-  st_eqs vars succ_assigs
+  fprintf chan_out ").\n\n";
+  st_eqs chan_out vars succ_assigs
 
-let rec r_shape vars1 vars2 succ_assigns =
+let rec r_shape chan_out vars1 vars2 succ_assigns =
   match vars1 with
   | [] -> let succ = r_without_case vars2 succ_assigns in
-	  r_shape_without_case vars2 succ
+	  r_shape_without_case chan_out vars2 succ
   | Elem(_,_) :: tl -> 
-     r_shape_with_st_eqs vars2 succ_assigns
-  | _ :: tl -> r_shape tl vars2 succ_assigns
+     r_shape_with_st_eqs chan_out vars2 succ_assigns
+  | _ :: tl -> r_shape chan_out tl vars2 succ_assigns
 
 
 let relation md md_lst =
@@ -968,25 +1084,41 @@ let relation md md_lst =
 
 
 let () =
-let chan_in = open_in Sys.argv.(1) in
+let ori_file = Sys.argv.(1) in
+let chan_in = open_in ori_file in
+let goal_file = (String.sub ori_file 0 (String.length ori_file - 3))^"p" in
+let chan_out = open_out goal_file in
 let lexbuf = Lexing.from_channel chan_in in
 let result = Parser.file Lexer.token lexbuf in
 let inits = init_state (List.hd result) (List.tl result) in
 let spec = spec_in_main (List.hd result) in
 let inits' = put_ahead_elem_vars inits in
-let var_lst = state_var_list (List.hd result) (List.tl result) in
+(*let var_lst = state_var_list (List.hd result) (List.tl result) in*)
 let var_lst' = state_var_list' (List.hd result) (List.tl result) in
 let var_lst'' = put_ahead_elem_vars var_lst' in
 let main_succ_assign = succ_assig_in_main (List.hd result) in
 let procs = list_of_procs (List.hd result) in
 let succ_assigns = succ_assig_in_each_proc procs (List.tl result) in
-atomic_prop_in_state (List.hd result) var_lst'';
+let chan_in_ctl = open_in "ctl_rule" in
+begin
+try
+ while true do
+   let line = input_line chan_in_ctl in
+   fprintf chan_out "%s\n" line
+ done
+with End_of_file -> close_in chan_in_ctl
+end;
+atomic_prop_in_state chan_out (List.hd result) var_lst'';
 print_newline();
-r_shape var_lst'' var_lst'' (main_succ_assign::succ_assigns);
+fprintf chan_out "\n";
+r_shape chan_out var_lst'' var_lst'' (main_succ_assign::succ_assigns);
 print_newline();
-goal spec inits';
+fprintf chan_out "\n";
+goal chan_out spec inits';
 print_newline();
-close_in chan_in
+fprintf chan_out "\n";
+close_in chan_in;
+close_out chan_out
 (*print_int result; print_newline(); flush stdout*)
 
 (*cnf(p1f, axiom, ~pi0(p1, s(C1, C2, b(ff,tt), B2, B3, B4, B5, B6, B7, B8, B9, B10, B11, B12))).*)
