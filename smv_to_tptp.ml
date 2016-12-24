@@ -926,7 +926,7 @@ exception  Not_Next_CNext
 	
 let rec find_case_next_value elem e_val var succ_assig vars =
   match succ_assig with
-  | [] -> String.uppercase var
+  | [] -> "b("^"T"^var^", F"^var^")" (*String.uppercase var*)
   | h :: tl -> 
      match h with
      | Next(var', exp) -> 
